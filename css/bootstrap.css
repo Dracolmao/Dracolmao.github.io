@@ -9351,6 +9351,7 @@ a.text-dark:focus {
 }
 #body {
   background-color: #b3d7ff;
+  scroll-behavior:smooth;
 }
 .space {
   margin-top: 60px;
@@ -9363,5 +9364,8 @@ a.text-dark:focus {
 }
 .nohi{
   max-height: 400px;
+}
+#logo{
+  max-width: 40px;
 }
 /*# sourceMappingURL=bootstrap.css.map */
