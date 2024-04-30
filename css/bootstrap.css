@@ -9351,21 +9351,21 @@ a.text-dark:focus {
 }
 #body {
   background-color: #b3d7ff;
-  scroll-behavior:smooth;
+  scroll-behavior: smooth;
 }
 .space {
   margin-top: 60px;
 }
-.padding{
-  background-color:#9fcdff;
+.padding {
+  background-color: #9fcdff;
   padding: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.nohi{
+.nohi {
   max-height: 400px;
 }
-#logo{
+#logo {
   max-width: 40px;
 }
 /*# sourceMappingURL=bootstrap.css.map */
