@@ -9349,13 +9349,7 @@ a.text-dark:focus {
   margin: 0px;
 }
 #body {
-  background: rgb(130, 225, 255);
-  background: linear-gradient(
-    90deg,
-    rgba(130, 225, 255, 1) 0%,
-    rgba(62, 73, 255, 1) 50%,
-    rgba(130, 225, 255, 1) 100%
-  );
+  background-color: #b3d7ff;
 }
 .space {
   padding-top: 20px;
