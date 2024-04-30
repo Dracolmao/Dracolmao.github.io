@@ -9368,4 +9368,7 @@ a.text-dark:focus {
 #logo {
   max-width: 40px;
 }
+.navbtn{
+  min-width: 50px;
+}
 /*# sourceMappingURL=bootstrap.css.map */
