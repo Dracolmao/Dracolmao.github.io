@@ -9353,12 +9353,15 @@ a.text-dark:focus {
   background-color: #b3d7ff;
 }
 .space {
-  padding-top: 20px;
+  margin-top: 60px;
 }
 .padding{
   background-color:#9fcdff;
   padding: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+.nohi{
+  max-height: 400px;
 }
 /*# sourceMappingURL=bootstrap.css.map */
