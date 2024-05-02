@@ -9376,9 +9376,9 @@ a.text-dark:focus {
   min-width: 50px;
 }
 .bg-yellow{
-  background-color: rgb(255, 195, 0);
+  background-color:blueviolet;
 }
 .bg-lyellow{
-  background-color: rgb(255, 255, 83);
+  background-color:mediumorchid;
 }
 /*# sourceMappingURL=bootstrap.css.map */
