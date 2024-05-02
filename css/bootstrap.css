@@ -9345,7 +9345,7 @@ a.text-dark:focus {
     border: 1px solid #ddd !important;
   }
 }
-#nomargin {
+.nomargin {
   margin: 0px;
   padding: 0px;
 }
@@ -9356,9 +9356,13 @@ a.text-dark:focus {
 .space {
   margin-top: 60px;
 }
-.padding {
+.space1 {
+  margin-top: 30px;
+}
+.bg-blue{
   background-color: #9fcdff;
-  padding: 20px;
+}
+.padding {
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -9370,5 +9374,11 @@ a.text-dark:focus {
 }
 .navbtn{
   min-width: 50px;
+}
+.bg-yellow{
+  background-color: rgb(255, 195, 0);
+}
+.bg-lyellow{
+  background-color: rgb(255, 255, 83);
 }
 /*# sourceMappingURL=bootstrap.css.map */
