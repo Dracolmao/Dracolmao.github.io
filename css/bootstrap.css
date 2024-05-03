@@ -9363,7 +9363,7 @@ a.text-dark:focus {
   margin-top: 30px;
 }
 .bg-blue{
-  background-color: #9fcdff;
+  background-color: rgba(159, 205, 255, 0.7);
 }
 .padding {
   padding-top: 20px;
@@ -9382,6 +9382,11 @@ a.text-dark:focus {
   background-color:var(--cyan);
 }
 .bg-lyellow{
-  background-color:cyan;
+  background-color:rgba(0, 255, 255, 0.7);
+}
+@media only screen and (min-width: 992px) {
+  #title {padding-left: 200px; padding-right: 200px;
+  padding-top: 50px; padding-bottom: 50px;}
+  #Project {padding-left: 200px; padding-right: 200px;}
 }
 /*# sourceMappingURL=bootstrap.css.map */
