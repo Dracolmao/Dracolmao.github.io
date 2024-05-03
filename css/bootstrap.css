@@ -9352,6 +9352,9 @@ a.text-dark:focus {
 #body {
   background-color: #b3d7ff;
   scroll-behavior: smooth;
+  background-image: url("/img/bg-dblue.jpg");
+  background-size: 100%;
+  
 }
 .space {
   margin-top: 60px;
@@ -9376,9 +9379,9 @@ a.text-dark:focus {
   min-width: 50px;
 }
 .bg-yellow{
-  background-color:blueviolet;
+  background-color:var(--cyan);
 }
 .bg-lyellow{
-  background-color:mediumorchid;
+  background-color:cyan;
 }
 /*# sourceMappingURL=bootstrap.css.map */
