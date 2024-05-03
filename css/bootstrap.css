@@ -9350,11 +9350,9 @@ a.text-dark:focus {
   padding: 0px;
 }
 #body {
-  background-color: #b3d7ff;
   scroll-behavior: smooth;
   background-image: url("/img/bg-dblue.jpg");
   background-size: 100%;
-  
 }
 .space {
   margin-top: 60px;
@@ -9362,7 +9360,7 @@ a.text-dark:focus {
 .space1 {
   margin-top: 30px;
 }
-.bg-blue{
+.bg-blue {
   background-color: rgba(159, 205, 255, 0.7);
 }
 .padding {
@@ -9375,18 +9373,34 @@ a.text-dark:focus {
 #logo {
   max-width: 40px;
 }
-.navbtn{
+.navbtn {
   min-width: 50px;
 }
-.bg-yellow{
-  background-color:var(--cyan);
+.navbtn:hover{
+  background-color: white;
 }
-.bg-lyellow{
-  background-color:rgba(0, 255, 255, 0.7);
+.navbtn:active{
+  background-color: yellow;
+}
+.bg-cyan {
+  background-color: var(--cyan);
+}
+.bg-lcyan {
+  background-color: rgba(0, 255, 255, 0.7);
+}
+.bg-lwhite {
+  background-color: rgba(248, 249, 250, 0.9);
 }
 @media only screen and (min-width: 992px) {
-  #title {padding-left: 200px; padding-right: 200px;
-  padding-top: 50px; padding-bottom: 50px;}
-  #Project {padding-left: 200px; padding-right: 200px;}
+  #title {
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  #Project {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 }
 /*# sourceMappingURL=bootstrap.css.map */
