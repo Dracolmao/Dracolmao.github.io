@@ -9393,14 +9393,14 @@ a.text-dark:focus {
 }
 @media only screen and (min-width: 992px) {
   #title {
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 15%;
+    padding-right: 15%;
     padding-top: 50px;
     padding-bottom: 50px;
   }
-  #Project {
-    padding-left: 100px;
-    padding-right: 100px;
+  #window {
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
