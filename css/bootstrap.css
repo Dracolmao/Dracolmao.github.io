@@ -9364,7 +9364,7 @@ a.text-dark:focus {
   background-color: rgba(159, 205, 255, 0.7);
 }
 .bg-blue{
-  background-color: rgba(0, 123, 255, 0.9);
+  background-color: rgba(0, 113, 196, 0.9);
 }
 .padding {
   padding-top: 20px;
@@ -9395,10 +9395,10 @@ a.text-dark:focus {
   background-color: rgba(248, 249, 250, 0.9);
 }
 .bg-purple{
-  background-color: rgba(162, 65, 207, 0.95);
+  background-color: rgba(58, 101, 174, 0.95);
 }
 .bg-lpurple{
-  background-color: rgba(195, 65, 255, 0.7);
+  background-color: rgba(58, 139, 219, 0.7);
 }
 @media only screen and (min-width: 992px) {
   #title {
@@ -9411,5 +9411,12 @@ a.text-dark:focus {
     padding-left: 10%;
     padding-right: 10%;
   }
+}
+.navborder{
+  border: 1px solid #00008e !important;
+  margin-right: 5px;
+}
+.white{
+  color: white;
 }
 /*# sourceMappingURL=bootstrap.css.map */
