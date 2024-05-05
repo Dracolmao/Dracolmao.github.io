@@ -9360,8 +9360,11 @@ a.text-dark:focus {
 .space1 {
   margin-top: 30px;
 }
-.bg-blue {
+.bg-lblue {
   background-color: rgba(159, 205, 255, 0.7);
+}
+.bg-blue{
+  background-color: rgba(0, 123, 255, 0.9);
 }
 .padding {
   padding-top: 20px;
@@ -9383,13 +9386,19 @@ a.text-dark:focus {
   background-color: yellow;
 }
 .bg-cyan {
-  background-color: var(--cyan);
+  background-color: rgba(23, 162, 184, 0.95);
 }
 .bg-lcyan {
   background-color: rgba(0, 255, 255, 0.7);
 }
 .bg-lwhite {
   background-color: rgba(248, 249, 250, 0.9);
+}
+.bg-purple{
+  background-color: rgba(162, 65, 207, 0.95);
+}
+.bg-lpurple{
+  background-color: rgba(195, 65, 255, 0.7);
 }
 @media only screen and (min-width: 992px) {
   #title {
