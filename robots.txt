@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://dracolmao.github.io/sitemap.xml
+
+# Allow search engines to crawl all important files
+Allow: /css/
+Allow: /js/
+Allow: /img/
+Allow: /documents/
+
+# Disallow crawling of development files if any
+Disallow: /*.map$
+Disallow: /node_modules/

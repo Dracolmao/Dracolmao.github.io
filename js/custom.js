@@ -248,31 +248,66 @@ function initContactForm() {
 
 // Resume download functionality
 function initResumeDownload() {
-    const resumeBtn = document.getElementById('resume-download');
+    // Handle all resume download buttons
+    const resumeDownloadBtns = document.querySelectorAll('a[href*="Jaffar_Alromaih_CV_Resume.pdf"][download]');
     
-    if (resumeBtn) {
-        resumeBtn.addEventListener('click', function(e) {
-            e.preventDefault();
+    resumeDownloadBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            // Add loading state
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Downloading...';
+            btn.disabled = true;
             
-            // Create a placeholder for the resume file
-            // In a real implementation, this would link to an actual PDF file
-            const resumeUrl = 'documents/Jaffar_Alromaih_Resume.pdf';
-            
-            // Create a temporary link to trigger download
-            const link = document.createElement('a');
-            link.href = resumeUrl;
-            link.download = 'Jaffar_Alromaih_Resume.pdf';
-            link.style.display = 'none';
-            
-            // Add to DOM, click, and remove
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            // Show a message (in a real implementation, you might want to handle errors)
-            console.log('Resume download initiated');
+            // Simulate download completion
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                
+                // Show success feedback
+                showNotification('Resume downloaded successfully!', 'success');
+            }, 1500);
         });
-    }
+    });
+}
+
+// Notification system
+function showNotification(message, type = 'info') {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.textContent = message;
+    
+    // Style the notification
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 1rem 1.5rem;
+        background-color: ${type === 'success' ? '#28a745' : type === 'error' ? '#dc3545' : '#007bff'};
+        color: white;
+        border-radius: 5px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 9999;
+        font-weight: 500;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    `;
+    
+    // Add to DOM
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 300);
+    }, 3000);
 }
 
 // Active navigation highlighting

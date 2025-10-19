@@ -75,6 +75,21 @@ body {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
+.hero-text .hero-subtitle {
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  font-size: 2rem;
+}
+
+.hero-text .hero-concentration {
+  color: #f0f8ff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
 .profile-img {
   max-width: 300px;
   border: 5px solid rgba(255, 255, 255, 0.2);
@@ -222,6 +237,52 @@ section {
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(10, 36, 99, 0.1);
+}
+
+/* Resume Viewer */
+.resume-viewer-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(10, 36, 99, 0.15);
+  overflow: hidden;
+  padding: 0;
+}
+
+.resume-viewer {
+  position: relative;
+  width: 100%;
+  background: #f8f9fa;
+  border-bottom: 3px solid var(--blue);
+}
+
+.resume-viewer iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+  display: block;
+}
+
+.resume-controls {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.resume-controls .btn {
+  margin: 0.5rem;
+  min-width: 180px;
+}
+
+/* Responsive Resume Viewer */
+@media (max-width: 768px) {
+  .resume-viewer iframe {
+    height: 400px;
+  }
+  
+  .resume-controls .btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
 }
 
 /* Footer */
@@ -425,22 +486,36 @@ footer {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--blue), #0056b3);
-  border: none;
-  color: var(--light-text);
-  font-weight: 600;
+  background: linear-gradient(135deg, #ffffff, #f8f9ff);
+  border: 2px solid #ffffff;
+  color: var(--deep-blue);
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #f8f9ff, #e6f3ff);
+  border-color: #ffffff;
+  color: var(--deep-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
 }
 
 .btn-outline-primary {
-  border-color: var(--blue);
-  color: var(--blue);
+  border-color: #ffffff;
+  color: #ffffff;
   font-weight: 600;
+  background: transparent;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .btn-outline-primary:hover {
-  background: var(--blue);
-  border-color: var(--blue);
-  color: var(--light-text);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
 
 .btn:hover {
