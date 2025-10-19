@@ -78,9 +78,15 @@ function initNavbarScroll() {
 
 // Scroll animations
 function initScrollAnimations() {
-    const fadeElements = document.querySelectorAll('.fade-in');
+    // Add fade-in class to elements that should animate
+    const animateElements = document.querySelectorAll('.section-title, .project-card, .education-item');
+    animateElements.forEach(element => {
+        element.classList.add('fade-in');
+    });
     
     function checkFadeElements() {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
         fadeElements.forEach(element => {
             const elementTop = element.getBoundingClientRect().top;
             const elementVisible = 150;
@@ -91,15 +97,14 @@ function initScrollAnimations() {
         });
     }
     
-    // Add fade-in class to elements that should animate
-    const animateElements = document.querySelectorAll('.section-title, .project-card, .education-item');
-    animateElements.forEach(element => {
-        element.classList.add('fade-in');
-    });
-    
     // Check on scroll and on load
     window.addEventListener('scroll', checkFadeElements);
-    checkFadeElements();
+    
+    // Initial check after a short delay to ensure DOM is ready
+    setTimeout(checkFadeElements, 100);
+    
+    // Also check on resize
+    window.addEventListener('resize', checkFadeElements);
 }
 
 // Contact form handling
