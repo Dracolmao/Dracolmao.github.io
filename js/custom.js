@@ -1,0 +1,353 @@
+// Custom JavaScript for Jaffar Alromaih's Portfolio
+
+document.addEventListener('DOMContentLoaded', function() {
+    initSmoothScrolling();
+    initNavbarScroll();
+    initScrollAnimations();
+    initContactForm();
+    initResumeDownload();
+    initActiveNavigation();
+    initScrollToTop();
+});
+
+// Smooth scrolling for navigation links
+function initSmoothScrolling() {
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const navbarHeight = document.getElementById('mainNav').offsetHeight;
+                const offsetTop = targetElement.offsetTop - navbarHeight - 20;
+                
+                // Use polyfill for browsers that don't support smooth scrolling
+                if ('scrollBehavior' in document.documentElement.style) {
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // Fallback for older browsers
+                    const startPosition = window.pageYOffset;
+                    const distance = offsetTop - startPosition;
+                    const duration = 500;
+                    let start = null;
+                    
+                    function animation(currentTime) {
+                        if (start === null) start = currentTime;
+                        const timeElapsed = currentTime - start;
+                        const run = ease(timeElapsed, startPosition, distance, duration);
+                        window.scrollTo(0, run);
+                        if (timeElapsed < duration) requestAnimationFrame(animation);
+                    }
+                    
+                    function ease(t, b, c, d) {
+                        t /= d / 2;
+                        if (t < 1) return c / 2 * t * t + b;
+                        t--;
+                        return -c / 2 * (t * (t - 2) - 1) + b;
+                    }
+                    
+                    requestAnimationFrame(animation);
+                }
+            }
+        });
+    });
+}
+
+// Change navbar style on scroll
+function initNavbarScroll() {
+    const navbar = document.getElementById('mainNav');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.style.padding = '0.5rem 0';
+            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+        } else {
+            navbar.style.padding = '1rem 0';
+            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+        }
+    });
+}
+
+// Scroll animations
+function initScrollAnimations() {
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    function checkFadeElements() {
+        fadeElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('visible');
+            }
+        });
+    }
+    
+    // Add fade-in class to elements that should animate
+    const animateElements = document.querySelectorAll('.section-title, .project-card, .education-item');
+    animateElements.forEach(element => {
+        element.classList.add('fade-in');
+    });
+    
+    // Check on scroll and on load
+    window.addEventListener('scroll', checkFadeElements);
+    checkFadeElements();
+}
+
+// Contact form handling
+function initContactForm() {
+    const contactForm = document.getElementById('contact-form');
+    const successMessage = document.querySelector('.success-message');
+    const errorMessage = document.querySelector('.error-message');
+    
+    if (contactForm) {
+        // Add input validation feedback
+        const inputs = contactForm.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                validateField(this);
+            });
+            
+            input.addEventListener('input', function() {
+                // Clear error when user starts typing
+                if (this.classList.contains('is-invalid')) {
+                    this.classList.remove('is-invalid');
+                    this.classList.add('is-valid');
+                }
+            });
+        });
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Validate all fields
+            let isValid = true;
+            inputs.forEach(input => {
+                if (!validateField(input)) {
+                    isValid = false;
+                }
+            });
+            
+            if (!isValid) {
+                showError('Please correct the errors in the form');
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission (replace with actual implementation)
+            setTimeout(() => {
+                // Reset form
+                contactForm.reset();
+                inputs.forEach(input => {
+                    input.classList.remove('is-valid', 'is-invalid');
+                });
+                
+                // Show success message
+                showSuccess('Your message has been sent successfully!');
+                
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        });
+    }
+    
+    function validateField(field) {
+        const value = field.value.trim();
+        let isValid = true;
+        let errorMessage = '';
+        
+        // Reset validation classes
+        field.classList.remove('is-valid', 'is-invalid');
+        
+        // Check if field is required and empty
+        if (field.hasAttribute('required') && !value) {
+            isValid = false;
+            errorMessage = 'This field is required';
+        }
+        // Email validation
+        else if (field.type === 'email' && value) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+                isValid = false;
+                errorMessage = 'Please enter a valid email address';
+            }
+        }
+        
+        // Apply validation classes
+        if (!isValid) {
+            field.classList.add('is-invalid');
+            
+            // Create or update error message
+            let errorDiv = field.parentNode.querySelector('.invalid-feedback');
+            if (!errorDiv) {
+                errorDiv = document.createElement('div');
+                errorDiv.className = 'invalid-feedback';
+                field.parentNode.appendChild(errorDiv);
+            }
+            errorDiv.textContent = errorMessage;
+        } else if (value) {
+            field.classList.add('is-valid');
+            
+            // Remove error message if exists
+            const errorDiv = field.parentNode.querySelector('.invalid-feedback');
+            if (errorDiv) {
+                errorDiv.remove();
+            }
+        }
+        
+        return isValid;
+    }
+    
+    function showSuccess(message) {
+        if (successMessage) {
+            successMessage.textContent = message;
+            successMessage.style.display = 'block';
+            successMessage.classList.add('alert', 'alert-success');
+            errorMessage.style.display = 'none';
+            
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        }
+    }
+    
+    function showError(message) {
+        if (errorMessage) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+            errorMessage.classList.add('alert', 'alert-danger');
+            successMessage.style.display = 'none';
+            
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 5000);
+        }
+    }
+}
+
+// Resume download functionality
+function initResumeDownload() {
+    const resumeBtn = document.getElementById('resume-download');
+    
+    if (resumeBtn) {
+        resumeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Create a placeholder for the resume file
+            // In a real implementation, this would link to an actual PDF file
+            const resumeUrl = 'documents/Jaffar_Alromaih_Resume.pdf';
+            
+            // Create a temporary link to trigger download
+            const link = document.createElement('a');
+            link.href = resumeUrl;
+            link.download = 'Jaffar_Alromaih_Resume.pdf';
+            link.style.display = 'none';
+            
+            // Add to DOM, click, and remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Show a message (in a real implementation, you might want to handle errors)
+            console.log('Resume download initiated');
+        });
+    }
+}
+
+// Active navigation highlighting
+function initActiveNavigation() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    
+    // Add active style to CSS if not already defined
+    const style = document.createElement('style');
+    style.textContent = `
+        .navbar-nav .nav-link.active {
+            color: #007bff !important;
+            font-weight: 600;
+        }
+    `;
+    document.head.appendChild(style);
+    
+    function updateActiveNav() {
+        const scrollPosition = window.scrollY + 100;
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        // Handle case when at top of page
+        if (scrollPosition < 100) {
+            current = 'home';
+        }
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    // Update on scroll
+    window.addEventListener('scroll', updateActiveNav);
+    
+    // Update on load
+    document.addEventListener('DOMContentLoaded', updateActiveNav);
+}
+
+
+// Scroll to top functionality
+function initScrollToTop() {
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
+    
+    if (scrollToTopBtn) {
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        // Scroll to top when clicked
+        scrollToTopBtn.addEventListener('click', function() {
+            if ('scrollBehavior' in document.documentElement.style) {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                // Fallback for older browsers
+                window.scrollTo(0, 0);
+            }
+        });
+    }
+}

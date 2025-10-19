@@ -1,111 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Jaffar Alromaih</title>
-    <link rel="icon" type="img" href="/img/jafar logo.png" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <script src="bootstrap.js"></script>
-    <title>Home</title>
-  </head>
-  <body id="body">
-    <div class="space"></div>
-    <div>
-      <nav class="navbar navbar-expand navbar-light bg-lwhite fixed-top">
-        <div class="container-fluid">
-          <img class="navbar-brand" src="img/jafar logo.png" id="logo" />
-          <div class="collapse navbar-collapse show" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a
-                class="nav-link active rounded navbtn text-center navborder"
-                href="index.html#"
-                >Home</a
-              >
-              <a
-                class="nav-link active rounded navbtn text-center navborder"
-                href="#"
-                >CV / Resume</a
-              >
-              <a
-                class="nav-link active rounded navbtn text-center navborder"
-                href="#"
-                >Contact</a
-              >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jaffar Alromaih - Junior Software Engineer specializing in Computer Networks. KFUPM graduate with a Bachelor of Science in Software Engineering.">
+  <meta name="keywords" content="Jaffar Alromaih, Software Engineer, KFUPM, Computer Networks, Web Development, Portfolio">
+  <meta name="author" content="Jaffar Alromaih">
+  <title>Jaffar Alromaih - Junior Software Engineer</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/jafar logo.png">
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+  
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body id="body">
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="#home">
+          <img src="img/jafar logo.png" alt="Jaffar Alromaih Logo" id="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#resume">Resume</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center hero-content">
+        <div class="col-lg-6 col-md-6">
+          <div class="hero-text">
+            <h1 class="display-4">Jaffar Alromaih</h1>
+            <h2 class="text-primary">Junior Software Engineer</h2>
+            <p class="lead">Bachelor of Science in Software Engineering - KFUPM</p>
+            <p class="text-muted">Concentration in Computer Networks</p>
+            <div class="hero-buttons mt-4">
+              <a href="#contact" class="btn btn-primary mr-3">Contact Me</a>
+              <a href="#resume" class="btn btn-outline-primary">View Resume</a>
             </div>
           </div>
         </div>
-      </nav>
-    </div>
-    <div class="space col-12"></div>
-    <div class="space1 col-12"></div>
-    <div class="rounded container-fluid padding bg-lblue" id="title">
-      <div
-        class="container-fluid row bg-blue rounded align-items-center nomargin"
-      >
-        <div class="container col-lg-6 col-sm-8 rounded nomargin">
-          <h1 class="text-center white">𝕁𝕒𝕗𝕗𝕒𝕣 𝔸𝕝𝕣𝕠𝕞𝕒𝕚𝕙</h1>
-          <h5 class="text-center white">Junior Software Engineer</h5>
-          <h6 class="text-center white">
-            Bachelor of Science in Software Engineering KFUPM
-          </h6>
-          <p class="text-center white">
-            Concentration (CX) in Computer Networks
-          </p>
-        </div>
-        <div
-          class="container col-lg-6 col-sm-4 rounded nohi row nomargin"
-          style="display: flex; justify-content: flex-end"
-        >
-          <img
-            src="img/Jaffar_Alromaih_Picture_sq.png"
-            class="nohi rounded img-fluid img"
-            alt=""
-          />
+        <div class="col-lg-6 col-md-6">
+          <div class="hero-image text-center">
+            <img src="img/Jaffar_Alromaih_Picture_sq.png" alt="Jaffar Alromaih" class="img-fluid rounded-circle profile-img">
+          </div>
         </div>
       </div>
     </div>
-    <div class="space1"></div>
-    <div class="Rounded container-fluid align-items-center" id="window">
-      <div class="row container-fluid bg-lcyan rounded nomargin">
-        <div class="col-12 rounded bg-cyan">
-          <h2 class="text-center white">Introduction</h2>
-        </div>
-        <div class="space col-12"></div>
-      </div>
-    </div>
-    <div class="space1"></div>
-    <div class="Rounded container-fluid align-items-center" id="window">
-      <div class="row container-fluid bg-lpurple rounded nomargin">
-        <div class="col-12 rounded bg-purple">
-          <h2 class="text-center white">Projects</h2>
-        </div>
-        <div class="space col-12"></div>
-      </div>
-    </div>
-    <div class="space1"></div>
-    <div class="space col-12"></div>
-    <div class="space col-12"></div>
-    <div class="space col-12"></div>
-    <div class="space col-12"></div>
-    <div class="space col-12"></div>
-    <div class="space col-12"></div>
-    <div class="space col-12"></div>
-    <div class="container-fluid row align-items-center bg-ldark nomargin">
-        <div class="space"></div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row">
         <div class="col-12">
-          <h5 class="text-center white">Jaffar Mohammed Alromaih</h5>
-        </div>
-        <div class="col-12">
-          <p class="text-center white">Phone: +966 508186889</p>
-        </div>
-        <div class="col-12">
-          <p class="text-center white">Main Email: jafar.m.r54@gmail.com</p>
-        </div>
-        <div class="col-12">
-          <p class="text-center white">Alum Email: jaffar.alromaih2080@alum.kfupm.edu.sa</p>
+          <div class="section-title text-center mb-5">
+            <h2 class="display-5">About Me</h2>
+            <div class="title-underline mx-auto"></div>
+          </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="about-content">
+            <p class="lead text-center">
+              <!-- Placeholder for introduction content -->
+              Passionate software engineer with a strong foundation in computer networks and software development. 
+              Currently seeking opportunities to apply my skills in creating innovative software solutions.
+            </p>
+            
+            <div class="row mt-5">
+              <div class="col-md-6">
+                <h3>Education</h3>
+                <div class="education-item mb-3">
+                  <h4>Bachelor of Science in Software Engineering</h4>
+                  <p class="mb-1"><strong>King Fahd University of Petroleum and Minerals (KFUPM)</strong></p>
+                  <p class="text-muted">Concentration: Computer Networks</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h3>Skills</h3>
+                <div class="skills-container">
+                  <!-- Placeholder for skills -->
+                  <div class="skill-item mb-2">
+                    <span class="badge badge-primary mr-2 mb-2">Programming Languages</span>
+                    <span class="badge badge-secondary mr-2 mb-2">Web Development</span>
+                    <span class="badge badge-info mr-2 mb-2">Computer Networks</span>
+                    <span class="badge badge-success mr-2 mb-2">Problem Solving</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </body>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title text-center mb-5">
+            <h2 class="display-5">Projects</h2>
+            <div class="title-underline mx-auto"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Project Card 1 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card project-card h-100">
+            <div class="card-body">
+              <h4 class="card-title">Network Monitoring Tool</h4>
+              <p class="card-text">A comprehensive network monitoring solution built with Python and Flask. Real-time monitoring of network performance, bandwidth usage, and security alerts with dashboard visualization.</p>
+              <div class="project-tags mb-3">
+                <span class="badge badge-info mr-1">Python</span>
+                <span class="badge badge-info mr-1">Flask</span>
+                <span class="badge badge-info mr-1">WebSocket</span>
+                <span class="badge badge-info mr-1">Chart.js</span>
+              </div>
+              <a href="project-template.html" class="btn btn-outline-primary btn-sm">View Details</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project Card 2 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card project-card h-100">
+            <div class="card-body">
+              <h4 class="card-title">E-Commerce Platform</h4>
+              <p class="card-text">Full-stack e-commerce solution with user authentication, payment processing, inventory management, and admin dashboard. Built with modern web technologies for scalability.</p>
+              <div class="project-tags mb-3">
+                <span class="badge badge-info mr-1">React</span>
+                <span class="badge badge-info mr-1">Node.js</span>
+                <span class="badge badge-info mr-1">MongoDB</span>
+                <span class="badge badge-info mr-1">Stripe API</span>
+              </div>
+              <a href="project-template.html" class="btn btn-outline-primary btn-sm">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title text-center mb-5">
+            <h2 class="display-5">Resume</h2>
+            <div class="title-underline mx-auto"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center">
+          <p class="lead mb-4">Download my resume to learn more about my experience and qualifications.</p>
+          <a href="#" class="btn btn-primary btn-lg" id="resume-download">
+            <i class="fas fa-download mr-2"></i>Download Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title text-center mb-5">
+            <h2 class="display-5">Get In Touch</h2>
+            <div class="title-underline mx-auto"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <div class="contact-info">
+            <h3 class="mb-4">Contact Information</h3>
+            <div class="info-item mb-3">
+              <i class="fas fa-phone mr-3 text-primary"></i>
+              <span>+966 508186889</span>
+            </div>
+            <div class="info-item mb-3">
+              <i class="fas fa-envelope mr-3 text-primary"></i>
+              <span>jafar.m.r54@gmail.com</span>
+            </div>
+            <div class="info-item mb-3">
+              <i class="fas fa-envelope mr-3 text-primary"></i>
+              <span>jaffar.alromaih2080@alum.kfupm.edu.sa</span>
+            </div>
+            
+            <div class="social-links mt-4">
+              <h3 class="mb-3">Connect With Me</h3>
+              <a href="#" class="btn btn-outline-primary btn-sm mr-2 mb-2">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
+              <a href="#" class="btn btn-outline-dark btn-sm mr-2 mb-2">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="contact-form">
+            <h3 class="mb-4">Send Me a Message</h3>
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" class="form-control" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            <div class="success-message">
+              Your message has been sent successfully!
+            </div>
+            <div class="error-message">
+              There was an error sending your message. Please try again.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p>&copy; 2025 Jaffar Alromaih. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scroll to Top Button -->
+  <button id="scroll-to-top" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  
+  <!-- Bootstrap JS -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="js/custom.js"></script>
+</body>
 </html>

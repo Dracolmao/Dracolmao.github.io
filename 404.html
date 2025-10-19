@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="404 - Page Not Found | Jaffar Alromaih">
+  <title>404 - Page Not Found | Jaffar Alromaih</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+  
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(0, 113, 196, 0.9), rgba(58, 101, 174, 0.9));
+      color: white;
+    }
+    
+    .error-content {
+      max-width: 600px;
+      padding: 2rem;
+    }
+    
+    .error-code {
+      font-size: 8rem;
+      font-weight: bold;
+      line-height: 1;
+      margin-bottom: 1rem;
+      text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .error-message {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .error-actions {
+      margin-top: 2rem;
+    }
+    
+    .error-actions .btn {
+      margin: 0.5rem;
+    }
+    
+    .error-animation {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="error-page">
+    <div class="error-content">
+      <div class="error-animation">
+        <div class="error-code">404</div>
+      </div>
+      <h1 class="error-message">Oops! Page Not Found</h1>
+      <p class="lead">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+      <div class="error-actions">
+        <a href="index.html" class="btn btn-light btn-lg">
+          <i class="fas fa-home mr-2"></i>Go Home
+        </a>
+        <button onclick="history.back()" class="btn btn-outline-light btn-lg">
+          <i class="fas fa-arrow-left mr-2"></i>Go Back
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Font Awesome for icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+  
+  <!-- Footer -->
+  <footer class="fixed-bottom bg-dark text-white py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p class="mb-0">&copy; 2025 Jaffar Alromaih. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
