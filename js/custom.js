@@ -23,42 +23,38 @@ function initSmoothScrolling() {
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                const navbarHeight = document.getElementById('mainNav').offsetHeight;
+                const navbarHeight = document.getElementById('mainNav') ? document.getElementById('mainNav').offsetHeight : 0;
                 const offsetTop = targetElement.offsetTop - navbarHeight - 20;
                 
-                // Use polyfill for browsers that don't support smooth scrolling
-                if ('scrollBehavior' in document.documentElement.style) {
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                } else {
-                    // Fallback for older browsers
-                    const startPosition = window.pageYOffset;
-                    const distance = offsetTop - startPosition;
-                    const duration = 500;
-                    let start = null;
-                    
-                    function animation(currentTime) {
-                        if (start === null) start = currentTime;
-                        const timeElapsed = currentTime - start;
-                        const run = ease(timeElapsed, startPosition, distance, duration);
-                        window.scrollTo(0, run);
-                        if (timeElapsed < duration) requestAnimationFrame(animation);
-                    }
-                    
-                    function ease(t, b, c, d) {
-                        t /= d / 2;
-                        if (t < 1) return c / 2 * t * t + b;
-                        t--;
-                        return -c / 2 * (t * (t - 2) - 1) + b;
-                    }
-                    
-                    requestAnimationFrame(animation);
-                }
+                // Use custom smooth scrolling for better compatibility
+                smoothScrollTo(offsetTop, 800);
             }
         });
     });
+}
+
+// Custom smooth scroll function
+function smoothScrollTo(targetPosition, duration) {
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    function easeInOutQuad(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
 }
 
 // Change navbar style on scroll
@@ -344,15 +340,7 @@ function initScrollToTop() {
         
         // Scroll to top when clicked
         scrollToTopBtn.addEventListener('click', function() {
-            if ('scrollBehavior' in document.documentElement.style) {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            } else {
-                // Fallback for older browsers
-                window.scrollTo(0, 0);
-            }
+            smoothScrollTo(0, 600);
         });
     }
 }

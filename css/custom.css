@@ -17,7 +17,6 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--secondary-text);
-  scroll-behavior: smooth;
   line-height: 1.6;
 }
 
