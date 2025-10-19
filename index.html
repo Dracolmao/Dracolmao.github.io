@@ -12,7 +12,7 @@
   <link rel="icon" type="image/png" href="img/jafar logo.png">
   
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/custom.css">
@@ -28,7 +28,7 @@
         <a class="navbar-brand" href="#home">
           <img src="img/jafar logo.png" alt="Jaffar Alromaih Logo" id="logo">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -38,6 +38,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience">Work Experience</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#projects">Projects</a>
@@ -94,25 +97,26 @@
         <div class="col-lg-12">
           <div class="about-content">
             <p class="lead text-center">
-              <!-- Placeholder for introduction content -->
-              Passionate software engineer with a strong foundation in computer networks and software development. 
-              Currently seeking opportunities to apply my skills in creating innovative software solutions.
+              An aspiring software engineer seeking a work opportunity in an organization where he can launch his career
+              and contribute to the growth of the organization. Passionate about software development,
+              web development, networking, databases, mobile development, and artificial intelligence with a strong foundation in
+              computer networks and software engineering principles.
             </p>
             
             <div class="row mt-5">
-              <div class="col-md-6">
+              <div class="col-12">
                 <h3>Education</h3>
                 <div class="education-item mb-3">
-                  <h4>Bachelor of Science in Software Engineering</h4>
+                  <h4>Bachelor of Science in Software Engineering with Second Honors</h4>
                   <p class="mb-1"><strong>King Fahd University of Petroleum and Minerals (KFUPM)</strong></p>
-                  <p class="text-muted">Graduation: 2023</p>
+                  <p class="text-muted">08/2018 – 05/2023 | Dhahran, Saudi Arabia</p>
+                  <p class="text-muted"><strong>Overall GPA: 3.58 / 4 (4.48 / 5)</strong> | Major GPA: 3.62 / 4 (4.53 / 5)</p>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <h3>Specialization</h3>
                 <div class="education-item mb-3">
                   <h4>Concentration in Computer Networks</h4>
                   <p class="mb-1"><strong>King Fahd University of Petroleum and Minerals (KFUPM)</strong></p>
+                  <p class="text-muted">08/2022 – 05/2023 | Dhahran, Saudi Arabia</p>
+                  <p class="text-muted"><strong>Concentration GPA: 3.81 / 4 (4.76 / 5)</strong></p>
                   <p class="text-muted">Advanced studies in network architecture, security, and protocols</p>
                 </div>
               </div>
@@ -121,13 +125,279 @@
             <div class="row mt-4">
               <div class="col-12">
                 <h3>Skills</h3>
-                <div class="skills-container">
-                  <!-- Placeholder for skills -->
-                  <div class="skill-item mb-2">
-                    <span class="badge badge-primary mr-2 mb-2">Programming Languages</span>
-                    <span class="badge badge-secondary mr-2 mb-2">Web Development</span>
-                    <span class="badge badge-info mr-2 mb-2">Computer Networks</span>
-                    <span class="badge badge-success mr-2 mb-2">Problem Solving</span>
+                
+                <!-- Technical Skills Grid -->
+                <div class="skill-category mb-4">
+                  <h4 class="mb-3"><i class="fas fa-code text-primary mr-2"></i>Technical Skills</h4>
+                  <div class="row g-3">
+                    <div class="col-6 col-md-4 col-lg-3">
+                      <div class="skill-card text-center p-3 bg-primary bg-opacity-10 rounded border border-primary">
+                        <i class="fas fa-mobile-alt text-primary mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">Flutter</h6>
+                        <small class="text-muted">Mobile Development</small>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                      <div class="skill-card text-center p-3 bg-primary bg-opacity-10 rounded border border-primary">
+                        <i class="fab fa-java text-primary mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">Java</h6>
+                        <small class="text-muted">Programming</small>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                      <div class="skill-card text-center p-3 bg-danger bg-opacity-10 rounded border border-danger">
+                        <i class="fab fa-html5 text-danger mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">HTML</h6>
+                        <small class="text-muted">Web Development</small>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                      <div class="skill-card text-center p-3 bg-info bg-opacity-10 rounded border border-info">
+                        <i class="fab fa-css3-alt text-info mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">CSS</h6>
+                        <small class="text-muted">Web Development</small>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                      <div class="skill-card text-center p-3 bg-secondary bg-opacity-10 rounded border border-secondary">
+                        <i class="fab fa-php text-secondary mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">PHP</h6>
+                        <small class="text-muted">Backend Development</small>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                      <div class="skill-card text-center p-3 bg-warning bg-opacity-10 rounded border border-warning">
+                        <i class="fab fa-js text-warning mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">JavaScript</h6>
+                        <small class="text-muted">Web Development</small>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                      <div class="skill-card text-center p-3 bg-success bg-opacity-10 rounded border border-success">
+                        <i class="fas fa-database text-success mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">MySQL</h6>
+                        <small class="text-muted">Database</small>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                      <div class="skill-card text-center p-3 bg-primary bg-opacity-10 rounded border border-primary">
+                        <i class="fab fa-bootstrap text-primary mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">Bootstrap</h6>
+                        <small class="text-muted">CSS Framework</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Professional Skills Grid -->
+                <div class="skill-category mb-4">
+                  <h4 class="mb-3"><i class="fas fa-users text-success mr-2"></i>Professional Skills</h4>
+                  <div class="row g-3">
+                    <div class="col-6 col-md-4">
+                      <div class="skill-card text-center p-3 bg-success bg-opacity-10 rounded border border-success">
+                        <i class="fas fa-file-alt text-success mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">Microsoft Office</h6>
+                        <small class="text-muted">Productivity</small>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                      <div class="skill-card text-center p-3 bg-success bg-opacity-10 rounded border border-success">
+                        <i class="fas fa-handshake text-success mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">Teamwork</h6>
+                        <small class="text-muted">Collaboration</small>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                      <div class="skill-card text-center p-3 bg-success bg-opacity-10 rounded border border-success">
+                        <i class="fas fa-brain text-success mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">Quick Learning</h6>
+                        <small class="text-muted">Adaptability</small>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                      <div class="skill-card text-center p-3 bg-success bg-opacity-10 rounded border border-success">
+                        <i class="fas fa-sync-alt text-success mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">Quick Adaption</h6>
+                        <small class="text-muted">Flexibility</small>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                      <div class="skill-card text-center p-3 bg-success bg-opacity-10 rounded border border-success">
+                        <i class="fas fa-clock text-success mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">Time Management</h6>
+                        <small class="text-muted">Organization</small>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                      <div class="skill-card text-center p-3 bg-success bg-opacity-10 rounded border border-success">
+                        <i class="fas fa-lightbulb text-success mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">Problem Solving</h6>
+                        <small class="text-muted">Critical Thinking</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Areas of Interest Grid -->
+                <div class="skill-category">
+                  <h4 class="mb-3"><i class="fas fa-heart text-info mr-2"></i>Areas of Interest</h4>
+                  <div class="row g-3">
+                    <div class="col-6 col-md-4">
+                      <div class="skill-card text-center p-3 bg-info bg-opacity-10 rounded border border-info">
+                        <i class="fas fa-laptop-code text-info mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">Software Development</h6>
+                        <small class="text-muted">Programming</small>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                      <div class="skill-card text-center p-3 bg-info bg-opacity-10 rounded border border-info">
+                        <i class="fas fa-globe text-info mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">Web Development</h6>
+                        <small class="text-muted">Internet</small>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                      <div class="skill-card text-center p-3 bg-info bg-opacity-10 rounded border border-info">
+                        <i class="fas fa-network-wired text-info mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">Networking</h6>
+                        <small class="text-muted">Infrastructure</small>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                      <div class="skill-card text-center p-3 bg-info bg-opacity-10 rounded border border-info">
+                        <i class="fas fa-database text-info mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">Databases</h6>
+                        <small class="text-muted">Data Management</small>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                      <div class="skill-card text-center p-3 bg-info bg-opacity-10 rounded border border-info">
+                        <i class="fas fa-mobile-alt text-info mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">Mobile Development</h6>
+                        <small class="text-muted">Apps</small>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                      <div class="skill-card text-center p-3 bg-info bg-opacity-10 rounded border border-info">
+                        <i class="fas fa-robot text-info mb-2" style="font-size: 1.5rem;"></i>
+                        <h6 class="mb-1">Artificial Intelligence</h6>
+                        <small class="text-muted">AI/ML</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="row mt-5">
+              <div class="col-12">
+                <h3>Honors & Achievements</h3>
+                <div class="honors-container">
+                  <div class="honor-category mb-4">
+                    <h4 class="mb-3"><i class="fas fa-trophy text-warning mr-2"></i>Second Honor Distinction (KFUPM)</h4>
+                    <div class="row">
+                      <div class="col-md-4 mb-3">
+                        <div class="honor-box text-center p-3 bg-light rounded">
+                          <i class="fas fa-award text-warning mb-2" style="font-size: 1.5rem;"></i>
+                          <h6 class="mb-1">Fall Semester 2020</h6>
+                          <small class="text-muted">Second Honor Distinction</small>
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <div class="honor-box text-center p-3 bg-light rounded">
+                          <i class="fas fa-award text-warning mb-2" style="font-size: 1.5rem;"></i>
+                          <h6 class="mb-1">Fall Semester 2021</h6>
+                          <small class="text-muted">Second Honor Distinction</small>
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <div class="honor-box text-center p-3 bg-light rounded">
+                          <i class="fas fa-award text-warning mb-2" style="font-size: 1.5rem;"></i>
+                          <h6 class="mb-1">Fall Semester 2022</h6>
+                          <small class="text-muted">Second Honor Distinction</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="honor-category">
+                    <h4 class="mb-3"><i class="fas fa-medal text-warning mr-2"></i>Third Honor Distinction (KFUPM)</h4>
+                    <div class="row">
+                      <div class="col-md-4 mb-3">
+                        <div class="honor-box text-center p-3 bg-light rounded">
+                          <i class="fas fa-medal text-warning mb-2" style="font-size: 1.5rem;"></i>
+                          <h6 class="mb-1">Fall Semester 2019</h6>
+                          <small class="text-muted">Third Honor Distinction</small>
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <div class="honor-box text-center p-3 bg-light rounded">
+                          <i class="fas fa-medal text-warning mb-2" style="font-size: 1.5rem;"></i>
+                          <h6 class="mb-1">Spring Semester 2021</h6>
+                          <small class="text-muted">Third Honor Distinction</small>
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <div class="honor-box text-center p-3 bg-light rounded">
+                          <i class="fas fa-medal text-warning mb-2" style="font-size: 1.5rem;"></i>
+                          <h6 class="mb-1">Spring Semester 2022</h6>
+                          <small class="text-muted">Third Honor Distinction</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Experience Section -->
+  <section id="experience" class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title text-center mb-5">
+            <h2 class="display-5">Work Experience</h2>
+            <div class="title-underline mx-auto"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="timeline">
+            <!-- Experience Item 1 -->
+            <div class="experience-item mb-4">
+              <div class="education-item">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <h4>Engineer Software</h4>
+                    <h5 class="text-primary">Daeah Saudi Arabia, Ltd</h5>
+                    <p class="mb-2">HR database development and maintenance for the main office in Dammam.</p>
+                  </div>
+                  <div class="text-right">
+                    <span class="badge badge-info">09/2023 – Present</span>
+                    <p class="text-muted mb-0">Dammam, Saudi Arabia</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Experience Item 2 -->
+            <div class="experience-item mb-4">
+              <div class="education-item">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <h4>Software Engineer Intern</h4>
+                    <h5 class="text-primary">Qatif Municipality</h5>
+                    <p class="mb-2">Summer training and development on Oracle DB, Oracle Database administration, and Oracle Database Development. Using the applications Oracle Toad, Oracle Forms, and Oracle Reports.</p>
+                  </div>
+                  <div class="text-right">
+                    <span class="badge badge-info">06/2022 – 08/2022</span>
+                    <p class="text-muted mb-0">Qatif, Saudi Arabia</p>
                   </div>
                 </div>
               </div>
@@ -154,15 +424,15 @@
         <div class="col-12 mb-4">
           <div class="card project-card h-100">
             <div class="card-body">
-              <h4 class="card-title">Network Monitoring Tool</h4>
-              <p class="card-text">A comprehensive network monitoring solution built with Python and Flask. Real-time monitoring of network performance, bandwidth usage, and security alerts with dashboard visualization. This project demonstrates advanced skills in network programming, real-time data processing, and creating intuitive user interfaces for complex technical systems.</p>
+              <h4 class="card-title">Fieldz - Simplest way to book a sports field</h4>
+              <p class="card-text">A mobile application that enables field owners to list and add their sports fields to the platform, while users can easily search and reserve their desired fields. This project was developed using Flutter for cross-platform mobile development and Firebase for backend services, demonstrating full-stack mobile app development capabilities.</p>
               <div class="project-tags mb-3">
-                <span class="badge badge-info mr-1">Python</span>
-                <span class="badge badge-info mr-1">Flask</span>
-                <span class="badge badge-info mr-1">WebSocket</span>
-                <span class="badge badge-info mr-1">Chart.js</span>
-                <span class="badge badge-info mr-1">Network Protocols</span>
-                <span class="badge badge-info mr-1">Real-time Analytics</span>
+                <span class="badge badge-info mr-1">Flutter</span>
+                <span class="badge badge-info mr-1">Firebase</span>
+                <span class="badge badge-info mr-1">Mobile Development</span>
+                <span class="badge badge-info mr-1">Cross-Platform</span>
+                <span class="badge badge-info mr-1">Database Integration</span>
+                <span class="badge badge-info mr-1">User Authentication</span>
               </div>
               <a href="project-template.html" class="btn btn-primary btn-sm">View Details</a>
             </div>
@@ -296,7 +566,7 @@
   </button>
   
   <!-- Bootstrap JS -->
-  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   
   <!-- Custom JS -->
   <script src="js/custom.js"></script>
