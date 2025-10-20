@@ -61,6 +61,15 @@ function smoothScrollTo(targetPosition, duration) {
 function initNavbarScroll() {
     const navbar = document.getElementById('mainNav');
     
+    // Set initial state based on current scroll position
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+        navbar.style.padding = '0.5rem 0';
+    } else {
+        navbar.classList.remove('scrolled');
+        navbar.style.padding = '1rem 0';
+    }
+    
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -354,8 +363,8 @@ function initActiveNavigation() {
     // Update on scroll
     window.addEventListener('scroll', updateActiveNav);
     
-    // Update on load
-    document.addEventListener('DOMContentLoaded', updateActiveNav);
+    // Set home as active immediately on page load
+    updateActiveNav();
 }
 
 
