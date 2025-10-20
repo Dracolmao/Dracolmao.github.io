@@ -151,13 +151,27 @@ body {
   pointer-events: none;
 }
 
-.hero-content {
+.hero-main-content {
   padding: 2rem 0;
+  position: relative;
+  z-index: 2;
+  min-height: 70vh;
+}
+
+.hero-about-section {
+  padding: 0.5rem 0 0.5rem 0;
   position: relative;
   z-index: 2;
 }
 
-.hero-text h1 {
+.hero-about-text-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-text h1,
+.hero-text-main h1 {
   font-weight: 900;
   margin-bottom: 1.5rem;
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
@@ -170,7 +184,8 @@ body {
   background-clip: text;
 }
 
-.hero-text h2 {
+.hero-text h2,
+.hero-text-main h2 {
   font-weight: 700;
   margin-bottom: 1.5rem;
   color: #ffffff;
@@ -178,7 +193,8 @@ body {
   font-size: 2.2rem;
 }
 
-.hero-text .hero-subtitle {
+.hero-text .hero-subtitle,
+.hero-text-main .hero-subtitle {
   font-weight: 600;
   margin-bottom: 1.5rem;
   color: #ffffff;
@@ -186,7 +202,8 @@ body {
   font-size: 2.2rem;
 }
 
-.hero-text .hero-concentration {
+.hero-text .hero-concentration,
+.hero-text-main .hero-concentration {
   color: #e8eaf6;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   font-weight: 600;
@@ -204,11 +221,12 @@ body {
 }
 
 .profile-img-enhanced {
-  max-width: 400px;
+  max-width: 380px;
   border: 8px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
               0 0 0 1px rgba(255, 255, 255, 0.1),
               inset 0 0 20px rgba(255, 255, 255, 0.1);
+  margin: 0 auto;
 }
 
 .btn-hero-primary {
@@ -294,17 +312,38 @@ body {
   letter-spacing: 0.5px;
 }
 
-.hero-text .lead {
+.hero-text .lead,
+.hero-text-main .lead {
   color: #e8eaf6;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   font-weight: 500;
   font-size: 1.1rem;
 }
 
-.hero-text .text-muted {
+.hero-text .text-muted,
+.hero-text-main .text-muted {
   color: #e6f3ff !important;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   font-weight: 400;
+}
+
+.hero-about-text {
+  color: #e8eaf6;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  border-left: 3px solid rgba(255, 255, 255, 0.3);
+  border-right: 3px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  margin: 0;
+}
+
+.hero-text-main {
+  padding-right: 1rem;
 }
 
 /* Section Styles */
@@ -331,6 +370,11 @@ section {
   border-radius: 2px;
 }
 
+
+/* Education & Skills Section - Light Blue Gradient */
+#education-skills {
+  background: linear-gradient(135deg, var(--very-light-blue) 0%, var(--light-blue) 100%);
+}
 
 /* About Section - Keep original gradient */
 #about {
@@ -590,20 +634,38 @@ footer {
     padding: 100px 0 50px;
   }
   
-  .hero-content {
+  .hero-main-content {
     flex-direction: column;
+    min-height: auto;
+    padding: 1rem 0;
   }
   
-  .hero-text {
+  .hero-text-main {
     margin-bottom: 2rem;
+    padding-right: 0;
   }
   
+  .hero-text-main h1,
   .hero-text h1 {
     font-size: 2.5rem;
   }
   
+  .hero-text-main h2,
   .hero-text h2 {
     font-size: 1.8rem;
+  }
+  
+  .hero-about-section {
+    padding: 0.5rem 0;
+  }
+  
+  .hero-about-text-container {
+    padding: 0 1rem;
+  }
+  
+  .hero-about-text {
+    padding: 1rem;
+    font-size: 0.9rem;
   }
   
   .profile-img-enhanced {
@@ -618,7 +680,15 @@ footer {
 
 @media (max-width: 992px) {
   .profile-img-enhanced {
-    max-width: 350px;
+    max-width: 320px;
+  }
+  
+  .hero-text-main {
+    padding-right: 0;
+  }
+  
+  .hero-main-content {
+    min-height: 60vh;
   }
 }
 
