@@ -63,11 +63,11 @@ function initNavbarScroll() {
     
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
             navbar.style.padding = '0.5rem 0';
-            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
         } else {
+            navbar.classList.remove('scrolled');
             navbar.style.padding = '1rem 0';
-            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
         }
     });
 }

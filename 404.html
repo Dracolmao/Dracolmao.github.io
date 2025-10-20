@@ -6,11 +6,17 @@
   <meta name="description" content="404 - Page Not Found | Jaffar Alromaih">
   <title>404 - Page Not Found | Jaffar Alromaih</title>
   
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/jafar logo.png">
+  
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/custom.css">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   
   <style>
     .error-page {
@@ -19,8 +25,9 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: linear-gradient(135deg, rgba(0, 113, 196, 0.9), rgba(58, 101, 174, 0.9));
+      background: linear-gradient(135deg, rgba(33, 150, 243, 0.9), rgba(3, 169, 244, 0.9));
       color: white;
+      padding-top: 80px;
     }
     
     .error-content {
@@ -34,11 +41,16 @@
       line-height: 1;
       margin-bottom: 1rem;
       text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(45deg, #ffffff, #e3f2fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     
     .error-message {
       font-size: 1.5rem;
       margin-bottom: 2rem;
+      font-weight: 300;
     }
     
     .error-actions {
@@ -47,6 +59,15 @@
     
     .error-actions .btn {
       margin: 0.5rem;
+      border-radius: 25px;
+      padding: 0.75rem 1.5rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .error-actions .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     }
     
     .error-animation {
@@ -58,19 +79,75 @@
       50% { transform: translateY(-20px); }
       100% { transform: translateY(0px); }
     }
+    
+    .error-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      opacity: 0.8;
+    }
   </style>
 </head>
 <body>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="img/jafar logo.png" alt="Jaffar Alromaih Logo" id="logo" class="me-2">
+          <span class="brand-text">Jaffar Alromaih</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#home">
+                <i class="fas fa-home me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#about">
+                <i class="fas fa-user me-1"></i>About
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#experience">
+                <i class="fas fa-briefcase me-1"></i>Work Experience
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#projects">
+                <i class="fas fa-code me-1"></i>Projects
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#resume">
+                <i class="fas fa-file-alt me-1"></i>Resume
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#contact">
+                <i class="fas fa-envelope me-1"></i>Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
   <div class="error-page">
     <div class="error-content">
       <div class="error-animation">
+        <i class="fas fa-search error-icon"></i>
         <div class="error-code">404</div>
       </div>
       <h1 class="error-message">Oops! Page Not Found</h1>
       <p class="lead">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
       <div class="error-actions">
         <a href="index.html" class="btn btn-light btn-lg">
-          <i class="fas fa-home mr-2"></i>Go Home
+          <i class="fas fa-home me-2"></i>Go Home
         </a>
         <button onclick="history.back()" class="btn btn-outline-light btn-lg">
           <i class="fas fa-arrow-left mr-2"></i>Go Back
@@ -82,18 +159,7 @@
   <!-- Bootstrap JS -->
   <script src="js/bootstrap.bundle.min.js"></script>
   
-  <!-- Font Awesome for icons -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-  
-  <!-- Footer -->
-  <footer class="fixed-bottom bg-dark text-white py-2">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <p class="mb-0">&copy; 2025 Jaffar Alromaih. All Rights Reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <!-- Custom JS -->
+  <script src="js/custom.js"></script>
 </body>
 </html>
