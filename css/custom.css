@@ -14,6 +14,14 @@
 }
 
 /* General Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--secondary-text);
@@ -350,6 +358,72 @@ body {
 section {
   padding: 5rem 0;
   transition: all 0.8s ease;
+  width: 100%;
+  min-width: 100%;
+  position: relative;
+}
+
+/* Ensure all containers utilize full width */
+.container {
+  max-width: 100%;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Enhanced container responsiveness */
+@media (min-width: 576px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+/* Full-width sections for better visual impact */
+.hero-section {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+}
+
+/* Ensure all sections fit properly within viewport */
+#education-skills,
+#experience,
+#projects,
+#resume,
+#contact {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .section-title {
@@ -1364,4 +1438,102 @@ footer {
   max-width: 100%;
   overflow: hidden;
   margin-bottom: 2rem;
+  box-sizing: border-box;
+}
+
+/* Fix container overflow issues */
+.row {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+.col-12 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+@media (min-width: 576px) {
+  .col-12 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-12 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Ensure all grid containers fit properly */
+.education-grid,
+.skill-grid {
+  box-sizing: border-box;
+  width: calc(100% - 1rem); /* Account for container padding */
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+@media (min-width: 576px) {
+  .education-grid,
+  .skill-grid {
+    width: calc(100% - 1.5rem);
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .education-grid,
+  .skill-grid {
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+/* Fix resume and contact form containers */
+.resume-preview-container,
+.contact-form {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Ensure footer fits full width */
+footer {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Prevent any horizontal scrolling */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for very small screens */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .col-12 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+  
+  .education-grid,
+  .skill-grid {
+    width: calc(100% - 0.5rem);
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
 }
