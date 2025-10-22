@@ -1125,7 +1125,7 @@ footer {
 
 /* Vertical Education Item Layout */
 .education-vertical {
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(10, 36, 99, 0.1);
@@ -1140,11 +1140,11 @@ footer {
   width: 80px;
   height: 80px;
   object-fit: contain;
-  margin: 0 auto 0.75rem auto;
+  margin: 0 auto 0.5rem auto;
 }
 
 .education-vertical .education-title {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.125rem;
   line-height: 1.3;
   word-wrap: break-word;
   hyphens: auto;
@@ -1153,26 +1153,26 @@ footer {
 .education-vertical .education-subtitle {
   font-size: 0.9rem;
   color: var(--secondary-text);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.125rem;
   font-weight: 500;
 }
 
 .education-vertical .education-honor {
   font-size: 1.1rem;
   color: var(--blue);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.375rem;
   font-weight: 700;
   font-style: italic;
 }
 
 .education-vertical .education-gpa {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .education-vertical .education-button {
   margin-top: auto;
-  padding-top: 1rem;
+  padding-top: 0.75rem;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -1256,6 +1256,15 @@ footer {
   .education-logo {
     width: 60px;
     height: 60px;
+  }
+  
+  .education-vertical {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .education-vertical .education-gpa {
+    margin-top: 0.375rem;
+    margin-bottom: 0.375rem;
   }
   
   .gpa-display {
