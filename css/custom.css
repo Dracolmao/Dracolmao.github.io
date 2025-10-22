@@ -1172,6 +1172,7 @@ footer {
 
 .education-vertical .education-button {
   margin-top: 0;
+  margin-bottom: 0.5rem;
   padding-top: 0;
   display: flex;
   justify-content: center;
