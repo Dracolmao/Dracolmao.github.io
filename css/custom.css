@@ -1211,6 +1211,9 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1rem;
   width: 100%;
+  max-width: 100%; /* Prevent overflow */
+  margin: 0 auto; /* Center the grid */
+  grid-auto-rows: 1fr; /* Standardize row heights */
 }
 
 /* Skill Card Styling */
@@ -1220,10 +1223,12 @@ footer {
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
+  min-height: 120px; /* Ensure minimum consistent height */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box; /* Include padding in height calculation */
 }
 
 .skill-card:hover {
@@ -1234,17 +1239,22 @@ footer {
 .skill-card i {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
 .skill-card h6 {
   margin-bottom: 0.25rem;
   font-weight: 600;
   line-height: 1.2;
+  text-align: center;
+  width: 100%; /* Ensure full width for centering */
 }
 
 .skill-card small {
   font-size: 0.8rem;
   line-height: 1.1;
+  text-align: center;
+  width: 100%; /* Ensure full width for centering */
 }
 
 /* Responsive breakpoints for skill grids */
@@ -1252,6 +1262,11 @@ footer {
   .skill-grid {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 0.875rem;
+    padding: 0 1rem; /* Add padding to prevent edge touching */
+  }
+  
+  .skill-card {
+    min-height: 110px;
   }
 }
 
@@ -1259,6 +1274,11 @@ footer {
   .skill-grid {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 0.75rem;
+    padding: 0 2rem; /* Increase padding for larger screens */
+  }
+  
+  .skill-card {
+    min-height: 105px;
   }
 }
 
@@ -1266,10 +1286,12 @@ footer {
   .skill-grid {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 0.625rem;
+    padding: 0 2.5rem; /* Further increase padding */
   }
   
   .skill-card {
     padding: 0.625rem;
+    min-height: 100px;
   }
 }
 
@@ -1277,10 +1299,12 @@ footer {
   .skill-grid {
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 0.5rem;
+    padding: 0 3rem; /* Maximum padding for ultra-wide */
   }
   
   .skill-card {
     padding: 0.5rem;
+    min-height: 95px;
   }
 }
 
@@ -1288,5 +1312,56 @@ footer {
   .skill-grid {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 0.5rem;
+    padding: 0 4rem; /* Maximum padding for ultra-wide screens */
   }
+  
+  .skill-card {
+    min-height: 90px;
+  }
+}
+
+/* Small screen specific fixes */
+@media (max-width: 767px) {
+  .skill-grid {
+    padding: 0 0.5rem; /* Prevent edge touching on mobile */
+    gap: 0.75rem;
+  }
+  
+  .skill-card {
+    min-height: 100px;
+    padding: 0.625rem;
+  }
+  
+  .skill-card i {
+    font-size: 1.25rem; /* Slightly smaller icons on mobile */
+  }
+  
+  .skill-card h6 {
+    font-size: 0.9rem; /* Slightly smaller text on mobile */
+  }
+  
+  .skill-card small {
+    font-size: 0.75rem;
+  }
+}
+
+/* Extra small screen fixes */
+@media (max-width: 480px) {
+  .skill-grid {
+    padding: 0 0.25rem; /* Minimal padding for very small screens */
+    gap: 0.5rem;
+  }
+  
+  .skill-card {
+    min-height: 90px;
+    padding: 0.5rem;
+  }
+}
+
+/* Ensure skill category containers don't overflow */
+.skill-category {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  margin-bottom: 2rem;
 }
