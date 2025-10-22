@@ -84,7 +84,7 @@ function initNavbarScroll() {
 // Scroll animations
 function initScrollAnimations() {
     // Add fade-in class to elements that should animate
-    const animateElements = document.querySelectorAll('.section-title, .project-card, .education-item');
+    const animateElements = document.querySelectorAll('.section-title, .project-card, .work-experience-item, .education-item, .education-vertical');
     animateElements.forEach(element => {
         element.classList.add('fade-in');
     });

@@ -393,6 +393,21 @@ section {
   line-height: 1.7;
 }
 
+/* Work Experience Item Styles */
+.work-experience-item {
+  padding: 1rem;
+  border-left: 3px solid var(--blue);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0 5px 5px 0;
+  box-shadow: 0 2px 8px rgba(10, 36, 99, 0.1);
+}
+
+.work-experience-item h4 {
+  color: var(--primary-text);
+  font-weight: 600;
+}
+
+/* Education Item Styles - Only for education section */
 .education-item {
   padding: 1rem;
   border-left: 3px solid var(--blue);
@@ -404,6 +419,15 @@ section {
 .education-item h4 {
   color: var(--primary-text);
   font-weight: 600;
+}
+
+/* Override for education section items that use education-vertical */
+.education-grid .education-item {
+  padding: 0;
+  border-left: none;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .skill-item {
@@ -727,6 +751,19 @@ footer {
   transform: translateY(0);
 }
 
+/* Animation for Work Experience Items */
+.work-experience-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.work-experience-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation for Education Items */
 .education-item {
   opacity: 0;
   transform: translateY(20px);
@@ -734,6 +771,18 @@ footer {
 }
 
 .education-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Special handling for education-vertical items */
+.education-vertical {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.education-vertical.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -969,17 +1018,111 @@ footer {
   margin-top: 0.5rem;
 }
 
+/* Education Grid Layout */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* For larger screens - 2 columns */
+@media (min-width: 992px) {
+  .education-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For medium screens - still 2 columns but smaller min-width */
+@media (min-width: 768px) and (max-width: 991px) {
+  .education-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* For smaller screens - 1 column */
+@media (max-width: 767px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Vertical Education Item Layout */
+.education-vertical {
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(10, 36, 99, 0.1);
+  border-left: 3px solid var(--blue);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.education-vertical .education-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin: 0 auto 0.75rem auto;
+}
+
+.education-vertical .education-title {
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.education-vertical .education-subtitle {
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.education-vertical .education-honor {
+  font-size: 1.1rem;
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.education-vertical .education-gpa {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.education-vertical .education-button {
+  margin-top: auto;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.education-vertical .education-button .btn {
+  min-width: 200px;
+  padding: 0.5rem 1.5rem;
+  width: 100%;
+  max-width: 250px;
+}
+
 /* GPA Display Styling */
 .gpa-display {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
-  padding: 0.75rem;
+  gap: 0.5rem;
+  margin: 0.25rem auto;
+  padding: 0.5rem;
   background-color: rgba(10, 36, 99, 0.05);
   border-radius: 8px;
   border-left: 3px solid var(--blue);
   max-width: fit-content;
+  text-align: center;
 }
 
 .gpa-row {
