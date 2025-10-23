@@ -476,8 +476,9 @@ section {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.work-experience-item:hover {
-  transform: translateY(-5px);
+.work-experience-item:hover,
+.work-experience-item.visible:hover {
+  transform: translateY(-5px) !important;
   box-shadow: 0 8px 25px rgba(10, 36, 99, 0.15);
 }
 
@@ -539,8 +540,9 @@ section {
   box-shadow: 0 4px 15px rgba(10, 36, 99, 0.1);
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
+.project-card:hover,
+.project-card.visible:hover {
+  transform: translateY(-5px) !important;
   box-shadow: 0 8px 25px rgba(10, 36, 99, 0.15);
   border-color: rgba(33, 150, 243, 0.3);
 }
@@ -819,10 +821,11 @@ footer {
   transform: translateY(0);
 }
 
-.project-card {
+/* Animation for Project Cards */
+.project-card:not(.visible) {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
 }
 
 .project-card.visible {
@@ -831,10 +834,10 @@ footer {
 }
 
 /* Animation for Work Experience Items */
-.work-experience-item {
+.work-experience-item:not(.visible) {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
 }
 
 .work-experience-item.visible {
@@ -1577,8 +1580,9 @@ img {
   flex-direction: column;
 }
 
-.certificate-card:hover {
-  transform: translateY(-5px);
+.certificate-card:hover,
+.certificate-card.visible:hover {
+  transform: translateY(-5px) !important;
   box-shadow: 0 8px 25px rgba(10, 36, 99, 0.15);
   border-color: rgba(33, 150, 243, 0.3);
 }
@@ -1756,7 +1760,7 @@ img {
 }
 
 /* Animation for certificate cards */
-.certificate-card {
+.certificate-card:not(.visible) {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -1789,14 +1793,15 @@ img {
   height: 100%;
 }
 
-.honor-card:hover {
-  transform: translateY(-5px);
+.honor-card:hover,
+.honor-card.visible:hover {
+  transform: translateY(-5px) !important;
   box-shadow: 0 8px 25px rgba(10, 36, 99, 0.15);
   border-color: rgba(33, 150, 243, 0.3);
 }
 
 /* Animation for honor cards */
-.honor-card {
+.honor-card:not(.visible) {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
