@@ -1669,9 +1669,16 @@ img {
 
 .certificate-thumbnail {
   max-width: 100%;
-  height: auto;
+  max-height: 400px;
+  object-fit: cover;
   border: 2px solid rgba(33, 150, 243, 0.1);
   transition: border-color 0.3s ease;
+}
+
+/* Ensure consistent height for education certificate thumbnails */
+.education-gpa + .certificate-preview .certificate-thumbnail {
+  max-height: 400px;
+  object-fit: contain;
 }
 
 .certificate-link:hover .certificate-thumbnail {
