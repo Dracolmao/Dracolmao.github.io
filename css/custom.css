@@ -599,12 +599,121 @@ section {
   margin-bottom: 10px;
 }
 
-.contact-form {
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(10, 36, 99, 0.1);
+/* Contact Button Styles */
+.contact-btn {
+  min-width: 350px;
+  padding: 0.8rem 1.8rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: #000000;
+  border: 2px solid #000000;
+  margin: 0;
+  line-height: 1.4;
 }
+
+.contact-btn-uniform {
+  width: 350px;
+  min-width: 350px;
+  max-width: 350px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  background-color: rgba(0, 0, 0, 0.1);
+  border-color: #000000;
+  color: #000000;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contact-btn:active {
+  transform: translateY(0);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Buttons Column */
+.contact-buttons-column {
+  max-width: 370px;
+  margin: 0 auto;
+}
+
+/* Enlarged Social Buttons */
+.social-links .btn {
+  margin-right: 12px;
+  margin-bottom: 12px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.social-links .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments for contact buttons */
+@media (max-width: 768px) {
+  .contact-btn {
+    min-width: 320px;
+    width: 320px;
+    max-width: 320px;
+    font-size: 0.9rem;
+    padding: 0.7rem 1.5rem;
+  }
+  
+  .contact-btn-uniform {
+    width: 320px;
+    min-width: 320px;
+    max-width: 320px;
+  }
+  
+  .contact-buttons-column {
+    max-width: 340px;
+  }
+  
+  .social-links .btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-btn {
+    min-width: 280px;
+    width: 280px;
+    max-width: 280px;
+    font-size: 0.85rem;
+    padding: 0.6rem 1.2rem;
+  }
+  
+  .contact-btn-uniform {
+    width: 280px;
+    min-width: 280px;
+    max-width: 280px;
+  }
+  
+  .contact-buttons-column {
+    max-width: 300px;
+  }
+  
+  .social-links .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
 
 /* Resume Preview */
 .resume-preview-container {
@@ -902,71 +1011,6 @@ footer {
   100% { transform: rotate(360deg); }
 }
 
-/* Form Validation Styles */
-.form-control.is-valid {
-  background-image: none;
-}
-
-.form-control.is-invalid {
-  background-image: none;
-}
-
-/* Success Message */
-.success-message {
-  display: none;
-  padding: 1rem;
-  margin-top: 1rem;
-  background-color: #d4edda;
-  color: #155724;
-  border-radius: 5px;
-  text-align: center;
-  font-weight: 500;
-  border-left: 4px solid #28a745;
-}
-
-/* Error Message */
-.error-message {
-  display: none;
-  padding: 1rem;
-  margin-top: 1rem;
-  background-color: #f8d7da;
-  color: #721c24;
-  border-radius: 5px;
-  text-align: center;
-  font-weight: 500;
-  border-left: 4px solid #dc3545;
-}
-
-/* Form Validation Feedback */
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.invalid-feedback {
-  display: none;
-  width: 100%;
-  margin-top: 0.25rem;
-  font-size: 0.875rem;
-  color: #dc3545;
-}
-
-.form-control.is-invalid {
-  border-color: #dc3545;
-}
-
-.form-control.is-valid {
-  border-color: #28a745;
-}
-
-.form-control.is-invalid:focus {
-  border-color: #dc3545;
-  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
-}
-
-.form-control.is-valid:focus {
-  border-color: #28a745;
-  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
-}
 
 /* Active Navigation Link */
 .navbar-nav .nav-link.active {
@@ -1519,9 +1563,8 @@ footer {
   }
 }
 
-/* Fix resume and contact form containers */
-.resume-preview-container,
-.contact-form {
+/* Fix resume containers */
+.resume-preview-container {
   max-width: 100%;
   box-sizing: border-box;
   overflow: hidden;
