@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initResumeDownload();
     initActiveNavigation();
     initScrollToTop();
+    initLoadingPlaceholders();
 });
 
 // Smooth scrolling for navigation links
@@ -244,4 +245,51 @@ function initScrollToTop() {
             smoothScrollTo(0, 600);
         });
     }
+}
+
+// Loading placeholder functionality
+function initLoadingPlaceholders() {
+    // Add loading placeholders to images that might take time to load
+    // EXCLUDE organization logos to preserve their hover effects
+    const imageSelectors = [
+        '.certificate-thumbnail',
+        '.profile-img-enhanced',
+        '.resume-preview-img'
+        // Removed '.certificate-org-logo' to preserve hover effects
+    ];
+    
+    imageSelectors.forEach(selector => {
+        const images = document.querySelectorAll(selector);
+        images.forEach(img => {
+            // Skip if already wrapped or if image is already loaded
+            if (img.parentElement.classList.contains('loading-placeholder') ||
+                (img.complete && img.naturalHeight !== 0)) {
+                return;
+            }
+            
+            // Create loading placeholder wrapper
+            const wrapper = document.createElement('div');
+            wrapper.className = 'loading-placeholder';
+            
+            // Insert wrapper before img
+            img.parentNode.insertBefore(wrapper, img);
+            
+            // Move img into wrapper
+            wrapper.appendChild(img);
+            
+            // Handle image load
+            img.addEventListener('load', function() {
+                wrapper.classList.add('loaded');
+            });
+            
+            img.addEventListener('error', function() {
+                wrapper.classList.add('loaded');
+            });
+            
+            // Handle already loaded images
+            if (img.complete && img.naturalHeight !== 0) {
+                wrapper.classList.add('loaded');
+            }
+        });
+    });
 }

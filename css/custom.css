@@ -43,14 +43,125 @@ body {
 }
 
 #logo {
-  max-width: 40px;
-  height: auto;
+  width: 40px;
+  height: 40px;
   filter: drop-shadow(0 2px 4px rgba(33, 150, 243, 0.3));
   transition: transform 0.3s ease;
+  /* Ensure SVG animation plays smoothly */
+  will-change: transform;
 }
 
 #logo:hover {
   transform: scale(1.1) rotate(5deg);
+}
+
+/* Optimize SVG animation performance */
+#logo[src$=".svg"] {
+  /* Enable hardware acceleration for SVG animations */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Fallback for browsers that don't support SVG favicon */
+@supports not (color: color(display-p3 1 1 1)) {
+  #logo[src$=".svg"] {
+    display: none;
+  }
+  
+  #logo[src$=".png"] {
+    display: inline-block;
+  }
+}
+
+/* Loading placeholder using animated logo */
+.loading-placeholder {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.loading-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-image: url('img/New Logo/Jaffar-Logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.loading-placeholder img {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.loading-placeholder.loaded img {
+  opacity: 1;
+}
+
+.loading-placeholder.loaded::before {
+  display: none;
+}
+
+/* Fix hover effects for images wrapped in loading placeholders */
+.loading-placeholder:hover img {
+  opacity: 1;
+}
+
+/* Ensure hover effects work on wrapped images (excluding org logos) */
+.certificate-link:hover .loading-placeholder img,
+.resume-image-link:hover .loading-placeholder img {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(10, 36, 99, 0.2);
+  border-color: rgba(33, 150, 243, 0.3);
+}
+
+/* Comprehensive fix for hover effects on images in loading placeholders */
+.loading-placeholder.loaded:hover img {
+  transform: inherit;
+}
+
+/* Ensure parent hover effects work on wrapped images (excluding org logos) */
+.certificate-link:hover .loading-placeholder img,
+.resume-image-link:hover .loading-placeholder img {
+  transform: inherit;
+}
+
+/* Specific loading placeholders for certificate images */
+.certificate-preview .loading-placeholder::before {
+  width: 40px;
+  height: 40px;
+}
+
+.resume-preview .loading-placeholder::before {
+  width: 50px;
+  height: 50px;
+}
+
+.profile-img-enhanced.loading-placeholder::before {
+  width: 80px;
+  height: 80px;
+}
+
+/* Loading animation for the placeholder */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.loading-placeholder::before {
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 .brand-text {
@@ -773,7 +884,8 @@ section {
   border: 3px solid rgba(33, 150, 243, 0.1);
 }
 
-.resume-image-link:hover .resume-preview-img {
+.resume-image-link:hover .resume-preview-img,
+.resume-image-link:hover .loading-placeholder .resume-preview-img {
   border-color: rgba(33, 150, 243, 0.3);
 }
 
@@ -1724,7 +1836,8 @@ img {
   object-fit: contain;
 }
 
-.certificate-link:hover .certificate-thumbnail {
+.certificate-link:hover .certificate-thumbnail,
+.certificate-link:hover .loading-placeholder .certificate-thumbnail {
   border-color: rgba(33, 150, 243, 0.3);
 }
 
