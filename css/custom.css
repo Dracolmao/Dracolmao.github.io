@@ -918,10 +918,144 @@ section {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-/* Contact Buttons Column */
-.contact-buttons-column {
-  max-width: 370px;
+/* Contact Information Column */
+.contact-info-column {
+  max-width: 500px;
   margin: 0 auto;
+}
+
+/* Contact Item Styles */
+.contact-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  border: 1px solid rgba(33, 150, 243, 0.2);
+  box-shadow: 0 2px 8px rgba(10, 36, 99, 0.1);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 450px;
+}
+
+.contact-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(10, 36, 99, 0.15);
+  border-color: rgba(33, 150, 243, 0.3);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary-text);
+  flex-grow: 1;
+  text-align: left;
+}
+
+/* Contact Action Buttons */
+.contact-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  min-width: 80px;
+  justify-content: center;
+}
+
+.contact-call-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.contact-call-btn:hover {
+  background-color: #218838;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+  color: white;
+  text-decoration: none;
+}
+
+.contact-email-btn {
+  background-color: var(--blue);
+  color: white;
+}
+
+.contact-email-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+  color: white;
+  text-decoration: none;
+}
+
+.contact-action-btn i {
+  font-size: 0.9rem;
+}
+
+.contact-action-btn .btn-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Responsive adjustments for contact items */
+@media (max-width: 768px) {
+  .contact-info-column {
+    max-width: 350px;
+  }
+  
+  .contact-item {
+    padding: 0.875rem 1rem;
+    max-width: 320px;
+  }
+  
+  .contact-text {
+    font-size: 0.9rem;
+  }
+  
+  .contact-action-btn {
+    padding: 0.4rem 0.8rem;
+    min-width: 70px;
+  }
+  
+  .contact-action-btn .btn-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info-column {
+    max-width: 300px;
+  }
+  
+  .contact-item {
+    padding: 0.75rem 0.875rem;
+    max-width: 280px;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+  
+  .contact-text {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+  
+  .contact-action-btn {
+    width: 100%;
+    max-width: 120px;
+    margin: 0 auto;
+  }
+  
+  .contact-action-btn .btn-text {
+    font-size: 0.8rem;
+  }
 }
 
 /* Enlarged Social Buttons */
