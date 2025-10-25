@@ -11,39 +11,39 @@
   <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
   <stop offset="100%" style="stop-color:#e3f2fd;stop-opacity:1" />
 </linearGradient>
-</defs> <!-- Outer ring --> <circle cx="50" cy="50" r="48" fill="url(#bgGradient)" stroke="url(#goldGradient)" stroke-width="2"/> <!-- Inner decorative ring --> <circle cx="50" cy="50" r="42" fill="none" stroke="url(#whiteGradient)" stroke-width="0.5" opacity="0.6"/> <!-- Simple, large, clean J letter without glow -->
+</defs> <!-- Outer ring --> <circle cx="50" cy="50" r="46" fill="url(#bgGradient)" stroke="url(#goldGradient)" stroke-width="8"/> <!-- Inner decorative ring --> <circle cx="50" cy="50" r="40" fill="none" stroke="url(#whiteGradient)" stroke-width="01" opacity="1"/> <!-- Simple, large, clean J letter without glow -->
 <text x="50" y="65" 
      font-family="Arial, sans-serif" 
-     font-size="42" 
+     font-size="50" 
      font-weight="bold" 
      fill="url(#whiteGradient)" 
      text-anchor="middle">J</text>
 
-<!-- 8 orbiting network nodes with larger circumference and faster rotation --> <g transform="translate(50, 50)"> <!-- Network nodes in larger circular orbit (midway between outer circle and J) --> <circle cx="0" cy="-32" r="2" fill="url(#whiteGradient)" opacity="0.8"> <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/> </circle> <circle cx="23" cy="-23" r="2" fill="url(#whiteGradient)" opacity="0.8"> <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/> </circle> <circle cx="32" cy="0" r="2" fill="url(#whiteGradient)" opacity="0.8"> <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/> </circle> <circle cx="23" cy="23" r="2" fill="url(#whiteGradient)" opacity="0.8"> <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/> </circle> <circle cx="0" cy="32" r="2" fill="url(#whiteGradient)" opacity="0.8"> <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/> </circle> <circle cx="-23" cy="23" r="2" fill="url(#whiteGradient)" opacity="0.8"> <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/> </circle> <circle cx="-32" cy="0" r="2" fill="url(#whiteGradient)" opacity="0.8"> <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/> </circle> <circle cx="-23" cy="-23" r="2" fill="url(#whiteGradient)" opacity="0.8"> <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/> </circle>
+<!-- 8 orbiting network nodes with larger circumference and faster rotation --> <g transform="translate(50, 50)"> <!-- Network nodes in larger circular orbit (midway between outer circle and J) --> <circle cx="0" cy="-32" r="2" fill="url(#whiteGradient)" opacity="1"> <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/> </circle> <circle cx="23" cy="-23" r="2" fill="url(#whiteGradient)" opacity="1"> <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/> </circle> <circle cx="32" cy="0" r="2" fill="url(#whiteGradient)" opacity="1"> <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/> </circle> <circle cx="23" cy="23" r="2" fill="url(#whiteGradient)" opacity="1"> <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/> </circle> <circle cx="0" cy="32" r="2" fill="url(#whiteGradient)" opacity="1"> <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/> </circle> <circle cx="-23" cy="23" r="2" fill="url(#whiteGradient)" opacity="1"> <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/> </circle> <circle cx="-32" cy="0" r="2" fill="url(#whiteGradient)" opacity="1"> <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/> </circle> <circle cx="-23" cy="-23" r="2" fill="url(#whiteGradient)" opacity="1"> <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/> </circle>
 <!-- Connection lines between orbiting nodes -->
-<g opacity="0.3">
-  <line x1="0" y1="-32" x2="23" y2="-23" stroke="url(#whiteGradient)" stroke-width="0.5">
+<g opacity="0.5">
+  <line x1="0" y1="-32" x2="23" y2="-23" stroke="url(#whiteGradient)" stroke-width="1">
     <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/>
   </line>
-  <line x1="23" y1="-23" x2="32" y2="0" stroke="url(#whiteGradient)" stroke-width="0.5">
+  <line x1="23" y1="-23" x2="32" y2="0" stroke="url(#whiteGradient)" stroke-width="1">
     <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/>
   </line>
-  <line x1="32" y1="0" x2="23" y2="23" stroke="url(#whiteGradient)" stroke-width="0.5">
+  <line x1="32" y1="0" x2="23" y2="23" stroke="url(#whiteGradient)" stroke-width="1">
     <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/>
   </line>
-  <line x1="23" y1="23" x2="0" y2="32" stroke="url(#whiteGradient)" stroke-width="0.5">
+  <line x1="23" y1="23" x2="0" y2="32" stroke="url(#whiteGradient)" stroke-width="1">
     <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/>
   </line>
-  <line x1="0" y1="32" x2="-23" y2="23" stroke="url(#whiteGradient)" stroke-width="0.5">
+  <line x1="0" y1="32" x2="-23" y2="23" stroke="url(#whiteGradient)" stroke-width="1">
     <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/>
   </line>
-  <line x1="-23" y1="23" x2="-32" y2="0" stroke="url(#whiteGradient)" stroke-width="0.5">
+  <line x1="-23" y1="23" x2="-32" y2="0" stroke="url(#whiteGradient)" stroke-width="1">
     <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/>
   </line>
-  <line x1="-32" y1="0" x2="-23" y2="-23" stroke="url(#whiteGradient)" stroke-width="0.5">
+  <line x1="-32" y1="0" x2="-23" y2="-23" stroke="url(#whiteGradient)" stroke-width="1">
     <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/>
   </line>
-  <line x1="-23" y1="-23" x2="0" y2="-32" stroke="url(#whiteGradient)" stroke-width="0.5">
+  <line x1="-23" y1="-23" x2="0" y2="-32" stroke="url(#whiteGradient)" stroke-width="1">
     <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/>
   </line>
 </g>
