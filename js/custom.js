@@ -84,7 +84,7 @@ function initNavbarScroll() {
 // Scroll animations
 function initScrollAnimations() {
     // Add fade-in class to elements that should animate
-    const animateElements = document.querySelectorAll('.section-title, .project-card, .work-experience-item, .education-item, .education-vertical, .certificate-card, .honor-card');
+    const animateElements = document.querySelectorAll('.section-title, .project-card, .work-experience-item, .education-item, .education-vertical, .certificate-card, .honor-card, .fieldz-card, .fieldz-feature-box, .fieldz-role-card, .fieldz-architecture-box');
     animateElements.forEach(element => {
         element.classList.add('fade-in');
     });
@@ -254,7 +254,8 @@ function initLoadingPlaceholders() {
     const imageSelectors = [
         '.certificate-thumbnail',
         '.profile-img-enhanced',
-        '.resume-preview-img'
+        '.resume-preview-img',
+        '.fieldz-image'
         // Removed '.certificate-org-logo' to preserve hover effects
     ];
     

@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fieldz - Sports Field Booking Platform. A comprehensive mobile application built with Flutter and Firebase for booking sports facilities.">
+  <meta name="keywords" content="Fieldz, Sports Booking, Flutter, Firebase, Mobile App, Sports Field Booking, Jaffar Alromaih">
+  <meta name="author" content="Jaffar Alromaih">
+  <title>Fieldz - Sports Field Booking Platform | Jaffar Alromaih</title>
+  
+  <!-- Favicon with SVG support and PNG fallback -->
+  <link rel="icon" type="image/svg+xml" href="img/New Logo/Jaffar-Logo.svg">
+  <link rel="icon" type="image/png" href="img/New Logo/Jaffar_Logo.png">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  <style>
+    /* Fieldz-specific color scheme */
+    :root {
+      --fieldz-primary-orange: rgb(232, 140, 87);
+      --fieldz-secondary-orange: rgb(221, 149, 99);
+      --fieldz-notification-orange: rgb(220, 149, 100);
+      --fieldz-light-orange: rgb(243, 219, 171);
+      --fieldz-background-gray: rgb(235, 235, 235);
+      --fieldz-gradient-start: rgba(232, 140, 87, 1);
+      --fieldz-gradient-mid: rgba(243, 219, 171, 1);
+      --fieldz-gradient-end: rgba(234, 242, 214, 0.4);
+    }
+    
+    /* Override global custom.css styles for Fieldz page */
+    .fieldz-project .container {
+      max-width: 1140px !important;
+      width: auto !important;
+      padding-left: 15px !important;
+      padding-right: 15px !important;
+    }
+    
+    .fieldz-project section {
+      padding: 40px 0 !important;
+    }
+    
+    /* Fix hero section specific padding */
+    .fieldz-project .fieldz-hero {
+      padding: 120px 0 80px !important;
+    }
+    
+    /* Ensure proper spacing and prevent overlaps */
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+    }
+    
+    /* Restore gray box styling for cards */
+    .fieldz-project .fieldz-details-card,
+    .fieldz-project .fieldz-achievements-card,
+    .fieldz-project .fieldz-feature-box,
+    .fieldz-project .fieldz-role-card,
+    .fieldz-project .fieldz-architecture-box {
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e9ecef;
+      transition: all 0.3s ease;
+      height: auto;
+      overflow: visible;
+    }
+    
+    .fieldz-project .fieldz-details-card:hover,
+    .fieldz-project .fieldz-achievements-card:hover,
+    .fieldz-project .fieldz-feature-box:hover,
+    .fieldz-project .fieldz-role-card:hover,
+    .fieldz-project .fieldz-architecture-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      border-color: #dee2e6;
+    }
+    
+    .fieldz-hero {
+      padding: 120px 0 80px;
+      background: linear-gradient(135deg,
+        var(--fieldz-gradient-start) 0%,
+        var(--fieldz-gradient-mid) 35%,
+        var(--fieldz-gradient-end) 100%);
+      color: #000;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+    }
+    
+    .fieldz-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    
+    .fieldz-hero .container {
+      position: relative;
+      z-index: 2;
+      max-width: 100%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    .fieldz-section {
+      padding: 40px 0;
+      margin: 0;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .fieldz-feature-box {
+      padding: 25px;
+      margin-bottom: 25px;
+      height: auto;
+      min-height: auto;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+    }
+    
+    .fieldz-feature-box i {
+      font-size: 2.5rem;
+      color: var(--fieldz-primary-orange);
+      margin-bottom: 15px;
+      display: block;
+      text-align: center;
+    }
+    
+    .fieldz-feature-box h4 {
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    
+    .fieldz-feature-box p {
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+    
+    .fieldz-tech-badge {
+      margin: 5px;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--fieldz-primary-orange), var(--fieldz-secondary-orange));
+      color: white;
+      border: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    
+    .fieldz-tech-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(232, 140, 87, 0.3);
+    }
+    
+    .fieldz-card {
+      border-radius: 15px;
+      border: none;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      height: 100%;
+    }
+    
+    .fieldz-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .fieldz-card-header {
+      background: linear-gradient(135deg, var(--fieldz-primary-orange), var(--fieldz-secondary-orange));
+      color: white;
+      font-weight: 700;
+      border: none;
+      padding: 20px;
+      margin: 0;
+    }
+    
+    .fieldz-role-card {
+      padding: 20px;
+      margin-bottom: 25px;
+      border-left: 5px solid var(--fieldz-primary-orange);
+      height: auto;
+      min-height: auto;
+    }
+    
+    .fieldz-role-card h4 {
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    
+    .fieldz-role-card p {
+      margin-bottom: 8px;
+    }
+    
+    .fieldz-role-card ul {
+      margin-bottom: 0;
+    }
+    
+    .fieldz-architecture-box {
+      padding: 25px;
+      margin-bottom: 25px;
+      height: auto;
+      min-height: auto;
+    }
+    
+    .fieldz-architecture-box h4 {
+      margin-bottom: 15px;
+    }
+    
+    .fieldz-architecture-box .mb-3 {
+      margin-bottom: 15px !important;
+    }
+    
+    .fieldz-btn-primary {
+      background: linear-gradient(135deg, var(--fieldz-primary-orange), var(--fieldz-secondary-orange));
+      border: none;
+      color: white;
+      font-weight: 600;
+      padding: 12px 30px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+      margin: 5px;
+    }
+    
+    .fieldz-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(232, 140, 87, 0.3);
+      background: linear-gradient(135deg, var(--fieldz-secondary-orange), var(--fieldz-primary-orange));
+      color: white;
+      text-decoration: none;
+    }
+    
+    .fieldz-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      display: block;
+      margin: 0 auto;
+    }
+    
+    .fieldz-image:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    }
+    
+    .fieldz-stats-box {
+      background: linear-gradient(135deg, var(--fieldz-primary-orange), var(--fieldz-secondary-orange));
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+    
+    .fieldz-stats-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(232, 140, 87, 0.3);
+    }
+    
+    .fieldz-stats-box h3 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    .fieldz-stats-box p {
+      margin-bottom: 0;
+      font-weight: 500;
+    }
+    
+    .fieldz-timeline {
+      position: relative;
+      padding-left: 30px;
+      margin: 0;
+    }
+    
+    .fieldz-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(135deg, var(--fieldz-primary-orange), var(--fieldz-secondary-orange));
+    }
+    
+    .fieldz-timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+      padding-left: 30px;
+    }
+    
+    .fieldz-timeline-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .fieldz-timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: 5px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--fieldz-primary-orange);
+      border: 3px solid white;
+    }
+    
+    .fieldz-timeline-item h6 {
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: var(--fieldz-primary-orange);
+    }
+    
+    .fieldz-timeline-item p {
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+    
+    /* Title and section spacing improvements */
+    .display-5 {
+      margin-bottom: 1rem;
+    }
+    
+    .title-underline {
+      margin-bottom: 1.5rem;
+    }
+    
+    .lead {
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Row spacing fixes */
+    .row {
+      margin-bottom: 1.5rem;
+    }
+    
+    .row:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* Remove problematic equal-height implementation */
+    .row.equal-height {
+      display: block;
+    }
+    
+    .row.equal-height > [class*="col-"] {
+      display: block;
+    }
+    
+    /* Prevent overflow issues */
+    .fieldz-section {
+      overflow: visible;
+    }
+    
+    /* Ensure containers don't overflow */
+    .container {
+      max-width: 100%;
+      overflow-x: visible;
+    }
+    
+    /* Fix card overflow */
+    .fieldz-feature-box,
+    .fieldz-role-card,
+    .fieldz-architecture-box,
+    .fieldz-gallery-item {
+      min-height: auto;
+      overflow: visible;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .fieldz-hero {
+        padding: 80px 0 50px;
+      }
+      
+      .fieldz-section {
+        padding: 30px 0;
+      }
+      
+      .fieldz-feature-box {
+        padding: 20px;
+        margin-bottom: 20px;
+        min-height: 250px;
+      }
+      
+      .fieldz-stats-box {
+        padding: 15px;
+        margin-bottom: 15px;
+      }
+      
+      .fieldz-stats-box h3 {
+        font-size: 1.8rem;
+      }
+      
+      .fieldz-role-card {
+        padding: 20px;
+        margin-bottom: 20px;
+        min-height: 350px;
+      }
+      
+      .fieldz-architecture-box {
+        padding: 20px;
+        margin-bottom: 20px;
+        min-height: 180px;
+      }
+      
+      .fieldz-card {
+        margin-bottom: 20px;
+      }
+      
+      .row {
+        margin-bottom: 1.2rem;
+      }
+      
+      .display-5 {
+        margin-bottom: 0.8rem;
+      }
+      
+      .title-underline {
+        margin-bottom: 1.2rem;
+      }
+      
+      .lead {
+        margin-bottom: 1.2rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .fieldz-hero {
+        padding: 60px 0 30px;
+      }
+      
+      .fieldz-section {
+        padding: 20px 0;
+      }
+      
+      .fieldz-feature-box {
+        padding: 15px;
+        margin-bottom: 15px;
+        min-height: 220px;
+      }
+      
+      .fieldz-stats-box {
+        padding: 12px;
+        margin-bottom: 12px;
+      }
+      
+      .fieldz-stats-box h3 {
+        font-size: 1.5rem;
+      }
+      
+      .fieldz-role-card {
+        padding: 15px;
+        margin-bottom: 15px;
+        min-height: 320px;
+      }
+      
+      .fieldz-architecture-box {
+        padding: 15px;
+        margin-bottom: 15px;
+        min-height: 160px;
+      }
+      
+      .fieldz-card {
+        margin-bottom: 15px;
+      }
+      
+      .row {
+        margin-bottom: 1rem;
+      }
+      
+      .fieldz-tech-badge {
+        margin: 2px;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+      }
+      
+      .display-5 {
+        margin-bottom: 0.6rem;
+      }
+      
+      .title-underline {
+        margin-bottom: 1rem;
+      }
+      
+      .lead {
+        margin-bottom: 1rem;
+      }
+      
+      .fieldz-gallery-item {
+        min-height: 250px;
+      }
+    }
+    
+    /* Project Details Card Styling - Standardized */
+    
+    .fieldz-details-header {
+      background: linear-gradient(135deg, var(--fieldz-primary-orange), var(--fieldz-secondary-orange));
+      color: white;
+      font-weight: 700;
+      border: none;
+      padding: 20px;
+      margin: 0;
+    }
+    
+    .fieldz-details-body {
+      padding: 20px;
+    }
+    
+    .detail-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(232, 140, 87, 0.1);
+      margin-bottom: 0;
+    }
+    
+    .detail-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    
+    .detail-item:first-child {
+      padding-top: 0;
+    }
+    
+    .detail-label {
+      font-weight: 600;
+      color: var(--fieldz-primary-orange);
+      font-size: 0.9rem;
+      flex: 1;
+    }
+    
+    .detail-value {
+      font-weight: 500;
+      color: #333;
+      font-size: 0.9rem;
+      text-align: right;
+      flex: 1;
+    }
+    
+    /* Key Achievements Card Styling - Standardized */
+    
+    .fieldz-achievements-header {
+      background: linear-gradient(135deg, var(--fieldz-primary-orange), var(--fieldz-secondary-orange));
+      color: white;
+      font-weight: 700;
+      border: none;
+      padding: 20px;
+      margin: 0;
+    }
+    
+    .fieldz-achievements-body {
+      padding: 20px;
+    }
+    
+    .achievement-item {
+      display: flex;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(232, 140, 87, 0.1);
+      margin-bottom: 0;
+    }
+    
+    .achievement-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    
+    .achievement-item:first-child {
+      padding-top: 0;
+    }
+    
+    .achievement-icon {
+      color: #28a745;
+      font-size: 1.1rem;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    
+    .achievement-text {
+      font-weight: 500;
+      color: #333;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    
+    /* Responsive adjustments for new cards */
+    @media (max-width: 768px) {
+      .fieldz-details-body,
+      .fieldz-achievements-body {
+        padding: 20px;
+      }
+      
+      .detail-item,
+      .achievement-item {
+        padding: 10px 0;
+      }
+      
+      .detail-label,
+      .detail-value,
+      .achievement-text {
+        font-size: 0.85rem;
+      }
+      
+      .achievement-icon {
+        font-size: 1rem;
+        margin-right: 12px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .fieldz-details-body,
+      .fieldz-achievements-body {
+        padding: 15px;
+      }
+      
+      .detail-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 0;
+      }
+      
+      .detail-label,
+      .detail-value {
+        text-align: left;
+        font-size: 0.8rem;
+      }
+      
+      .detail-value {
+        margin-top: 4px;
+      }
+      
+      .achievement-item {
+        padding: 8px 0;
+      }
+      
+      .achievement-text {
+        font-size: 0.8rem;
+      }
+      
+      .achievement-icon {
+        font-size: 0.9rem;
+        margin-right: 10px;
+      }
+    }
+    
+    /* Hero Button Styling */
+    .fieldz-hero-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 35px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      min-width: 180px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .fieldz-hero-btn-primary {
+      background: linear-gradient(135deg, var(--fieldz-primary-orange), var(--fieldz-secondary-orange));
+      color: white;
+      border-color: var(--fieldz-primary-orange);
+    }
+    
+    .fieldz-hero-btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(232, 140, 87, 0.4);
+      background: linear-gradient(135deg, var(--fieldz-secondary-orange), var(--fieldz-primary-orange));
+      color: white;
+      text-decoration: none;
+    }
+    
+    .fieldz-hero-btn-secondary {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--fieldz-primary-orange);
+      border-color: var(--fieldz-primary-orange);
+    }
+    
+    .fieldz-hero-btn-secondary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(232, 140, 87, 0.3);
+      background: white;
+      color: var(--fieldz-primary-orange);
+      text-decoration: none;
+    }
+    
+    /* Responsive adjustments for hero buttons */
+    @media (max-width: 768px) {
+      .fieldz-hero-btn {
+        padding: 12px 28px;
+        font-size: 1rem;
+        min-width: 160px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .fieldz-hero-btn {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+        min-width: 140px;
+      }
+    }
+    
+    /* Gallery Image Styling - Simplified */
+    .fieldz-gallery-item img,
+    .fieldz-image {
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .fieldz-gallery-item img:hover,
+    .fieldz-image:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Responsive adjustments for gallery */
+    @media (max-width: 768px) {
+      .fieldz-gallery-item {
+        padding: 8px;
+        margin-bottom: 15px;
+      }
+      
+      .fieldz-gallery-item h6 {
+        font-size: 0.9rem;
+      }
+      
+      .fieldz-gallery-item p {
+        font-size: 0.8rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .fieldz-gallery-item {
+        padding: 6px;
+        margin-bottom: 12px;
+      }
+      
+      .fieldz-gallery-item h6 {
+        font-size: 0.85rem;
+      }
+      
+      .fieldz-gallery-item p {
+        font-size: 0.75rem;
+      }
+    }
+    
+    /* Certificate-style poster styling */
+    .certificate-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      background: white;
+    }
+    
+    .certificate-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(232, 140, 87, 0.3);
+    }
+    
+    .certificate-link {
+      display: block;
+      text-decoration: none;
+      position: relative;
+    }
+    
+    .certificate-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(232, 140, 87, 0.1), rgba(221, 149, 99, 0.1));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    
+    .certificate-link:hover::before {
+      opacity: 1;
+    }
+    
+    .certificate-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+    
+    .certificate-link:hover .certificate-img {
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body class="fieldz-project">
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="img/New Logo/Jaffar-Logo.svg" alt="Jaffar Alromaih Logo" id="logo" class="me-2">
+          <span class="brand-text">Jaffar Alromaih</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#home">
+                <i class="fas fa-home me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#education-skills">
+                <i class="fas fa-graduation-cap me-1"></i>Education & Skills
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#experience">
+                <i class="fas fa-briefcase me-1"></i>Work Experience
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#projects">
+                <i class="fas fa-code me-1"></i>Projects
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#resume">
+                <i class="fas fa-file-alt me-1"></i>CV / Resume
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#contact">
+                <i class="fas fa-envelope me-1"></i>Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Fieldz Hero Section -->
+  <section class="fieldz-hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h1 class="display-3 fw-bold mb-4">Fieldz</h1>
+          <h2 class="h2 mb-4">Sports Field Booking Platform</h2>
+          <p class="lead mb-4">Simplest way to book a sports field - A comprehensive mobile marketplace connecting sports facility owners with users seeking to book sports fields for various activities.</p>
+          <div class="d-flex flex-wrap gap-3 justify-content-center">
+            <a href="#overview" class="fieldz-hero-btn fieldz-hero-btn-primary">
+              <i class="fas fa-info-circle me-2"></i>Learn More
+            </a>
+            <a href="#features" class="fieldz-hero-btn fieldz-hero-btn-secondary">
+              <i class="fas fa-star me-2"></i>Key Features
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="fieldz-stats-box">
+            <h3>3</h3>
+            <p>User Roles</p>
+          </div>
+          <div class="fieldz-stats-box">
+            <h3>6+</h3>
+            <p>Sport Categories</p>
+          </div>
+          <div class="fieldz-stats-box">
+            <h3>100%</h3>
+            <p>Mobile Native</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Project Overview Section -->
+  <section id="overview" class="fieldz-section bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Project Overview</h2>
+            <div class="title-underline mx-auto"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="project-overview">
+            <h3 class="mb-4">The Vision</h3>
+            <p class="lead">
+              Fieldz represents a comprehensive sports field booking mobile application built with Flutter and Firebase, 
+              designed to revolutionize how people discover, book, and manage sports facilities. The platform serves as 
+              a dynamic marketplace connecting sports facility owners with users who want to book sports fields for various activities.
+            </p>
+            
+            <h3 class="mt-5 mb-3">The Challenge</h3>
+            <p>
+              Traditional sports field booking processes are often fragmented, inefficient, and lack real-time availability 
+              information. Facility owners struggle with management overhead, while users face difficulties in discovering 
+              available fields, comparing options, and securing bookings. The challenge was to create a unified platform that 
+              addresses these pain points while providing exceptional user experiences across multiple user roles.
+            </p>
+            
+            <h3 class="mt-5 mb-3">The Solution</h3>
+            <p>
+              Fieldz delivers a sophisticated mobile-first solution featuring real-time booking capabilities, multi-role user 
+              management, secure payment processing, and advanced location services. The application leverages modern 
+              technologies including Flutter for cross-platform development, Firebase for backend services, and Google Maps 
+              for location-based features, creating a scalable and maintainable platform suitable for commercial deployment.
+            </p>
+          </div>
+        </div>
+        
+        <div class="col-lg-4">
+          <div class="fieldz-details-card mb-4">
+            <div class="fieldz-details-header">
+              <h5 class="mb-0">Project Details</h5>
+            </div>
+            <div class="fieldz-details-body">
+              <div class="detail-item">
+                <span class="detail-label">Platform:</span>
+                <span class="detail-value">Mobile Application</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Development Time:</span>
+                <span class="detail-value">6 months</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Role:</span>
+                <span class="detail-value">Development Lead</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Team Size:</span>
+                <span class="detail-value">6 members</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Academic Project:</span>
+                <span class="detail-value">KFUPM Senior Project</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Advisor:</span>
+                <span class="detail-value">Dr. Jameleddine Hassine</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Completion:</span>
+                <span class="detail-value">May 14, 2023</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Target Market:</span>
+                <span class="detail-value">Sports & Recreation</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="fieldz-achievements-card mb-4">
+            <div class="fieldz-achievements-header">
+              <h5 class="mb-0">Key Achievements</h5>
+            </div>
+            <div class="fieldz-achievements-body">
+              <div class="achievement-item">
+                <i class="fas fa-check-circle achievement-icon"></i>
+                <span class="achievement-text">Multi-role architecture</span>
+              </div>
+              <div class="achievement-item">
+                <i class="fas fa-check-circle achievement-icon"></i>
+                <span class="achievement-text">Real-time booking system</span>
+              </div>
+              <div class="achievement-item">
+                <i class="fas fa-check-circle achievement-icon"></i>
+                <span class="achievement-text">Payment integration</span>
+              </div>
+              <div class="achievement-item">
+                <i class="fas fa-check-circle achievement-icon"></i>
+                <span class="achievement-text">Location-based services</span>
+              </div>
+              <div class="achievement-item">
+                <i class="fas fa-check-circle achievement-icon"></i>
+                <span class="achievement-text">Admin dashboard</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Application Features Overview - Full Width Section -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="fieldz-architecture-box">
+            <h4 class="mb-4 text-center"><i class="fas fa-mobile-alt me-2"></i>Application Feature Overview</h4>
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <h6 class="text-primary mb-3"><i class="fas fa-user-circle me-2"></i>User Experience</h6>
+                <ul class="list-unstyled">
+                  <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Intuitive onboarding and authentication</li>
+                  <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Advanced search with multiple filters</li>
+                  <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Detailed field information display</li>
+                  <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Real-time availability checking</li>
+                  <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Seamless booking confirmation</li>
+                </ul>
+              </div>
+              <div class="col-md-6 mb-4">
+                <h6 class="text-primary mb-3"><i class="fas fa-cogs me-2"></i>Technical Implementation</h6>
+                <ul class="list-unstyled">
+                  <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Flutter cross-platform development</li>
+                  <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Firebase real-time database</li>
+                  <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Google Maps integration</li>
+                  <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Secure payment gateway integration</li>
+                  <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Cloud storage for images</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Stack Section -->
+  <section id="technology" class="fieldz-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Technology Stack</h2>
+            <div class="title-underline mx-auto"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <div class="fieldz-architecture-box">
+            <h4 class="mb-3"><i class="fas fa-mobile-alt me-2"></i>Frontend Framework</h4>
+            <div class="mb-3">
+              <span class="fieldz-tech-badge">Flutter</span>
+              <span class="fieldz-tech-badge">Dart</span>
+              <span class="fieldz-tech-badge">SDK >=2.18.0</span>
+            </div>
+            <p>Cross-platform mobile development framework providing native performance and expressive UI capabilities.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="fieldz-architecture-box">
+            <h4 class="mb-3"><i class="fas fa-server me-2"></i>Backend Services</h4>
+            <div class="mb-3">
+              <span class="fieldz-tech-badge">Firebase Core</span>
+              <span class="fieldz-tech-badge">Cloud Firestore</span>
+              <span class="fieldz-tech-badge">Firebase Auth</span>
+              <span class="fieldz-tech-badge">Firebase Storage</span>
+            </div>
+            <p>Comprehensive backend solution providing real-time database, authentication, and cloud storage.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="fieldz-architecture-box">
+            <h4 class="mb-3"><i class="fas fa-cogs me-2"></i>State Management</h4>
+            <div class="mb-3">
+              <span class="fieldz-tech-badge">Provider Pattern</span>
+              <span class="fieldz-tech-badge">ChangeNotifier</span>
+            </div>
+            <p>Reactive state management solution ensuring efficient UI updates and data flow control.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="fieldz-architecture-box">
+            <h4 class="mb-3"><i class="fas fa-map-marked-alt me-2"></i>Maps & Location</h4>
+            <div class="mb-3">
+              <span class="fieldz-tech-badge">Google Maps Flutter</span>
+              <span class="fieldz-tech-badge">Geolocator</span>
+              <span class="fieldz-tech-badge">Flutter Polyline Points</span>
+            </div>
+            <p>Advanced location services with interactive maps and GPS functionality.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="fieldz-architecture-box">
+            <h4 class="mb-3"><i class="fas fa-puzzle-piece me-2"></i>Additional Libraries & Tools</h4>
+            <div class="mb-3">
+              <span class="fieldz-tech-badge">Animated Bottom Navigation</span>
+              <span class="fieldz-tech-badge">Carousel Slider</span>
+              <span class="fieldz-tech-badge">Search Bar Animation</span>
+              <span class="fieldz-tech-badge">Flutter Calendar Carousel</span>
+              <span class="fieldz-tech-badge">Flutter SpinKit</span>
+              <span class="fieldz-tech-badge">Auto Size Text</span>
+              <span class="fieldz-tech-badge">Awesome Dialog</span>
+              <span class="fieldz-tech-badge">Image Picker</span>
+              <span class="fieldz-tech-badge">Path Provider</span>
+              <span class="fieldz-tech-badge">URL Launcher</span>
+              <span class="fieldz-tech-badge">Shared Preferences</span>
+              <span class="fieldz-tech-badge">Intl</span>
+            </div>
+            <p>Comprehensive suite of UI/UX libraries and utilities enhancing the application's functionality and user experience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Academic Project Details Section -->
+  <section id="academic-details" class="fieldz-section bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Academic Project Details</h2>
+            <div class="title-underline mx-auto"></div>
+            <p class="lead">King Fahd University of Petroleum and Minerals Senior Project</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <div class="fieldz-architecture-box">
+            <h4 class="mb-3"><i class="fas fa-users me-2"></i>Project Team</h4>
+            <div class="mb-3">
+              <h6 class="text-primary">Team Members:</h6>
+              <ul class="list-unstyled">
+                <li class="mb-2"><i class="fas fa-user text-success me-2"></i>Abdulaziz Alghizzi</li>
+                <li class="mb-2"><i class="fas fa-user text-success me-2"></i>Abdullah Albader</li>
+                <li class="mb-2"><i class="fas fa-user text-success me-2"></i><strong>Jaffar Alromaih</strong> (Development Lead)</li>
+                <li class="mb-2"><i class="fas fa-user text-success me-2"></i>Mohammed Alghamdi</li>
+                <li class="mb-2"><i class="fas fa-user text-success me-2"></i>Mohammed Almanie</li>
+                <li class="mb-2"><i class="fas fa-user text-success me-2"></i>Nasser Alghamdi</li>
+              </ul>
+            </div>
+            <div class="mb-3">
+              <h6 class="text-primary">Project Advisor:</h6>
+              <p class="mb-0"><i class="fas fa-chalkboard-teacher text-warning me-2"></i><strong>Dr. Jameleddine Hassine</strong></p>
+            </div>
+            <div class="mb-3">
+              <h6 class="text-primary">Academic Details:</h6>
+              <p class="mb-0"><i class="fas fa-university text-info me-2"></i>College of Computing and Mathematics</p>
+              <p class="mb-0"><i class="fas fa-calendar text-info me-2"></i>Completed: May 14, 2023</p>
+            </div>
+          </div>
+          
+          <!-- Project Poster -->
+          <div class="fieldz-architecture-box">
+            <h4 class="mb-3"><i class="fas fa-image me-2"></i>Project Poster</h4>
+            <div class="certificate-container">
+              <a href="Fieldz/Fieldz-Poster.pdf" target="_blank" class="certificate-link">
+                <img src="Fieldz/Fieldz- Poster.png" alt="Fieldz Project Poster" class="certificate-img">
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="fieldz-architecture-box">
+            <h4 class="mb-3"><i class="fas fa-cogs me-2"></i>Development Techniques</h4>
+            <div class="mb-3">
+              <span class="fieldz-tech-badge">User Story Mapping</span>
+              <span class="fieldz-tech-badge">Prototyping</span>
+              <span class="fieldz-tech-badge">CI/CD</span>
+              <span class="fieldz-tech-badge">API Integration</span>
+              <span class="fieldz-tech-badge">Accessible Design</span>
+            </div>
+            <p class="mt-3">The project followed modern software engineering practices including user-centered design approaches, continuous integration/deployment pipelines, comprehensive API development, and accessibility standards to ensure inclusive user experiences.</p>
+            
+            <h6 class="mt-4 mb-3">Project Outcomes:</h6>
+            <ul class="list-unstyled">
+              <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Users can conveniently find various sports fields through multiple discovery methods</li>
+              <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Enables discovery of nearby sports events and activities</li>
+              <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Field owners can easily connect with their target audience</li>
+              <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Simplified field management and booking processes</li>
+              <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Creates a central hub for sports field rental marketplace</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- User Roles Section -->
+  <section id="user-roles" class="fieldz-section bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Multi-Role Architecture</h2>
+            <div class="title-underline mx-auto"></div>
+            <p class="lead">Tailored experiences for different user types with specific functionalities</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="fieldz-role-card">
+            <div class="text-center mb-3">
+              <i class="fas fa-user fa-3x" style="color: var(--fieldz-primary-orange);"></i>
+            </div>
+            <h4 class="text-center mb-3">Regular Users</h4>
+            <p class="mb-2"><strong>Role ID:</strong> 1</p>
+            <ul class="list-unstyled">
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Browse and search sports fields</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Filter by category, price, rating, distance</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>View detailed field information</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Make bookings with date/time selection</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>View booking history</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Manage personal profile</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 mb-4">
+          <div class="fieldz-role-card">
+            <div class="text-center mb-3">
+              <i class="fas fa-store fa-3x" style="color: var(--fieldz-primary-orange);"></i>
+            </div>
+            <h4 class="text-center mb-3">Field Owners</h4>
+            <p class="mb-2"><strong>Role ID:</strong> 3</p>
+            <ul class="list-unstyled">
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>All regular user capabilities</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Add and manage sports fields</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Upload multiple field images</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Set pricing and availability</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>View field statistics</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Track booking history</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 mb-4">
+          <div class="fieldz-role-card">
+            <div class="text-center mb-3">
+              <i class="fas fa-user-shield fa-3x" style="color: var(--fieldz-primary-orange);"></i>
+            </div>
+            <h4 class="text-center mb-3">Administrators</h4>
+            <p class="mb-2"><strong>Role ID:</strong> 2</p>
+            <ul class="list-unstyled">
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>All user management capabilities</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Approve/reject field submissions</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Manage users (ban/unban)</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Access platform statistics</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Monitor pending requests</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Oversee platform operations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features Section -->
+  <section id="features" class="fieldz-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Key Features</h2>
+            <div class="title-underline mx-auto"></div>
+            <p class="lead">Comprehensive functionality designed for optimal user experience</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <div class="fieldz-feature-box">
+            <i class="fas fa-search"></i>
+            <h4>Advanced Search & Discovery</h4>
+            <p>Sophisticated field discovery with animated search bar, category-based filtering, and multiple sorting options including price, rating, and distance-based searches.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="fieldz-feature-box">
+            <i class="fas fa-calendar-check"></i>
+            <h4>Real-time Booking System</h4>
+            <p>Interactive calendar for date selection, real-time time slot availability checking, conflict prevention, and unique booking ID generation with instant confirmations.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="fieldz-feature-box">
+            <i class="fas fa-credit-card"></i>
+            <h4>Payment Integration</h4>
+            <p>Multiple payment method support including Apple Pay, STC Pay, credit/debit cards, and cash options with secure processing and transaction confirmations.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="fieldz-feature-box">
+            <i class="fas fa-map-marked-alt"></i>
+            <h4>Location Services</h4>
+            <p>GPS integration with automatic location detection, distance calculation, Google Maps navigation, and location-based field recommendations.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="fieldz-feature-box">
+            <i class="fas fa-images"></i>
+            <h4>Multi-Image Support</h4>
+            <p>Comprehensive image handling with Firebase Storage integration, multi-image upload, automatic compression, and carousel galleries for field displays.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="fieldz-feature-box">
+            <i class="fas fa-chart-line"></i>
+            <h4>Analytics Dashboard</h4>
+            <p>Advanced analytics for field owners including booking history tracking, revenue monitoring, field performance metrics, and user engagement statistics.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design System Section -->
+  <section id="design" class="fieldz-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Design System</h2>
+            <div class="title-underline mx-auto"></div>
+            <p class="lead">Distinctive orange-based gradient theme creating a warm, inviting visual experience</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <div class="fieldz-architecture-box">
+            <h4 class="mb-3"><i class="fas fa-palette me-2"></i>Color Scheme</h4>
+            <div class="row">
+              <div class="col-6">
+                <div class="text-center mb-3">
+                  <div style="width: 60px; height: 60px; background: rgb(232, 140, 87); border-radius: 10px; margin: 0 auto 10px;"></div>
+                  <small>Primary Orange</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="text-center mb-3">
+                  <div style="width: 60px; height: 60px; background: rgb(221, 149, 99); border-radius: 10px; margin: 0 auto 10px;"></div>
+                  <small>Secondary Orange</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="text-center mb-3">
+                  <div style="width: 60px; height: 60px; background: rgb(243, 219, 171); border-radius: 10px; margin: 0 auto 10px;"></div>
+                  <small>Light Orange</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="text-center mb-3">
+                  <div style="width: 60px; height: 60px; background: rgb(235, 235, 235); border-radius: 10px; margin: 0 auto 10px;"></div>
+                  <small>Background Gray</small>
+                </div>
+              </div>
+            </div>
+            <p class="mt-3">The signature gradient creates visual appeal and establishes brand recognition across all application interfaces.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="fieldz-architecture-box">
+            <h4 class="mb-3"><i class="fas fa-font me-2"></i>Typography & Components</h4>
+            <div class="mb-3">
+              <h5>Primary Font: Poppins</h5>
+              <div class="mb-2">
+                <span class="badge bg-secondary me-2">Regular (400)</span>
+                <span class="badge bg-secondary me-2">Medium (500)</span>
+                <span class="badge bg-secondary me-2">Semibold (600)</span>
+                <span class="badge bg-secondary">Bold (700)</span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <h6>Component Design Principles:</h6>
+              <ul class="list-unstyled">
+                <li><i class="fas fa-check text-success me-2"></i>Rounded corners (10-30px radius)</li>
+                <li><i class="fas fa-check text-success me-2"></i>Consistent shadow effects</li>
+                <li><i class="fas fa-check text-success me-2"></i>Gradient backgrounds</li>
+                <li><i class="fas fa-check text-success me-2"></i>Animated transitions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="fieldz-architecture-box">
+            <h4 class="mb-3"><i class="fas fa-mobile-alt me-2"></i>Responsive Design</h4>
+            <div class="row">
+              <div class="col-md-4">
+                <h6>Screen Adaptation</h6>
+                <ul class="list-unstyled">
+                  <li><i class="fas fa-check text-success me-2"></i>MediaQuery responsive layouts</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Flexible container sizing</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Adaptive padding/margins</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Orientation support</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <h6>Accessibility</h6>
+                <ul class="list-unstyled">
+                  <li><i class="fas fa-check text-success me-2"></i>Semantic widgets</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Proper contrast ratios</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Screen reader support</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Touch optimization</li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <h6>Performance</h6>
+                <ul class="list-unstyled">
+                  <li><i class="fas fa-check text-success me-2"></i>Progressive image loading</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Skeleton screens</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Lazy loading</li>
+                  <li><i class="fas fa-check text-success me-2"></i>Efficient state management</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Gallery Section -->
+  <section id="gallery" class="fieldz-section bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Application Gallery</h2>
+            <div class="title-underline mx-auto"></div>
+            <p class="lead">Complete visual journey through the Fieldz mobile application interface</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- App Screenshots Gallery -->
+      <div class="row mb-4">
+        <div class="col-lg-4 col-md-6 mb-3">
+          <img src="Fieldz/ics-fieldz-1.png" alt="Fieldz App Screen 1" class="fieldz-image">
+        </div>
+        <div class="col-lg-4 col-md-6 mb-3">
+          <img src="Fieldz/ics-fieldz-2.png" alt="Fieldz App Screen 2" class="fieldz-image">
+        </div>
+        <div class="col-lg-4 col-md-6 mb-3">
+          <img src="Fieldz/ics-fieldz-3.png" alt="Fieldz App Screen 3" class="fieldz-image">
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-3">
+          <img src="Fieldz/ics-fieldz-4.png" alt="Fieldz App Screen 4" class="fieldz-image">
+        </div>
+        <div class="col-lg-4 col-md-6 mb-3">
+          <img src="Fieldz/ics-fieldz-5.png" alt="Fieldz App Screen 5" class="fieldz-image">
+        </div>
+        <div class="col-lg-4 col-md-6 mb-3">
+          <img src="Fieldz/ics-fieldz-6.png" alt="Fieldz App Screen 6" class="fieldz-image">
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Conclusion Section -->
+  <section id="conclusion" class="fieldz-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Project Impact</h2>
+            <div class="title-underline mx-auto"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <p class="lead mb-4">
+            Fieldz represents a comprehensive sports field booking platform that successfully integrates modern mobile development
+            practices with real-world business requirements. The application demonstrates sophisticated architecture patterns,
+            robust user management systems, and advanced features including real-time booking, payment processing, and
+            location-based services.
+          </p>
+          
+          <h4 class="mb-3">Project Impact & Outcomes</h4>
+          <p class="mb-3">
+            The Fieldz app serves as a bright, valuable resource that functions as a one-of-a-kind central hub for both
+            individuals seeking sports fields and owners looking to attract renters. With its potential to connect sports
+            enthusiasts and athletes to undiscovered fields in their area, the app inspires more people to engage in the
+            diverse world of sports.
+          </p>
+          <p class="mb-4">
+            The Fieldz app allows users to conveniently find various sports fields through multiple discovery methods and
+            discover nearby sports events. The app also supports field owners by connecting them to their audience with
+            the ease of field management, creating a comprehensive marketplace for sports facility rentals.
+          </p>
+          
+          <div class="fieldz-architecture-box mb-4">
+            <h5 class="mb-3"><i class="fas fa-heart text-danger me-2"></i>Acknowledgments</h5>
+            <p class="mb-2">
+              We extend our sincerest gratitude to our advisor, <strong>Dr. Jameleddine Hassine</strong>,
+              for his invaluable guidance and support throughout our project.
+            </p>
+            <p class="mb-2">
+              We also thank <strong>King Fahd University of Petroleum and Minerals</strong> for providing
+              the necessary resources and suitable environments for this academic project.
+            </p>
+            <p class="mb-0">
+              Our gratitude extends to our colleagues, friends, and families for their unwavering support
+              throughout the development journey.
+            </p>
+          </div>
+          
+          <div class="d-flex flex-wrap gap-3 justify-content-center">
+            <a href="index.html#projects" class="fieldz-btn-primary">
+              <i class="fas fa-arrow-left me-2"></i>Back to Projects
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p>&copy; 2025 Jaffar Alromaih. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  
+  <!-- Custom JS -->
+  <script src="js/custom.js"></script>
+</body>
+</html>
