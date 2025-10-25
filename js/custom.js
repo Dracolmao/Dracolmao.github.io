@@ -271,8 +271,28 @@ function initLoadingPlaceholders() {
             const wrapper = document.createElement('div');
             wrapper.className = 'loading-placeholder';
             
+            // Create animated SVG logo as loading indicator
+            const loadingSvg = document.createElement('img');
+            loadingSvg.src = 'img/New Logo/Jaffar-Logo.svg';
+            loadingSvg.className = 'loading-svg';
+            loadingSvg.alt = 'Loading...';
+            loadingSvg.style.cssText = `
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 60px;
+                height: 60px;
+                z-index: 1;
+                pointer-events: none;
+                animation: pulse 1.5s ease-in-out infinite;
+            `;
+            
             // Insert wrapper before img
             img.parentNode.insertBefore(wrapper, img);
+            
+            // Add loading SVG to wrapper
+            wrapper.appendChild(loadingSvg);
             
             // Move img into wrapper
             wrapper.appendChild(img);
@@ -280,15 +300,33 @@ function initLoadingPlaceholders() {
             // Handle image load
             img.addEventListener('load', function() {
                 wrapper.classList.add('loaded');
+                // Remove the SVG after image loads
+                setTimeout(() => {
+                    if (loadingSvg.parentNode) {
+                        loadingSvg.parentNode.removeChild(loadingSvg);
+                    }
+                }, 300);
             });
             
             img.addEventListener('error', function() {
                 wrapper.classList.add('loaded');
+                // Remove the SVG on error as well
+                setTimeout(() => {
+                    if (loadingSvg.parentNode) {
+                        loadingSvg.parentNode.removeChild(loadingSvg);
+                    }
+                }, 300);
             });
             
             // Handle already loaded images
             if (img.complete && img.naturalHeight !== 0) {
                 wrapper.classList.add('loaded');
+                // Remove the SVG immediately if already loaded
+                setTimeout(() => {
+                    if (loadingSvg.parentNode) {
+                        loadingSvg.parentNode.removeChild(loadingSvg);
+                    }
+                }, 100);
             }
         });
     });

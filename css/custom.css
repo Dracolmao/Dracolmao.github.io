@@ -81,22 +81,6 @@ body {
   overflow: hidden;
 }
 
-.loading-placeholder::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  background-image: url('img/New Logo/Jaffar-Logo.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 1;
-  pointer-events: none;
-}
-
 .loading-placeholder img {
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -106,8 +90,13 @@ body {
   opacity: 1;
 }
 
-.loading-placeholder.loaded::before {
-  display: none;
+.loading-placeholder .loading-svg {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.loading-placeholder.loaded .loading-svg {
+  opacity: 0;
 }
 
 /* Fix hover effects for images wrapped in loading placeholders */
@@ -135,17 +124,17 @@ body {
 }
 
 /* Specific loading placeholders for certificate images */
-.certificate-preview .loading-placeholder::before {
+.certificate-preview .loading-placeholder .loading-svg {
   width: 40px;
   height: 40px;
 }
 
-.resume-preview .loading-placeholder::before {
+.resume-preview .loading-placeholder .loading-svg {
   width: 50px;
   height: 50px;
 }
 
-.profile-img-enhanced.loading-placeholder::before {
+.profile-img-enhanced.loading-placeholder .loading-svg {
   width: 80px;
   height: 80px;
 }
@@ -160,7 +149,7 @@ body {
   }
 }
 
-.loading-placeholder::before {
+.loading-placeholder .loading-svg {
   animation: pulse 1.5s ease-in-out infinite;
 }
 
