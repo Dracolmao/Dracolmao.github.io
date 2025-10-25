@@ -78,7 +78,7 @@ body {
 .loading-placeholder {
   position: relative;
   display: inline-block;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .loading-placeholder img {
@@ -335,6 +335,26 @@ body {
               0 0 0 1px rgba(255, 255, 255, 0.1),
               inset 0 0 20px rgba(255, 255, 255, 0.1);
   margin: 0 auto;
+}
+
+/* Special handling for profile image loading placeholder to preserve shadow */
+.loading-placeholder.profile-img-enhanced {
+  overflow: visible;
+  display: inline-block;
+}
+
+.loading-placeholder.profile-img-enhanced img {
+  border-radius: 50%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
+              0 0 0 1px rgba(255, 255, 255, 0.1),
+              inset 0 0 20px rgba(255, 255, 255, 0.1);
+  border: 8px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Ensure the loading SVG doesn't interfere with the circular profile image */
+.loading-placeholder.profile-img-enhanced .loading-svg {
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .btn-hero-primary {
