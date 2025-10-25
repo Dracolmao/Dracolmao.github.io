@@ -34,21 +34,21 @@
       --fieldz-gradient-end: rgba(234, 242, 214, 0.4);
     }
     
-    /* Override global custom.css styles for Fieldz page */
+    /* Fieldz-specific container styling */
     .fieldz-project .container {
-      max-width: 1140px !important;
-      width: auto !important;
-      padding-left: 15px !important;
-      padding-right: 15px !important;
+      max-width: 1140px;
+      width: auto;
+      padding-left: 15px;
+      padding-right: 15px;
     }
     
     .fieldz-project section {
-      padding: 40px 0 !important;
+      padding: 40px 0;
     }
     
-    /* Fix hero section specific padding */
+    /* Hero section specific padding */
     .fieldz-project .fieldz-hero {
-      padding: 120px 0 80px !important;
+      padding: 120px 0 80px;
     }
     
     /* Ensure proper spacing and prevent overlaps */
@@ -123,7 +123,7 @@
     .fieldz-project .fieldz-feature-box,
     .fieldz-project .fieldz-role-card,
     .fieldz-project .fieldz-architecture-box {
-      color: #2c1810 !important;
+      color: #2c1810;
     }
     
     .fieldz-project .fieldz-details-card h5,
@@ -131,7 +131,7 @@
     .fieldz-project .fieldz-feature-box h5,
     .fieldz-project .fieldz-role-card h5,
     .fieldz-project .fieldz-architecture-box h5 {
-      color: #1a0e08 !important;
+      color: #1a0e08;
       font-weight: 600;
     }
     
@@ -140,7 +140,7 @@
     .fieldz-project .fieldz-feature-box h6,
     .fieldz-project .fieldz-role-card h6,
     .fieldz-project .fieldz-architecture-box h6 {
-      color: #2c1810 !important;
+      color: #2c1810;
       font-weight: 500;
     }
     
@@ -149,16 +149,20 @@
     .fieldz-project .fieldz-feature-box .text-muted,
     .fieldz-project .fieldz-role-card .text-muted,
     .fieldz-project .fieldz-architecture-box .text-muted {
-      color: #5a3a2a !important;
+      color: #5a3a2a;
     }
     
-    /* Ensure icons have proper contrast - use dark colors instead of orange */
+    /* Ensure icons have proper contrast - use theme colors for consistency */
     .fieldz-project .fieldz-details-card i,
     .fieldz-project .fieldz-achievements-card i,
-    .fieldz-project .fieldz-feature-box i,
-    .fieldz-project .fieldz-role-card i,
     .fieldz-project .fieldz-architecture-box i {
-      color: #2c1810 !important;
+      color: #2c1810;
+    }
+    
+    /* Feature box and role card icons should use theme orange */
+    .fieldz-project .fieldz-feature-box i,
+    .fieldz-project .fieldz-role-card i {
+      color: var(--fieldz-primary-orange);
     }
     
     /* Ensure badges have proper contrast */
@@ -167,12 +171,11 @@
     .fieldz-project .fieldz-feature-box .badge,
     .fieldz-project .fieldz-role-card .badge,
     .fieldz-project .fieldz-architecture-box .badge {
-      background-color: rgba(44, 24, 16, 0.8) !important;
-      color: #ffffff !important;
+      background-color: rgba(44, 24, 16, 0.8);
+      color: #ffffff;
     }
     
     .fieldz-hero {
-      padding: 120px 0 80px;
       background: linear-gradient(135deg,
         var(--fieldz-gradient-start) 0%,
         var(--fieldz-gradient-mid) 35%,
@@ -194,14 +197,6 @@
       background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
                   radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
       pointer-events: none;
-    }
-    
-    .fieldz-hero .container {
-      position: relative;
-      z-index: 2;
-      max-width: 100%;
-      padding-left: 1rem;
-      padding-right: 1rem;
     }
     
     .fieldz-section {
@@ -453,34 +448,6 @@
       margin-bottom: 0;
     }
     
-    /* Remove problematic equal-height implementation */
-    .row.equal-height {
-      display: block;
-    }
-    
-    .row.equal-height > [class*="col-"] {
-      display: block;
-    }
-    
-    /* Prevent overflow issues */
-    .fieldz-section {
-      overflow: visible;
-    }
-    
-    /* Ensure containers don't overflow */
-    .container {
-      max-width: 100%;
-      overflow-x: visible;
-    }
-    
-    /* Fix card overflow */
-    .fieldz-feature-box,
-    .fieldz-role-card,
-    .fieldz-architecture-box,
-    .fieldz-gallery-item {
-      min-height: auto;
-      overflow: visible;
-    }
     
     /* Responsive adjustments */
     @media (max-width: 768px) {
@@ -495,7 +462,6 @@
       .fieldz-feature-box {
         padding: 20px;
         margin-bottom: 20px;
-        min-height: 250px;
       }
       
       .fieldz-stats-box {
@@ -510,13 +476,11 @@
       .fieldz-role-card {
         padding: 20px;
         margin-bottom: 20px;
-        min-height: 350px;
       }
       
       .fieldz-architecture-box {
         padding: 20px;
         margin-bottom: 20px;
-        min-height: 180px;
       }
       
       .fieldz-card {
@@ -552,7 +516,6 @@
       .fieldz-feature-box {
         padding: 15px;
         margin-bottom: 15px;
-        min-height: 220px;
       }
       
       .fieldz-stats-box {
@@ -567,13 +530,11 @@
       .fieldz-role-card {
         padding: 15px;
         margin-bottom: 15px;
-        min-height: 320px;
       }
       
       .fieldz-architecture-box {
         padding: 15px;
         margin-bottom: 15px;
-        min-height: 160px;
       }
       
       .fieldz-card {
@@ -602,9 +563,6 @@
         margin-bottom: 1rem;
       }
       
-      .fieldz-gallery-item {
-        min-height: 250px;
-      }
     }
     
     /* Project Details Card Styling - Standardized */
@@ -688,7 +646,7 @@
     }
     
     .achievement-icon {
-      color: #28a745;
+      color: var(--fieldz-primary-orange);
       font-size: 1.1rem;
       margin-right: 15px;
       flex-shrink: 0;
@@ -976,10 +934,13 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-8">
-          <h1 class="display-3 fw-bold mb-4">Fieldz</h1>
-          <h2 class="h2 mb-4">Sports Field Booking Platform</h2>
+          <div class="text-center mb-4">
+            <img src="Fieldz/fieldz_Logo.png" alt="Fieldz Logo" style="height: 120px; width: auto; object-fit: contain;">
+          </div>
+          <h1 class="display-3 fw-bold text-center mb-4">Fieldz</h1>
+          <h2 class="h2 mb-4 text-center">Sports Field Booking Platform</h2>
           <p class="lead mb-4">Simplest way to book a sports field - A comprehensive mobile marketplace connecting sports facility owners with users seeking to book sports fields for various activities.</p>
-          <div class="d-flex flex-wrap gap-3 justify-content-center">
+          <div class="d-flex flex-wrap gap-3 justify-content-center mb-4">
             <a href="#overview" class="fieldz-hero-btn fieldz-hero-btn-primary">
               <i class="fas fa-info-circle me-2"></i>Learn More
             </a>
@@ -1349,6 +1310,24 @@
         <div class="col-lg-4 mb-4">
           <div class="fieldz-role-card">
             <div class="text-center mb-3">
+              <i class="fas fa-user-shield fa-3x" style="color: var(--fieldz-primary-orange);"></i>
+            </div>
+            <h4 class="text-center mb-3">Administrators</h4>
+            <p class="mb-2"><strong>Role ID:</strong> 2</p>
+            <ul class="list-unstyled">
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>All user management capabilities</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Approve/reject field submissions</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Manage users (ban/unban)</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Access platform statistics</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Monitor pending requests</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Oversee platform operations</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+          <div class="fieldz-role-card">
+            <div class="text-center mb-3">
               <i class="fas fa-store fa-3x" style="color: var(--fieldz-primary-orange);"></i>
             </div>
             <h4 class="text-center mb-3">Field Owners</h4>
@@ -1364,23 +1343,6 @@
           </div>
         </div>
         
-        <div class="col-lg-4 mb-4">
-          <div class="fieldz-role-card">
-            <div class="text-center mb-3">
-              <i class="fas fa-user-shield fa-3x" style="color: var(--fieldz-primary-orange);"></i>
-            </div>
-            <h4 class="text-center mb-3">Administrators</h4>
-            <p class="mb-2"><strong>Role ID:</strong> 2</p>
-            <ul class="list-unstyled">
-              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>All user management capabilities</li>
-              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Approve/reject field submissions</li>
-              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Manage users (ban/unban)</li>
-              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Access platform statistics</li>
-              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Monitor pending requests</li>
-              <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Oversee platform operations</li>
-            </ul>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -1503,10 +1465,10 @@
             <div class="mb-3">
               <h5>Primary Font: Poppins</h5>
               <div class="mb-2">
-                <span class="badge bg-secondary me-2">Regular (400)</span>
-                <span class="badge bg-secondary me-2">Medium (500)</span>
-                <span class="badge bg-secondary me-2">Semibold (600)</span>
-                <span class="badge bg-secondary">Bold (700)</span>
+                <span class="fieldz-tech-badge me-2">Regular (400)</span>
+                <span class="fieldz-tech-badge me-2">Medium (500)</span>
+                <span class="fieldz-tech-badge me-2">Semibold (600)</span>
+                <span class="fieldz-tech-badge">Bold (700)</span>
               </div>
             </div>
             <div class="mb-3">
