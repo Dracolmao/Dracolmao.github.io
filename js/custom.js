@@ -255,7 +255,8 @@ function initLoadingPlaceholders() {
         '.certificate-thumbnail',
         '.profile-img-enhanced',
         '.resume-preview-img',
-        '.fieldz-image'
+        '.fieldz-image',
+        '.certificate-img'
         // Removed '.certificate-org-logo' to preserve hover effects
     ];
     
