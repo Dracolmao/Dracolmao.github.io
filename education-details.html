@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Education Details - Jaffar Alromaih's Academic Journey with Software Engineering and Computer Networks Concentration">
+  <meta name="keywords" content="Education, KFUPM, Software Engineering, Computer Networks, Courses, GPA, Academic Achievement">
+  <meta name="author" content="Jaffar Alromaih">
+  <title>Education Details - Jaffar Alromaih</title>
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="img/KFUPM_LOGO.png" as="image">
+  <link rel="preload" href="css/custom.css" as="style">
+  
+  <!-- Favicon with SVG support and PNG fallback -->
+  <link rel="icon" type="image/svg+xml" href="img/New Logo/Jaffar-Logo.svg">
+  <link rel="icon" type="image/png" href="img/New Logo/Jaffar_Logo.png">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  <style>
+    /* Enhanced Education Page Styles */
+    .education-hero {
+      padding: 80px 0 40px;
+      background: linear-gradient(135deg, rgba(0, 113, 196, 0.9), rgba(23, 162, 184, 0.9));
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Logo styling */
+    .logo-circle {
+      width: 120px;
+      height: 120px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      margin: 0 10px;
+    }
+    
+    .logo-circle img {
+      max-width: 100px;
+      max-height: 100px;
+      object-fit: contain;
+    }
+    
+    .ics-logo {
+      width: 100px;
+      height: 100px;
+      background: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      margin: 0 10px;
+    }
+    
+    .ics-logo img {
+      max-width: 84px;
+      max-height: 84px;
+      object-fit: contain;
+      border-radius: 5px;
+    }
+    
+    /* Add margin between hero content and navbar */
+    .hero-content {
+      margin-top: 20px;
+    }
+    
+    .education-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .gpa-showcase {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .gpa-item {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 1.5rem;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+      min-width: 200px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .gpa-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .gpa-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+    
+    .gpa-label {
+      font-size: 1rem;
+      opacity: 0.9;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    
+    .section-navigation {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      margin: 1.5rem auto;
+      display: inline-flex;
+      flex-wrap: nowrap;
+      gap: 0.5rem;
+      max-width: fit-content;
+    }
+    
+    .section-navigation .nav-link {
+      color: white !important;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .section-navigation .nav-link:hover,
+    .section-navigation .nav-link.active {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Responsive navigation - vertical on small screens */
+    @media (max-width: 768px) {
+      .section-navigation {
+        flex-direction: column;
+        width: 200px;
+        padding: 1rem;
+      }
+      
+      .section-navigation .nav-link {
+        text-align: center;
+        margin: 0.25rem 0;
+      }
+    }
+    
+    .course-section {
+      padding: 3rem 0;
+      background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+    }
+    
+    .course-section:nth-child(even) {
+      background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .section-title h2 {
+      color: var(--primary-text);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+    }
+    
+    .section-title .title-underline {
+      height: 4px;
+      width: 80px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      border-radius: 2px;
+      margin: 0 auto;
+    }
+    
+    .course-card {
+      background: white;
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 15px rgba(10, 36, 99, 0.1);
+      border: 1px solid rgba(33, 150, 243, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .course-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      transition: width 0.3s ease;
+    }
+    
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(10, 36, 99, 0.15);
+      border-color: rgba(33, 150, 243, 0.3);
+    }
+    
+    .course-card:hover::before {
+      width: 8px;
+    }
+    
+    .course-header {
+      margin-bottom: 1rem;
+    }
+    
+    .course-code {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 0.25rem;
+    }
+    
+    .course-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--primary-text);
+      margin-bottom: 0.5rem;
+    }
+    
+    
+    .course-description {
+      color: var(--secondary-text);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    
+    .course-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .skill-tag {
+      background: rgba(23, 162, 184, 0.1);
+      color: var(--cyan);
+      padding: 0.25rem 0.75rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid rgba(23, 162, 184, 0.2);
+    }
+    
+    .concentration-overview {
+      background: linear-gradient(135deg, rgba(23, 162, 184, 0.1), rgba(0, 123, 255, 0.1));
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(23, 162, 184, 0.2);
+    }
+    
+    .vision-alignment {
+      background: linear-gradient(135deg, rgba(40, 167, 69, 0.1), rgba(23, 162, 184, 0.1));
+      border-radius: 15px;
+      padding: 2rem;
+      margin-top: 3rem;
+      border: 1px solid rgba(40, 167, 69, 0.2);
+    }
+    
+    .achievements-section {
+      background: linear-gradient(135deg, #fff9e6 0%, #ffffff 100%);
+      padding: 3rem 0;
+    }
+    
+    .honor-card {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(10, 36, 99, 0.1);
+      border: 1px solid rgba(255, 193, 7, 0.2);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .honor-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(10, 36, 99, 0.15);
+    }
+    
+    .honor-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffc107, #ff9800);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .skills-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .skill-category {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(10, 36, 99, 0.1);
+      border: 1px solid rgba(33, 150, 243, 0.1);
+    }
+    
+    .skill-category h4 {
+      color: var(--blue);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+    
+    .skill-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .skill-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+    }
+    
+    .skill-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .skill-list li i {
+      color: var(--cyan);
+      margin-right: 0.75rem;
+      width: 20px;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .gpa-showcase {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .gpa-item {
+        width: 100%;
+        max-width: 300px;
+      }
+      
+      .section-navigation {
+        width: 100%;
+        overflow-x: auto;
+        justify-content: center;
+      }
+      
+    }
+    
+    /* Smooth scrolling removed to avoid conflicts with JavaScript */
+    
+    /* Loading animations */
+    .course-card {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    .course-card:nth-child(1) { animation-delay: 0.1s; }
+    .course-card:nth-child(2) { animation-delay: 0.2s; }
+    .course-card:nth-child(3) { animation-delay: 0.3s; }
+    .course-card:nth-child(4) { animation-delay: 0.4s; }
+    
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Program Overview Styles */
+    .program-overview {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(10, 36, 99, 0.1);
+      border: 1px solid rgba(33, 150, 243, 0.1);
+    }
+    
+    .program-overview h4 {
+      color: var(--blue);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .program-overview h4:first-child {
+      margin-top: 0;
+    }
+    
+    .program-overview ul {
+      padding-left: 1.5rem;
+    }
+    
+    .program-overview li {
+      margin-bottom: 0.5rem;
+      color: var(--secondary-text);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="img/New Logo/Jaffar-Logo.svg" alt="Jaffar Alromaih Logo" id="logo" class="me-2">
+          <span class="brand-text">Jaffar Alromaih</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#home">
+                <i class="fas fa-home me-1"></i>Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html#education-skills">
+                <i class="fas fa-graduation-cap me-1"></i>Education & Skills
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#experience">
+                <i class="fas fa-briefcase me-1"></i>Work Experience
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#projects">
+                <i class="fas fa-code me-1"></i>Projects
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#resume">
+                <i class="fas fa-file-alt me-1"></i>CV / Resume
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#contact">
+                <i class="fas fa-envelope me-1"></i>Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Education Hero Section -->
+  <section class="education-hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="mb-4 d-flex justify-content-center align-items-center gap-4">
+          <div class="logo-circle">
+            <img src="img/KFUPM_LOGO.png" alt="KFUPM Logo">
+          </div>
+          <div class="ics-logo">
+            <img src="Degree details/ICS department LOGO.jpg" alt="ICS Department Logo">
+          </div>
+        </div>
+        <h1 class="display-4" style="font-weight: 700; margin-bottom: 1.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">King Fahd University of Petroleum & Minerals</h1>
+        <p class="lead" style="font-size: 1.4rem; font-weight: 500; margin-bottom: 0.8rem;">Bachelor of Science in Software Engineering</p>
+        <p class="lead" style="font-size: 1.4rem; font-weight: 500; margin-bottom: 1.5rem;">Concentration in Computer Networks</p>
+        
+        <!-- GPA Showcase -->
+        <div class="gpa-showcase">
+          <div class="gpa-item">
+            <div class="gpa-label">Overall GPA</div>
+            <div class="gpa-value">3.58/4.00</div>
+          </div>
+          <div class="gpa-item">
+            <div class="gpa-label">Major GPA</div>
+            <div class="gpa-value">3.62/4.00</div>
+          </div>
+          <div class="gpa-item">
+            <div class="gpa-label">Concentration GPA</div>
+            <div class="gpa-value">3.81/4.00</div>
+          </div>
+        </div>
+        
+        <!-- Section Navigation -->
+        <nav class="section-navigation">
+          <a href="#software-engineering" class="nav-link">Software Engineering</a>
+          <a href="#computer-science" class="nav-link">Computer Science</a>
+          <a href="#concentration" class="nav-link">CX computer networks</a>
+          <a href="#achievements" class="nav-link">Achievements</a>
+          <a href="#skills" class="nav-link">Skills</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Description Section -->
+  <section id="program-description" class="course-section">
+    <div class="container">
+      <div class="section-title">
+        <h2><i class="fas fa-info-circle me-2"></i>Program Overview</h2>
+        <div class="title-underline"></div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="program-overview">
+            <div class="row">
+              <div class="col-md-6">
+                <h4><i class="fas fa-bullseye me-2"></i>Program Mission</h4>
+                <p>
+                  To bring forth competent Software Engineers with a strong understanding of computer science
+                  bodies of knowledge and theories, who can apply sound engineering principles and methods to
+                  the cost-effective creation, development, operation, and maintenance of high-quality software
+                  and are prepared for lifelong learning.
+                </p>
+                
+                <h4><i class="fas fa-eye me-2"></i>Department Vision</h4>
+                <p>
+                  The vision of the ICS department is to be a regional leader that is recognized worldwide in
+                  education, research and professional development in the areas of Computer Science and
+                  Software Engineering.
+                </p>
+              </div>
+              
+              <div class="col-md-6">
+                <h4><i class="fas fa-graduation-cap me-2"></i>Program Goal</h4>
+                <p>
+                  Our goal has been, and continues to be, a high quality degree program in Software Engineering
+                  that prepares students for lifelong learning as they undertake professional careers in computing.
+                  The program prepares students to work as requirements engineer, software architect, software
+                  design engineer, software quality engineer, software developer, software test engineer, or
+                  software engineering project manager.
+                </p>
+                
+                <h4><i class="fas fa-certificate me-2"></i>Accreditation & Standards</h4>
+                <p>
+                  The current program was revised and approved in April 2008. The program is in full compliance
+                  with IEEE/ACM Software Engineering SE2004 guidelines and meets the Engineering Accreditation
+                  Criteria (EAC).
+                </p>
+              </div>
+            </div>
+            
+            <div class="row mt-4">
+              <div class="col-md-12">
+                <h4><i class="fas fa-tasks me-2"></i>Program Structure</h4>
+                <p>
+                  The Bachelor of Science in Software Engineering requires a total of 132 semester credit-hours,
+                  including:
+                </p>
+                <ul>
+                  <li><strong>General Education Requirements:</strong> 52 credits (Basic Sciences, Mathematics, Islamic & Arabic Studies, English, Physical Education)</li>
+                  <li><strong>Core Requirements:</strong> 65 credits (SWE, ICS, and COE courses)</li>
+                  <li><strong>Electives:</strong> 15 credits (SWE/ICS electives and Free electives)</li>
+                  <li><strong>Summer Training:</strong> Pass/Fail (No credits, 8 weeks practical experience)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Software Engineering Core Section -->
+  <section id="software-engineering" class="course-section">
+    <div class="container">
+      <div class="section-title">
+        <h2><i class="fas fa-code me-2"></i>Software Engineering Core</h2>
+        <div class="title-underline"></div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="course-card">
+            <div class="course-header">
+              <div>
+                <div class="course-code">SWE 205</div>
+                <div class="course-title">Introduction to Software Engineering</div>
+              </div>
+            </div>
+            <div class="course-description">
+              Introduction to software engineering and software processes, construction techniques and 
+              principles, concepts of programming languages, analysis and design modes, ethical and 
+              professional responsibilities.
+            </div>
+            <div class="course-skills">
+              <span class="skill-tag">Software Processes</span>
+              <span class="skill-tag">Programming Concepts</span>
+              <span class="skill-tag">Professional Ethics</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="course-card">
+            <div class="course-header">
+              <div>
+                <div class="course-code">SWE 215</div>
+                <div class="course-title">Software Requirements Engineering</div>
+              </div>
+            </div>
+            <div class="course-description">
+              Requirements engineering process, methods and tools for eliciting, organizing and documenting 
+              software requirements, analysis and validation techniques, requirements documentation 
+              standards, traceability and requirements management.
+            </div>
+            <div class="course-skills">
+              <span class="skill-tag">Requirements Analysis</span>
+              <span class="skill-tag">Use Cases</span>
+              <span class="skill-tag">Documentation</span>
+              <span class="skill-tag">Traceability</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="course-card">
+            <div class="course-header">
+              <div>
+                <div class="course-code">SWE 312</div>
+                <div class="course-title">User-Interface Design</div>
+              </div>
+            </div>
+            <div class="course-description">
+              Study of theoretical and practical issues in human-computer interfaces, user interface 
+              design process, usability engineering, development and evaluating interface designs, 
+              visual prototyping and user manuals.
+            </div>
+            <div class="course-skills">
+              <span class="skill-tag">UI/UX Design</span>
+              <span class="skill-tag">Usability Testing</span>
+              <span class="skill-tag">Prototyping</span>
+              <span class="skill-tag">HCI</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="course-card">
+            <div class="course-header">
+              <div>
+                <div class="course-code">SWE 316</div>
+                <div class="course-title">Software Design and Construction</div>
+              </div>
+            </div>
+            <div class="course-description">
+              Study of design concepts and notations, architecture, middleware architectures, design 
+              patterns, frameworks and components, designing for qualities such as performance, 
+              security, reusability, and reliability.
+            </div>
+            <div class="course-skills">
+              <span class="skill-tag">Software Architecture</span>
+              <span class="skill-tag">Design Patterns</span>
+              <span class="skill-tag">Frameworks</span>
+              <span class="skill-tag">Quality Attributes</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="course-card">
+            <div class="course-header">
+              <div>
+                <div class="course-code">SWE 326</div>
+                <div class="course-title">Software Testing</div>
+              </div>
+            </div>
+            <div class="course-description">
+              Software quality concepts and metrics, quality assurance planning, validation and verification, 
+              reviews and inspections, mechanisms for validating software systems, techniques for 
+              generating and validating test data.
+            </div>
+            <div class="course-skills">
+              <span class="skill-tag">Testing Methodologies</span>
+              <span class="skill-tag">Quality Assurance</span>
+              <span class="skill-tag">Test Planning</span>
+              <span class="skill-tag">Validation</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="course-card">
+            <div class="course-header">
+              <div>
+                <div class="course-code">SWE 363</div>
+                <div class="course-title">Web Engineering & Development</div>
+              </div>
+            </div>
+            <div class="course-description">
+              Web engineering fundamentals, internet basics for web applications, technologies and tools 
+              for developing web applications: markup languages, styling, data description and 
+              transformation, client and server side programming, web services.
+            </div>
+            <div class="course-skills">
+              <span class="skill-tag">Web Development</span>
+              <span class="skill-tag">HTML/CSS/JS</span>
+              <span class="skill-tag">Server-side Programming</span>
+              <span class="skill-tag">Web Services</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="course-card">
+            <div class="course-header">
+              <div>
+                <div class="course-code">SWE 387</div>
+                <div class="course-title">Software Project Management</div>
+              </div>
+            </div>
+            <div class="course-description">
+              Project management concepts, tools and techniques: integration management and project 
+              planning, scope management, scheduling, budget control, human resource management, 
+              communication management, risk analysis and management.
+            </div>
+            <div class="course-skills">
+              <span class="skill-tag">Project Planning</span>
+              <span class="skill-tag">Risk Management</span>
+              <span class="skill-tag">Team Management</span>
+              <span class="skill-tag">Budget Control</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="course-card">
+            <div class="course-header">
+              <div>
+                <div class="course-code">SWE 417</div>
+                <div class="course-title">Software Engineering Project I</div>
+              </div>
+            </div>
+            <div class="course-description">
+              First part of senior-year capstone project. Student teams develop project plan, software 
+              requirement specification and software design document for a real-world software solution.
+            </div>
+            <div class="course-skills">
+              <span class="skill-tag">Capstone Project</span>
+              <span class="skill-tag">Requirements Specification</span>
+              <span class="skill-tag">Software Design</span>
+              <span class="skill-tag">Team Collaboration</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="course-card">
+            <div class="course-header">
+              <div>
+                <div class="course-code">SWE 418</div>
+                <div class="course-title">Software Engineering Project II</div>
+              </div>
+            </div>
+            <div class="course-description">
+              Second part of senior-year capstone project. Student teams implement the design, test 
+              their code, and evaluate their final product, completing the software development lifecycle.
+            </div>
+            <div class="course-skills">
+              <span class="skill-tag">Software Implementation</span>
+              <span class="skill-tag">Testing & Evaluation</span>
+              <span class="skill-tag">Product Delivery</span>
+              <span class="skill-tag">Project Completion</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Computer Science Fundamentals Section -->
+  <section id="computer-science" class="course-section">
+    <div class="container">
+      <div class="section-title">
+        <h2><i class="fas fa-laptop-code me-2"></i>Computer Science Fundamentals</h2>
+        <div class="title-underline"></div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="course-card">
+            <div class="course-header">
+              <div>
+                <div class="course-code">ICS 102</div>
+                <div class="course-title">Introduction to Computing I</div>
+              </div>
+            </div>
+            <div class="course-description">
+              Overview of computers and computing, introduction to object-oriented programming, 
+              basic data types and operators, logical expressions and control structures, classes 
+              and methods, arrays and strings.
+            </div>
+            <div class="course-skills">
+              <span class="skill-tag">Programming Fundamentals</span>
+              <span class="skill-tag">Object-Oriented</span>
+              <span class="skill-tag">Data Types</span>
+              <span class="skill-tag">Control Structures</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="course-card">
+            <div class="course-header">
+              <div>
+                <div class="course-code">ICS 202</div>
+                <div class="course-title">Data Structures</div>
+              </div>
+            </div>
+            <div class="course-description">
+              Review of object-oriented concepts, introduction to design patterns, basic algorithms 
+              analysis, fundamental data structures, recursion, implementation strategies for trees 
+              and graphs, hash tables, applications of data structures.
+            </div>
+            <div class="course-skills">
+              <span class="skill-tag">Data Structures</span>
+              <span class="skill-tag">Algorithms</span>
+              <span class="skill-tag">Trees & Graphs</span>
+              <span class="skill-tag">Hash Tables</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="course-card">
+            <div class="course-header">
+              <div>
+                <div class="course-code">ICS 324</div>
+                <div class="course-title">Database Systems</div>
+              </div>
+            </div>
+            <div class="course-description">
+              Basic database concepts, conceptual data modeling, relational data model, relational 
+              theory and languages, database design, SQL, introduction to query processing and 
+              optimization, and introduction to concurrency and recovery.
+            </div>
+            <div class="course-skills">
+              <span class="skill-tag">Database Design</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Relational Theory</span>
+              <span class="skill-tag">Query Optimization</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="course-card">
+            <div class="course-header">
+              <div>
+                <div class="course-code">ICS 343</div>
+                <div class="course-title">Fundamentals of Computer Networks</div>
+              </div>
+            </div>
+            <div class="course-description">
+              Introduction to computer networks and layered architectures, TCP/IP and ISO models, 
+              application layer protocols, transport layer (TCP/UDP), network layer (routing), 
+              data link layer, and physical layer principles.
+            </div>
+            <div class="course-skills">
+              <span class="skill-tag">Network Layers</span>
+              <span class="skill-tag">TCP/IP</span>
+              <span class="skill-tag">Routing</span>
+              <span class="skill-tag">Network Protocols</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="course-card">
+            <div class="course-header">
+              <div>
+                <div class="course-code">ICS 353</div>
+                <div class="course-title">Design and Analysis of Algorithms</div>
+              </div>
+            </div>
+            <div class="course-description">
+              Algorithms and problem solving, basic algorithmic analysis, advanced data structures, 
+              algorithmic strategies and analysis of fundamental computing algorithms, basic 
+              computability, complexity classes P and NP.
+            </div>
+            <div class="course-skills">
+              <span class="skill-tag">Algorithm Analysis</span>
+              <span class="skill-tag">Complexity Theory</span>
+              <span class="skill-tag">Problem Solving</span>
+              <span class="skill-tag">NP-Completeness</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="course-card">
+            <div class="course-header">
+              <div>
+                <div class="course-code">ICS 431</div>
+                <div class="course-title">Operating Systems</div>
+              </div>
+            </div>
+            <div class="course-description">
+              Fundamentals of operating systems design and implementation, process management, 
+              threads, CPU scheduling, process synchronization, memory management and virtual 
+              memory, file systems, I/O systems, security and protection.
+            </div>
+            <div class="course-skills">
+              <span class="skill-tag">Process Management</span>
+              <span class="skill-tag">Memory Management</span>
+              <span class="skill-tag">File Systems</span>
+              <span class="skill-tag">System Security</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Computer Networks Concentration Section -->
+  <section id="concentration" class="course-section">
+    <div class="container">
+      <div class="section-title">
+        <h2><i class="fas fa-network-wired me-2"></i>CX Computer Networks</h2>
+        <div class="title-underline"></div>
+      </div>
+      
+      <div class="concentration-overview">
+        <h3 class="mb-3">Concentration Overview</h3>
+        <p class="lead">
+          The Computer Networks concentration is designed to introduce students to wired/wireless computer networks,
+          design aspects of computer networks, network management, and security, and internet and cloud engineering.
+        </p>
+        
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <h5><i class="fas fa-bullseye me-2"></i>Concentration Objectives</h5>
+            <ul>
+              <li>Equip students with knowledge and skills to design, manage and secure computer networks</li>
+              <li>Equip students with the ability to utilize tools and technologies in computer networks</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5><i class="fas fa-chart-line me-2"></i>Vision 2030 Alignment</h5>
+            <p>
+              This area of concentration contributes directly to the diversification of the local economy.
+              It aids the "National Industrial Development and Logistics Program" of Vision 2030 by developing
+              local talents and expertise in key technological areas of computer networks.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="course-card">
+            <div class="course-header">
+              <div>
+                <div class="course-code">COE 444</div>
+                <div class="course-title">Network Design</div>
+              </div>
+            </div>
+            <div class="course-description">
+              Introduction to types of computer networks: LANs, VLANs, and WANs. STP and PVST protocols,
+              IPv4 and IPv6 subnetting and routing. Network development life cycle, network analysis and
+              design methodology, datacenter design and implementation.
+            </div>
+            <div class="course-skills">
+              <span class="skill-tag">Network Design</span>
+              <span class="skill-tag">STP/PVST</span>
+              <span class="skill-tag">IPv4/IPv6</span>
+              <span class="skill-tag">Subnetting</span>
+              <span class="skill-tag">Packet Tracer</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="course-card">
+            <div class="course-header">
+              <div>
+                <div class="course-code">COE 446</div>
+                <div class="course-title">Mobile Computing</div>
+              </div>
+            </div>
+            <div class="course-description">
+              Introduction to mobile computing with wireless randomly moving devices. Studying exciting
+              infrastructure/infrastructure-less wireless protocols to design computer networks.
+              Quality of Service (QoS) issues and performance evaluation of various wireless protocols.
+            </div>
+            <div class="course-skills">
+              <span class="skill-tag">Mobile Networks</span>
+              <span class="skill-tag">Wireless Protocols</span>
+              <span class="skill-tag">QoS</span>
+              <span class="skill-tag">Performance Evaluation</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="course-card">
+            <div class="course-header">
+              <div>
+                <div class="course-code">COE 453</div>
+                <div class="course-title">Cloud and Edge Computing</div>
+              </div>
+            </div>
+            <div class="course-description">
+              Internet and web protocols, web development fundamentals, web services and RESTful APIs.
+              Introduction to utility computing, cloud service-oriented architecture, serverless computing,
+              virtualization and containerization (Docker and Kubernetes).
+            </div>
+            <div class="course-skills">
+              <span class="skill-tag">Cloud Computing</span>
+              <span class="skill-tag">Edge Computing</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Kubernetes</span>
+              <span class="skill-tag">RESTful APIs</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="course-card">
+            <div class="course-header">
+              <div>
+                <div class="course-code">ICS 445</div>
+                <div class="course-title">Network Management and Security</div>
+              </div>
+            </div>
+            <div class="course-description">
+              Network management standards, models, and protocols. Security of LANs, wireless LANs,
+              and cellular networks. Authentication, authorization, and access controls. Network protection
+              tools: Firewalls, Intrusion Detection and Prevention Systems, hands-on with Kali Linux.
+            </div>
+            <div class="course-skills">
+              <span class="skill-tag">Network Security</span>
+              <span class="skill-tag">Firewalls</span>
+              <span class="skill-tag">IDS/IPS</span>
+              <span class="skill-tag">Kali Linux</span>
+              <span class="skill-tag">Authentication</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Academic Achievements Section -->
+  <section id="achievements" class="achievements-section">
+    <div class="container">
+      <div class="section-title">
+        <h2><i class="fas fa-trophy me-2"></i>Academic Achievements</h2>
+        <div class="title-underline"></div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="honor-card">
+            <div class="honor-icon">
+              <i class="fas fa-medal"></i>
+            </div>
+            <h5>Second Honor Distinction</h5>
+            <p class="text-muted">Bachelor Degree Graduation</p>
+            <p class="mb-0">Overall GPA: 3.58/4.00</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="honor-card">
+            <div class="honor-icon">
+              <i class="fas fa-award"></i>
+            </div>
+            <h5>Excellence in Concentration</h5>
+            <p class="text-muted">Computer Networks</p>
+            <p class="mb-0">Concentration GPA: 3.81/4.00</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="honor-card">
+            <div class="honor-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <h5>Major Excellence</h5>
+            <p class="text-muted">Software Engineering</p>
+            <p class="mb-0">Major GPA: 3.62/4.00</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="honor-card">
+            <div class="honor-icon">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <h5>Dean's List</h5>
+            <p class="text-muted">Multiple Semesters</p>
+            <p class="mb-0">Fall 2020, 2021, 2022</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="honor-card">
+            <div class="honor-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h5>Summer Training</h5>
+            <p class="text-muted">Qatif Municipality</p>
+            <p class="mb-0">Oracle Database Development</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="honor-card">
+            <div class="honor-icon">
+              <i class="fas fa-project-diagram"></i>
+            </div>
+            <h5>Capstone Excellence</h5>
+            <p class="text-muted">Senior Project</p>
+            <p class="mb-0">Grade: A+ (Both Parts)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & Knowledge Section -->
+  <section id="skills" class="course-section">
+    <div class="container">
+      <div class="section-title">
+        <h2><i class="fas fa-brain me-2"></i>Skills & Knowledge</h2>
+        <div class="title-underline"></div>
+      </div>
+      
+      <div class="skills-matrix">
+        <div class="skill-category">
+          <h4><i class="fas fa-network-wired me-2"></i>Network Technologies</h4>
+          <ul class="skill-list">
+            <li><i class="fas fa-check"></i>Network Design & Architecture</li>
+            <li><i class="fas fa-check"></i>Cloud & Edge Computing</li>
+            <li><i class="fas fa-check"></i>Network Security & Management</li>
+            <li><i class="fas fa-check"></i>Mobile Computing</li>
+            <li><i class="fas fa-check"></i>TCP/IP Protocols</li>
+            <li><i class="fas fa-check"></i>Firewalls & IDS/IPS</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h4><i class="fas fa-code me-2"></i>Software Development</h4>
+          <ul class="skill-list">
+            <li><i class="fas fa-check"></i>Software Engineering Principles</li>
+            <li><i class="fas fa-check"></i>Requirements Engineering</li>
+            <li><i class="fas fa-check"></i>Software Design & Architecture</li>
+            <li><i class="fas fa-check"></i>Testing & Quality Assurance</li>
+            <li><i class="fas fa-check"></i>Web Development</li>
+            <li><i class="fas fa-check"></i>Project Management</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h4><i class="fas fa-database me-2"></i>Technical Foundations</h4>
+          <ul class="skill-list">
+            <li><i class="fas fa-check"></i>Data Structures & Algorithms</li>
+            <li><i class="fas fa-check"></i>Database Systems & SQL</li>
+            <li><i class="fas fa-check"></i>Operating Systems</li>
+            <li><i class="fas fa-check"></i>Computer Architecture</li>
+            <li><i class="fas fa-check"></i>Object-Oriented Programming</li>
+            <li><i class="fas fa-check"></i>Discrete Mathematics</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h4><i class="fas fa-tools me-2"></i>Tools & Technologies</h4>
+          <ul class="skill-list">
+            <li><i class="fas fa-check"></i>Docker & Kubernetes</li>
+            <li><i class="fas fa-check"></i>Kali Linux</li>
+            <li><i class="fas fa-check"></i>Packet Tracer</li>
+            <li><i class="fas fa-check"></i>Oracle Database</li>
+            <li><i class="fas fa-check"></i>Web Technologies</li>
+            <li><i class="fas fa-check"></i>Development Frameworks</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h4><i class="fas fa-user-tie me-2"></i>Professional Skills</h4>
+          <ul class="skill-list">
+            <li><i class="fas fa-check"></i>Team Leadership</li>
+            <li><i class="fas fa-check"></i>Project Management</li>
+            <li><i class="fas fa-check"></i>Technical Documentation</li>
+            <li><i class="fas fa-check"></i>Client Communication</li>
+            <li><i class="fas fa-check"></i>Problem Solving</li>
+            <li><i class="fas fa-check"></i>Continuous Learning</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h4><i class="fas fa-industry me-2"></i>Industry Applications</h4>
+          <ul class="skill-list">
+            <li><i class="fas fa-check"></i>Software Development Lifecycle</li>
+            <li><i class="fas fa-check"></i>Network Infrastructure</li>
+            <li><i class="fas fa-check"></i>Cloud Services</li>
+            <li><i class="fas fa-check"></i>Cybersecurity</li>
+            <li><i class="fas fa-check"></i>Database Administration</li>
+            <li><i class="fas fa-check"></i>System Integration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Return to Home Button -->
+  <section class="py-4">
+    <div class="container text-center">
+      <a href="index.html#education-skills" class="btn btn-primary btn-lg">
+        <i class="fas fa-home me-2"></i>Return to Education Section
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p>&copy; 2025 Jaffar Alromaih. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  
+  <!-- Custom JS -->
+  <script src="js/custom.js"></script>
+  
+  <script>
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM loaded, initializing smooth scrolling...');
+      
+      // Smooth scroll navigation
+      const navLinks = document.querySelectorAll('.section-navigation .nav-link');
+      console.log('Found navigation links:', navLinks.length);
+      
+      navLinks.forEach((link, index) => {
+        console.log(`Setting up click handler for link ${index}:`, link.getAttribute('href'));
+        
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          console.log('Navigation link clicked:', this.getAttribute('href'));
+          
+          const targetId = this.getAttribute('href').substring(1);
+          const targetSection = document.getElementById(targetId);
+          
+          console.log('Target ID:', targetId);
+          console.log('Target section found:', !!targetSection);
+          
+          if (targetSection) {
+            // Calculate offset for fixed header
+            const navbar = document.querySelector('.navbar-custom');
+            const headerHeight = navbar ? navbar.offsetHeight : 80;
+            const targetPosition = targetSection.offsetTop - headerHeight - 20;
+            
+            console.log('Header height:', headerHeight);
+            console.log('Target position:', targetPosition);
+            
+            // Smooth scroll to target
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          } else {
+            console.error('Target section not found:', targetId);
+          }
+        });
+      });
+      
+      // Update active navigation on scroll
+      window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('.course-section, .achievements-section');
+        const navLinks = document.querySelectorAll('.section-navigation .nav-link');
+        
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          if (window.pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+          }
+        });
+        
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href').substring(1) === current) {
+            link.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

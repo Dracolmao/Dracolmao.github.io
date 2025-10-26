@@ -1,0 +1,68 @@
+Concentration Description 
+The concentration is designed to introduce students to wired/wireless computer networks, design aspects of computer networks, network management, and security, and internet and cloud engineering.
+
+ 
+Concentration Objectives
+The objectives of the concentration in computer networks program are to: 
+
+Equip students with knowledge and skills to design, manage and secure computer networks
+Equip students with the ability to utilize tools and technologies in computer networks
+Relationship between the Objectives of the course and University Mission and the Saudi Vision 2030
+
+This area of concentration contributes directly to the diversification of the local economy. It aids the "National Industrial Development and Logistics Program" of Vision 2030 by developing local talents and expertise in key technological areas of computer networks, which are the backbone of communication.
+
+ 
+
+Eligibility
+Students who finished all junior-level courses in the following majors are eligible to enroll in this concentration:
+
+COE
+ICS
+EE
+SE
+A student of other majors can enroll in this concentration if he can fulfill the prerequisite requirements of all concentration courses. For the concentration to be registered in the student's records, the student should finish all the concentration courses successfully.
+
+ 
+Courses
+
+First Semester  ​ ​ ​ ​ ​
+Course #  ​	Title	LT	LB	CR
+COE	444	Network Design	3	0	3
+COE	446	Mobile Computing	3	0	3
+Second Semester ​ ​ ​ ​ ​
+Course #  ​	Title	LT	LB	CR
+COE	453	Cloud and Edge Computing
+3	0	3
+ICS
+445	Network Management and Security
+3	0	3
+ 
+
+ 
+
+Description of Courses
+
+
+COE 444: Network Design (3-0-3)
+
+Introduction to types of computer networks: LANs, VLANs, and WANs. STP and PVST protocols, in addition to ACL (Standard and Extended), are to be covered.  IPv4 and IPv6 subnetting and routing. Network development life cycle. Network analysis and design methodology. Link topology and sizing; Routing; Reliability. Data in support of network design. Datacenter design and implementation. Introduction to Packet tracer simulator/emulator or other network simulation tools.
+
+Prerequisite: COE 344 or ICS 343 or EE 400
+
+COE 446: Mobile Computing (3-0-3)
+
+Introduction to mobile computing, which are wireless randomly moving devices with/without an administration center. Studying exciting infrastructure/infrastructure-less wireless protocols to design computer networks. Quality of Service (QoS) issues and performance evaluation of various wireless protocols using simulation programs.
+
+Prerequisite: COE 344 or ICS 343 or EE 400
+
+COE 453: Cloud and Edge Computing (3-0-3)
+
+Internet and web protocols and technologies (HTTP). Basics of web development: frontend, backend, and full-stack (HTML, CSS, Javascript, Node.js). Web services and RESTful APIs. Introduction to utility computing: Cloud and Edge computing. Cloud Service-oriented architecture and microservices. The XaaS pyramid. Serverless computing. Cloud resource management. Virtualization and containerization (Docker and Kubernetes). Cloud data storage: BigTable, Dynamo, and Cassandra. Batch cloud processing: MapReduce and Hadoop, Spark, BigTable. Cloud-native applications. Security of Cloud computing. Hands-on activities and projects.
+
+Prerequisite: COE 344 or ICS 343 or EE 400
+
+ICS 445: Network Management and Security (3-0-3)
+
+Network Management Standards, Models, and protocols. Network Management Applications, Tools, and Systems. Remote Monitoring and Management (RMM). Large-scale network management techniques and systems. Security of LANs, wireless LANs, and cellular networks. Authentication, authorization, accountability, and access controls of computer networks. Network protection tools: Firewalls, Intrusion Detection and Prevention Systems, Sandboxing, proxies. Study of diverse attack types: DDoS, spoofing, flooding, hijacking, poisoning, DNS, replay attacks, and their countermeasures. Hands-on experience in network security using Kali Linux. Hands-on experience in implementing secure, manageable networks.
+
+Prerequisite: COE 344 or ICS 343 or EE 400
