@@ -877,6 +877,84 @@
     .certificate-link:hover .certificate-img {
       transform: scale(1.02);
     }
+    
+    /* Floating Course Button Styling */
+    .floating-course-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: auto;
+      min-width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--fieldz-primary-orange), var(--fieldz-secondary-orange));
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(232, 140, 87, 0.3);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      border: none;
+      cursor: pointer;
+      padding: 0 15px;
+    }
+    
+    .floating-btn-text {
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    
+    .floating-course-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(232, 140, 87, 0.5);
+      color: white;
+      text-decoration: none;
+      background: linear-gradient(135deg, var(--fieldz-secondary-orange), var(--fieldz-primary-orange));
+    }
+    
+    .floating-course-btn:focus {
+      outline: none;
+      box-shadow: 0 8px 25px rgba(232, 140, 87, 0.5);
+    }
+    
+    @media (max-width: 768px) {
+      .floating-course-btn {
+        width: auto;
+        min-width: 50px;
+        height: 50px;
+        bottom: 20px;
+        left: 20px;
+        font-size: 1.2rem;
+        padding: 0 12px;
+        border-radius: 25px;
+      }
+      
+      .floating-btn-text {
+        font-size: 0.8rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .floating-course-btn {
+        width: auto;
+        min-width: 45px;
+        height: 45px;
+        bottom: 20px;
+        left: 15px;
+        font-size: 1.1rem;
+        padding: 0 10px;
+        border-radius: 22px;
+      }
+      
+      .floating-btn-text {
+        font-size: 0.75rem;
+      }
+    }
   </style>
 </head>
 <body class="fieldz-project">
@@ -1639,6 +1717,12 @@
   <button id="scroll-to-top" aria-label="Scroll to top" style="background: linear-gradient(135deg, var(--fieldz-primary-orange), var(--fieldz-secondary-orange)); border: none;">
     <i class="fas fa-arrow-up"></i>
   </button>
+  
+  <!-- Floating Course Button -->
+  <a href="education-details.html#swe-417-course" class="floating-course-btn" title="See University Courses" aria-label="See University Courses">
+    <i class="fas fa-graduation-cap"></i>
+    <span class="floating-btn-text">View Courses</span>
+  </a>
   
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
