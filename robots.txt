@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://dracolmao.github.io/sitemap.xml
+Sitemap: https://jaffaralromaih.com/sitemap.xml
 
 # Allow search engines to crawl all important files
 Allow: /css/
