@@ -133,7 +133,7 @@
     }
     
     .personal-website section {
-      padding: 40px 0;
+      padding: 60px 0;
     }
     
     /* Hero section specific padding */
@@ -173,6 +173,7 @@
       overflow: visible;
       position: relative;
       color: #000;
+      padding: 1.5rem;
     }
     
     .personal-website .personal-details-card::before,
@@ -274,15 +275,49 @@
       width: 100%;
       position: relative;
       overflow: hidden;
+      background: transparent;
     }
     
     .personal-feature-box {
       padding: 25px;
       margin-bottom: 25px;
       height: auto;
-      min-height: auto;
+      min-height: 200px;
       transition: all 0.3s ease;
       box-sizing: border-box;
+      background: linear-gradient(145deg,
+        rgba(179, 217, 255, 0.95) 0%,
+        rgba(192, 224, 255, 0.9) 25%,
+        rgba(204, 231, 255, 0.85) 50%,
+        rgba(192, 224, 255, 0.9) 75%,
+        rgba(179, 217, 255, 0.95) 100%);
+      border-radius: 12px;
+      box-shadow:
+        0 4px 15px rgba(0, 123, 255, 0.2),
+        0 1px 3px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 123, 255, 0.3);
+    }
+    
+    /* Remove the gradient overlay completely */
+    .personal-feature-box::before {
+      display: none;
+    }
+    
+    .personal-feature-box > * {
+      position: static;
+      z-index: auto;
+    }
+    
+    .personal-feature-box:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow:
+        0 8px 25px rgba(0, 123, 255, 0.3),
+        0 3px 10px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.08);
+      border-color: rgba(0, 123, 255, 0.4);
     }
     
     .personal-feature-box i {
@@ -335,6 +370,23 @@
       display: inline-block;
       text-decoration: none;
       margin: 5px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .personal-btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .personal-btn-primary:hover::before {
+      left: 100%;
     }
     
     .personal-btn-primary:hover {
@@ -343,6 +395,11 @@
       background: linear-gradient(135deg, var(--personal-secondary-blue), var(--personal-primary-blue));
       color: white;
       text-decoration: none;
+    }
+    
+    .personal-btn-primary:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
     }
     
     .personal-timeline {
@@ -547,6 +604,23 @@
       border: 2px solid transparent;
       min-width: 180px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .personal-hero-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .personal-hero-btn:hover::before {
+      left: 100%;
     }
     
     .personal-hero-btn-primary {
@@ -563,6 +637,11 @@
       text-decoration: none;
     }
     
+    .personal-hero-btn-primary:active {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    }
+    
     .personal-hero-btn-secondary {
       background: rgba(255, 255, 255, 0.95);
       color: var(--personal-primary-blue);
@@ -575,6 +654,11 @@
       background: white;
       color: var(--personal-primary-blue);
       text-decoration: none;
+    }
+    
+    .personal-hero-btn-secondary:active {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
     }
     
     /* Responsive adjustments for hero buttons */
@@ -914,7 +998,7 @@
   </section>
 
   <!-- Key Features Section -->
-  <section id="features" class="personal-section">
+  <section id="features" class="personal-section" style="background: transparent;">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -943,7 +1027,6 @@
           </div>
         </div>
         
-        
         <div class="col-lg-6 mb-4">
           <div class="personal-feature-box">
             <i class="fas fa-tachometer-alt"></i>
@@ -965,6 +1048,22 @@
             <i class="fas fa-shield-alt"></i>
             <h4>Secure & Reliable</h4>
             <p>HTTPS encryption, secure hosting, and regular updates to ensure data protection and website reliability.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="personal-feature-box">
+            <i class="fas fa-code"></i>
+            <h4>Clean Code</h4>
+            <p>Well-structured, semantic HTML5 with organized CSS and JavaScript following best practices and industry standards.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="personal-feature-box">
+            <i class="fas fa-mobile-alt"></i>
+            <h4>Cross-Platform</h4>
+            <p>Fully responsive design ensuring optimal viewing experience across all devices, browsers, and screen sizes.</p>
           </div>
         </div>
       </div>
@@ -1070,9 +1169,6 @@
           <div class="d-flex flex-wrap gap-3 justify-content-center">
             <a href="index.html#projects" class="personal-btn-primary">
               <i class="fas fa-arrow-left me-2"></i>Back to Projects
-            </a>
-            <a href="https://jaffaralromaih.com" target="_blank" class="personal-btn-primary">
-              <i class="fas fa-external-link-alt me-2"></i>Visit Live Site
             </a>
           </div>
         </div>
