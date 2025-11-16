@@ -198,7 +198,6 @@
     .personal-website .personal-details-card:hover,
     .personal-website .personal-features-card:hover,
     .personal-website .personal-tech-card:hover,
-    .personal-website .personal-timeline-card:hover,
     .personal-website .personal-deployment-card:hover {
       transform: translateY(-3px) scale(1.02);
       box-shadow:
@@ -207,6 +206,17 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.7),
         inset 0 -1px 0 rgba(0, 0, 0, 0.08);
       border-color: rgba(0, 123, 255, 0.4);
+    }
+    
+    /* Remove hover effect from timeline card specifically */
+    .personal-website .personal-timeline-card:hover {
+      transform: none;
+      box-shadow:
+        0 4px 15px rgba(0, 123, 255, 0.2),
+        0 1px 3px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+      border-color: rgba(0, 123, 255, 0.3);
     }
     
     /* Ensure text readability on blue backgrounds */
@@ -402,54 +412,161 @@
       box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
     }
     
+    /* Modern Compact Timeline Styles */
     .personal-timeline {
       position: relative;
-      padding-left: 30px;
+      padding: 0;
       margin: 0;
+      list-style: none;
     }
     
     .personal-timeline::before {
       content: '';
       position: absolute;
-      left: 0;
+      left: 20px;
       top: 0;
       bottom: 0;
       width: 3px;
-      background: linear-gradient(135deg, var(--personal-primary-blue), var(--personal-secondary-blue));
+      background: linear-gradient(180deg, var(--light-blue) 0%, var(--blue) 50%, var(--very-light-blue) 100%);
     }
     
     .personal-timeline-item {
       position: relative;
-      margin-bottom: 30px;
-      padding-left: 30px;
+      margin-bottom: 20px;
+      padding-left: 50px;
     }
     
     .personal-timeline-item:last-child {
       margin-bottom: 0;
     }
     
-    .personal-timeline-item::before {
-      content: '';
+    .personal-timeline-content {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--very-light-blue) 100%);
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+      transition: all 0.3s ease;
+      position: relative;
+      border-left: 4px solid var(--light-blue);
+    }
+    
+    .personal-timeline-content:hover {
+      transform: translateX(5px);
+      box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+      border-left-color: var(--very-light-blue);
+    }
+    
+    .personal-timeline-dot {
       position: absolute;
-      left: -9px;
-      top: 5px;
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      background: var(--personal-primary-blue);
+      left: 12px;
+      top: 20px;
+      width: 18px;
+      height: 18px;
+      background: var(--light-blue);
       border: 3px solid white;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(227, 242, 253, 0.5);
+      z-index: 10;
+      transition: all 0.3s ease;
     }
     
-    .personal-timeline-item h6 {
-      margin-bottom: 5px;
+    .personal-timeline-item:hover .personal-timeline-dot {
+      background: var(--blue);
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4);
+      transform: scale(1.2);
+    }
+    
+    .personal-timeline-date {
+      font-size: 0.8rem;
       font-weight: 600;
-      color: var(--personal-primary-blue);
+      color: #ffffff !important;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     
-    .personal-timeline-item p {
+    .personal-timeline-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff !important;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    
+    .personal-timeline-description {
       margin-bottom: 0;
-      line-height: 1.5;
-      color: #333;
+      line-height: 1.4;
+      color: #000000;
+      font-size: 0.9rem;
+    }
+    
+    /* Timeline responsive adjustments */
+    @media (max-width: 768px) {
+      .personal-timeline::before {
+        left: 15px;
+      }
+      
+      .personal-timeline-item {
+        padding-left: 40px;
+        margin-bottom: 15px;
+      }
+      
+      .personal-timeline-content {
+        padding: 12px 15px;
+      }
+      
+      .personal-timeline-dot {
+        left: 8px;
+        top: 15px;
+        width: 14px;
+        height: 14px;
+        border-width: 2px;
+      }
+      
+      .personal-timeline-title {
+        font-size: 0.9rem;
+      }
+      
+      .personal-timeline-description {
+        font-size: 0.8rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .personal-timeline::before {
+        left: 12px;
+        width: 2px;
+      }
+      
+      .personal-timeline-item {
+        padding-left: 35px;
+        margin-bottom: 12px;
+      }
+      
+      .personal-timeline-content {
+        padding: 10px 12px;
+      }
+      
+      .personal-timeline-dot {
+        left: 6px;
+        top: 12px;
+        width: 12px;
+        height: 12px;
+      }
+      
+      .personal-timeline-date {
+        font-size: 0.7rem;
+      }
+      
+      .personal-timeline-title {
+        font-size: 0.85rem;
+        margin-bottom: 5px;
+      }
+      
+      .personal-timeline-description {
+        font-size: 0.75rem;
+        line-height: 1.3;
+      }
     }
     
     /* Title and section spacing improvements */
@@ -968,29 +1085,45 @@
       </div>
       
       <div class="row">
-        <div class="col-lg-8 mx-auto">
+        <div class="col-12">
           <div class="personal-timeline-card">
-            <div class="personal-timeline">
-              <div class="personal-timeline-item">
-                <h6>2023 - Discontinued</h6>
-                <p>Initial version of the personal website was discontinued due to technical limitations and the need for a more modern approach.</p>
-              </div>
+            <ul class="personal-timeline">
+              <li class="personal-timeline-item">
+                <div class="personal-timeline-dot"></div>
+                <div class="personal-timeline-content">
+                  <span class="personal-timeline-date">2023</span>
+                  <h5 class="personal-timeline-title">Project Discontinued</h5>
+                  <p class="personal-timeline-description">Initial version of the personal website was discontinued due to technical limitations and the need for a more modern approach.</p>
+                </div>
+              </li>
               
-              <div class="personal-timeline-item">
-                <h6>19/10/2025 - 29/10/2025 - Redeveloped from Scratch</h6>
-                <p>Complete redevelopment of the website using modern web technologies, implementing responsive design, SEO optimization, and enhanced user experience. The entire project was rebuilt from the ground up with best practices and current web standards.</p>
-              </div>
+              <li class="personal-timeline-item">
+                <div class="personal-timeline-dot"></div>
+                <div class="personal-timeline-content">
+                  <span class="personal-timeline-date">Oct 19-29, 2025</span>
+                  <h5 class="personal-timeline-title">Complete Redevelopment</h5>
+                  <p class="personal-timeline-description">Complete redevelopment from scratch using modern web technologies, implementing responsive design, SEO optimization, and enhanced user experience with best practices and current web standards.</p>
+                </div>
+              </li>
               
-              <div class="personal-timeline-item">
-                <h6>29/10/2025 - Deployed</h6>
-                <p>Successful deployment of the redeveloped website to Netlify with custom domain configuration from Porkbun. The site went live with full functionality and optimization.</p>
-              </div>
+              <li class="personal-timeline-item">
+                <div class="personal-timeline-dot"></div>
+                <div class="personal-timeline-content">
+                  <span class="personal-timeline-date">Oct 29, 2025</span>
+                  <h5 class="personal-timeline-title">Initial Deployment</h5>
+                  <p class="personal-timeline-description">Successful deployment to Netlify with custom domain configuration from Porkbun. The site went live with full functionality and optimization.</p>
+                </div>
+              </li>
               
-              <div class="personal-timeline-item">
-                <h6>30/10/2025 - Present - Updates + Maintenance</h6>
-                <p>Ongoing maintenance and updates to ensure optimal performance, security, and user experience. Regular content updates, performance monitoring, and feature enhancements based on user feedback and analytics.</p>
-              </div>
-            </div>
+              <li class="personal-timeline-item">
+                <div class="personal-timeline-dot"></div>
+                <div class="personal-timeline-content">
+                  <span class="personal-timeline-date">Oct 30, 2025 - Present</span>
+                  <h5 class="personal-timeline-title">Ongoing Maintenance</h5>
+                  <p class="personal-timeline-description">Continuous maintenance and updates ensuring optimal performance, security, and user experience with regular content updates, performance monitoring, and feature enhancements.</p>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
