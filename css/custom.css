@@ -935,6 +935,47 @@ section {
   font-size: 0.75rem;
 }
 
+/* Override project tags badge colors for specific technologies */
+.project-tags .tech-badge-flutter {
+  background-color: #02569B !important;
+  color: white !important;
+}
+
+.project-tags .tech-badge-firebase {
+  background-color: #FFCA28 !important;
+  color: #000 !important;
+}
+
+.project-tags .tech-badge-dart {
+  background-color: #00A2E5 !important;
+  color: white !important;
+}
+
+.project-tags .tech-badge-maps {
+  background-color: #4285F4 !important;
+  color: white !important;
+}
+
+.project-tags .tech-badge-mobile {
+  background-color: #3DDC84 !important;
+  color: #000 !important;
+}
+
+.project-tags .tech-badge-crossplatform {
+  background-color: #7952B3 !important;
+  color: white !important;
+}
+
+.project-tags .tech-badge-payment {
+  background-color: #FF6B35 !important;
+  color: white !important;
+}
+
+.project-tags .tech-badge-pattern {
+  background-color: #6B46C1 !important;
+  color: white !important;
+}
+
 /* Resume Section - Light Cyan Variation */
 #resume {
   background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
@@ -2752,4 +2793,45 @@ img:not(.fieldz-image) {
     font-size: 0.9rem !important;
     padding: 10px 20px !important;
   }
+}
+
+/* Technology Badge Colors for Fieldz Project */
+.tech-badge-flutter {
+  background-color: #02569B !important;
+  color: white !important;
+}
+
+.tech-badge-firebase {
+  background-color: #FFCA28 !important;
+  color: #000 !important;
+}
+
+.tech-badge-dart {
+  background-color: #00A2E5 !important;
+  color: white !important;
+}
+
+.tech-badge-maps {
+  background-color: #4285F4 !important;
+  color: white !important;
+}
+
+.tech-badge-mobile {
+  background-color: #3DDC84 !important;
+  color: #000 !important;
+}
+
+.tech-badge-crossplatform {
+  background-color: #7952B3 !important;
+  color: white !important;
+}
+
+.tech-badge-payment {
+  background-color: #FF6B35 !important;
+  color: white !important;
+}
+
+.tech-badge-pattern {
+  background-color: #6B46C1 !important;
+  color: white !important;
 }
