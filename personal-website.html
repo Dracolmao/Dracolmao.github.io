@@ -3,10 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal Website Project - Jaffar Alromaih's Portfolio Website">
-  <meta name="keywords" content="Personal Website, Portfolio, Software Engineering, Jaffar Alromaih">
+  
+  <!-- Primary Meta Tags -->
+  <title>Personal Portfolio Website - Jaffar Alromaih | Web Development Project</title>
+  <meta name="description" content="Personal portfolio website developed by Jaffar Alromaih (Jafar Alromaih). Professional web presence showcasing projects, education, and technical expertise. Built with HTML5, CSS3, Bootstrap 5, and JavaScript.">
+  <meta name="keywords" content="personal website, portfolio, web development, Jaffar Alromaih, Jafar Alromaih, alromaih website, romaih portfolio, HTML5, CSS3, Bootstrap, JavaScript, Netlify, Porkbun">
   <meta name="author" content="Jaffar Alromaih">
-  <title>Personal Website Project - Jaffar Alromaih</title>
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://jaffaralromaih.com/personal-website.html">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Personal Portfolio Website - Jaffar Alromaih">
+  <meta property="og:description" content="Professional portfolio website showcasing web development skills and projects">
+  <meta property="og:image" content="https://jaffaralromaih.com/img/New Logo/Jaffar_Logo.png">
+  <meta property="og:url" content="https://jaffaralromaih.com/personal-website.html">
+  <meta property="og:type" content="article">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Personal Portfolio Website - Jaffar Alromaih">
+  <meta name="twitter:description" content="Professional portfolio website built with modern web technologies">
+  <meta name="twitter:image" content="https://jaffaralromaih.com/img/New Logo/Jaffar_Logo.png">
+  
+  <!-- Additional SEO Meta Tags -->
+  <meta name="robots" content="index, follow">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Personal Portfolio Website",
+    "applicationCategory": "WebApplication",
+    "operatingSystem": "Web Browser",
+    "author": {
+      "@type": "Person",
+      "name": "Jaffar Alromaih"
+    },
+    "description": "Professional portfolio website showcasing software development projects and technical expertise",
+    "keywords": ["Portfolio", "Web Development", "HTML5", "CSS3", "Bootstrap", "JavaScript"]
+  }
+  </script>
+  
+  <!-- Website Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Jaffar Alromaih Portfolio",
+    "alternateName": ["Jafar Alromaih Portfolio", "Jafer Alromaih Website"],
+    "url": "https://jaffaralromaih.com/",
+    "description": "Professional portfolio showcasing software development projects and technical expertise",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "publisher": {
+      "@type": "Person",
+      "name": "Jaffar Alromaih"
+    }
+  }
+  </script>
+  
+  <!-- Article Schema for Project Page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Personal Portfolio Website",
+    "alternativeHeadline": ["Web Development Project", "Professional Portfolio"],
+    "author": {
+      "@type": "Person",
+      "name": "Jaffar Alromaih",
+      "alternateName": ["Jafar Alromaih", "Jafer Alromaih", "Jaffar alromaih", "Jaffar alrumaih"]
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Jaffar Alromaih"
+    },
+    "datePublished": "2023-01-01",
+    "dateModified": "2025-10-30",
+    "image": "https://jaffaralromaih.com/img/New Logo/Jaffar_Logo.png",
+    "url": "https://jaffaralromaih.com/personal-website.html",
+    "description": "Professional portfolio website built with modern web technologies - Personal project by Jaffar Alromaih",
+    "keywords": ["Portfolio", "Web Development", "HTML5", "CSS3", "Bootstrap", "JavaScript", "Jaffar Alromaih", "Jafar Alromaih"],
+    "about": [
+      "Web Development",
+      "Portfolio Design",
+      "Responsive Design",
+      "Modern Web Technologies",
+      "Personal Branding"
+    ],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://jaffaralromaih.com/personal-website.html"
+    }
+  }
+  </script>
   
   <!-- Favicon with SVG support and PNG fallback -->
   <link rel="icon" type="image/svg+xml" href="img/New Logo/Jaffar-Logo.svg">
@@ -22,91 +114,494 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   
   <style>
-    .project-hero {
+    /* Personal Website specific color scheme */
+    :root {
+      --personal-primary-blue: #007bff;
+      --personal-secondary-blue: #0056b3;
+      --personal-light-blue: #b3d9ff;
+      --personal-gradient-start: #007bff;
+      --personal-gradient-mid: #4dabf7;
+      --personal-gradient-end: #74c0fc;
+    }
+    
+    /* Personal Website container styling */
+    .personal-website .container {
+      max-width: 1140px;
+      width: auto;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    
+    .personal-website section {
+      padding: 40px 0;
+    }
+    
+    /* Hero section specific padding */
+    .personal-website .personal-hero {
       padding: 120px 0 80px;
-      background: linear-gradient(135deg, rgba(0, 113, 196, 0.9), rgba(58, 101, 174, 0.9));
-      color: white;
+    }
+    
+    /* Ensure proper spacing and prevent overlaps */
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+    }
+    
+    /* Personal Website metallic blue box styling for cards */
+    .personal-website .personal-details-card,
+    .personal-website .personal-features-card,
+    .personal-website .personal-tech-card,
+    .personal-website .personal-timeline-card,
+    .personal-website .personal-deployment-card {
+      background: linear-gradient(145deg,
+        rgba(179, 217, 255, 0.95) 0%,
+        rgba(192, 224, 255, 0.9) 25%,
+        rgba(204, 231, 255, 0.85) 50%,
+        rgba(192, 224, 255, 0.9) 75%,
+        rgba(179, 217, 255, 0.95) 100%);
+      border-radius: 12px;
+      box-shadow:
+        0 4px 15px rgba(0, 123, 255, 0.2),
+        0 1px 3px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 123, 255, 0.3);
+      transition: all 0.3s ease;
+      height: auto;
+      overflow: visible;
+      position: relative;
+      color: #000;
+    }
+    
+    .personal-website .personal-details-card::before,
+    .personal-website .personal-features-card::before,
+    .personal-website .personal-tech-card::before,
+    .personal-website .personal-timeline-card::before,
+    .personal-website .personal-deployment-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.4) 0%,
+        transparent 50%,
+        rgba(0, 123, 255, 0.1) 100%);
+      border-radius: 12px;
+      pointer-events: none;
+    }
+    
+    .personal-website .personal-details-card:hover,
+    .personal-website .personal-features-card:hover,
+    .personal-website .personal-tech-card:hover,
+    .personal-website .personal-timeline-card:hover,
+    .personal-website .personal-deployment-card:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow:
+        0 8px 25px rgba(0, 123, 255, 0.3),
+        0 3px 10px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.08);
+      border-color: rgba(0, 123, 255, 0.4);
+    }
+    
+    /* Ensure text readability on blue backgrounds */
+    .personal-website .personal-details-card h5,
+    .personal-website .personal-features-card h5,
+    .personal-website .personal-tech-card h5,
+    .personal-website .personal-timeline-card h5,
+    .personal-website .personal-deployment-card h5 {
+      color: #000;
+      font-weight: 600;
+    }
+    
+    .personal-website .personal-details-card h6,
+    .personal-website .personal-features-card h6,
+    .personal-website .personal-tech-card h6,
+    .personal-website .personal-timeline-card h6,
+    .personal-website .personal-deployment-card h6 {
+      color: #000;
+      font-weight: 500;
+    }
+    
+    .personal-website .personal-details-card .text-muted,
+    .personal-website .personal-features-card .text-muted,
+    .personal-website .personal-tech-card .text-muted,
+    .personal-website .personal-timeline-card .text-muted,
+    .personal-website .personal-deployment-card .text-muted {
+      color: #333;
+    }
+    
+    /* Ensure icons have proper contrast */
+    .personal-website .personal-details-card i,
+    .personal-website .personal-features-card i,
+    .personal-website .personal-tech-card i,
+    .personal-website .personal-timeline-card i,
+    .personal-website .personal-deployment-card i {
+      color: var(--personal-primary-blue);
+    }
+    
+    .personal-hero {
+      background: linear-gradient(135deg,
+        var(--personal-gradient-start) 0%,
+        var(--personal-gradient-mid) 35%,
+        var(--personal-gradient-end) 100%);
+      color: #000;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin: 0;
     }
     
-    .project-image {
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    .personal-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      pointer-events: none;
     }
     
-    .tech-badge {
-      margin: 5px;
-      padding: 8px 15px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-    }
-    
-    .feature-box {
-      padding: 20px;
-      border-radius: 10px;
-      background-color: #f8f9fa;
-      margin-bottom: 20px;
-      height: 100%;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .feature-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-    
-    .feature-box i {
-      font-size: 2rem;
-      color: #007bff;
-      margin-bottom: 15px;
-    }
-    
-    .website-screenshot {
-      border: 3px solid #e9ecef;
-      border-radius: 10px;
+    .personal-section {
+      padding: 40px 0;
+      margin: 0;
+      width: 100%;
+      position: relative;
       overflow: hidden;
     }
     
-    .timeline-item {
-      position: relative;
-      padding-left: 30px;
-      margin-bottom: 20px;
+    .personal-feature-box {
+      padding: 25px;
+      margin-bottom: 25px;
+      height: auto;
+      min-height: auto;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
     }
     
-    .timeline-item:before {
+    .personal-feature-box i {
+      font-size: 2.5rem;
+      color: var(--personal-primary-blue);
+      margin-bottom: 15px;
+      display: block;
+      text-align: center;
+    }
+    
+    .personal-feature-box h4 {
+      margin-bottom: 12px;
+      text-align: center;
+      color: #000;
+    }
+    
+    .personal-feature-box p {
+      margin-bottom: 0;
+      line-height: 1.5;
+      color: #333;
+    }
+    
+    .personal-tech-badge {
+      margin: 5px;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--personal-primary-blue), var(--personal-secondary-blue));
+      color: white;
+      border: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    
+    .personal-tech-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    }
+    
+    .personal-btn-primary {
+      background: linear-gradient(135deg, var(--personal-primary-blue), var(--personal-secondary-blue));
+      border: none;
+      color: white;
+      font-weight: 600;
+      padding: 12px 30px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+      margin: 5px;
+    }
+    
+    .personal-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+      background: linear-gradient(135deg, var(--personal-secondary-blue), var(--personal-primary-blue));
+      color: white;
+      text-decoration: none;
+    }
+    
+    .personal-timeline {
+      position: relative;
+      padding-left: 30px;
+      margin: 0;
+    }
+    
+    .personal-timeline::before {
       content: '';
       position: absolute;
       left: 0;
-      top: 8px;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background-color: #007bff;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(135deg, var(--personal-primary-blue), var(--personal-secondary-blue));
     }
     
-    .timeline-item:after {
+    .personal-timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+      padding-left: 30px;
+    }
+    
+    .personal-timeline-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .personal-timeline-item::before {
       content: '';
       position: absolute;
-      left: 5px;
-      top: 20px;
-      width: 2px;
-      height: calc(100% + 10px);
-      background-color: #dee2e6;
+      left: -9px;
+      top: 5px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--personal-primary-blue);
+      border: 3px solid white;
     }
     
-    .timeline-item:last-child:after {
-      display: none;
+    .personal-timeline-item h6 {
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: var(--personal-primary-blue);
+    }
+    
+    .personal-timeline-item p {
+      margin-bottom: 0;
+      line-height: 1.5;
+      color: #333;
+    }
+    
+    /* Title and section spacing improvements */
+    .display-5 {
+      margin-bottom: 1rem;
+    }
+    
+    .title-underline {
+      margin-bottom: 1.5rem;
+    }
+    
+    .lead {
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Row spacing fixes */
+    .row {
+      margin-bottom: 1.5rem;
+    }
+    
+    .row:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .personal-hero {
+        padding: 80px 0 50px;
+      }
+      
+      .personal-section {
+        padding: 30px 0;
+      }
+      
+      .personal-feature-box {
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+      
+      .row {
+        margin-bottom: 1.2rem;
+      }
+      
+      .display-5 {
+        margin-bottom: 0.8rem;
+      }
+      
+      .title-underline {
+        margin-bottom: 1.2rem;
+      }
+      
+      .lead {
+        margin-bottom: 1.2rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .personal-hero {
+        padding: 60px 0 30px;
+      }
+      
+      .personal-section {
+        padding: 20px 0;
+      }
+      
+      .personal-feature-box {
+        padding: 15px;
+        margin-bottom: 15px;
+      }
+      
+      .row {
+        margin-bottom: 1rem;
+      }
+      
+      .personal-tech-badge {
+        margin: 2px;
+        padding: 6px 12px;
+        font-size: 0.75rem;
+      }
+      
+      .display-5 {
+        margin-bottom: 0.6rem;
+      }
+      
+      .title-underline {
+        margin-bottom: 1rem;
+      }
+      
+      .lead {
+        margin-bottom: 1rem;
+      }
+    }
+    
+    /* Project Details Card Styling */
+    .personal-details-header {
+      background: linear-gradient(135deg, var(--personal-primary-blue), var(--personal-secondary-blue));
+      color: white;
+      font-weight: 700;
+      border: none;
+      padding: 20px;
+      margin: 0;
+    }
+    
+    .personal-details-body {
+      padding: 20px;
+    }
+    
+    .detail-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(0, 123, 255, 0.1);
+      margin-bottom: 0;
+    }
+    
+    .detail-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    
+    .detail-item:first-child {
+      padding-top: 0;
+    }
+    
+    .detail-label {
+      font-weight: 600;
+      color: var(--personal-primary-blue);
+      font-size: 0.9rem;
+      flex: 1;
+    }
+    
+    .detail-value {
+      font-weight: 500;
+      color: #333;
+      font-size: 0.9rem;
+      text-align: right;
+      flex: 1;
+    }
+    
+    /* Hero Button Styling */
+    .personal-hero-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 35px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      min-width: 180px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .personal-hero-btn-primary {
+      background: linear-gradient(135deg, var(--personal-primary-blue), var(--personal-secondary-blue));
+      color: white;
+      border-color: var(--personal-primary-blue);
+    }
+    
+    .personal-hero-btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+      background: linear-gradient(135deg, var(--personal-secondary-blue), var(--personal-primary-blue));
+      color: white;
+      text-decoration: none;
+    }
+    
+    .personal-hero-btn-secondary {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--personal-primary-blue);
+      border-color: var(--personal-primary-blue);
+    }
+    
+    .personal-hero-btn-secondary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+      background: white;
+      color: var(--personal-primary-blue);
+      text-decoration: none;
+    }
+    
+    /* Responsive adjustments for hero buttons */
+    @media (max-width: 768px) {
+      .personal-hero-btn {
+        padding: 12px 28px;
+        font-size: 1rem;
+        min-width: 160px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .personal-hero-btn {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+        min-width: 140px;
+      }
     }
   </style>
 </head>
-<body>
+<body class="personal-website">
   <!-- Navigation -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="index.html">
-          <img src="img/New Logo/Jaffar-Logo.svg" alt="Jaffar Alromaih (Jafar Alrumaih) Logo - Junior Software Engineer Portfolio" id="logo" class="me-2">
+          <img src="img/New Logo/Jaffar-Logo.svg" alt="Jaffar Alromaih Logo" id="logo" class="me-2">
           <span class="brand-text">Jaffar Alromaih</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -150,225 +645,468 @@
     </nav>
   </header>
 
-  <!-- Project Hero Section -->
-  <section class="project-hero">
+  <!-- Personal Website Hero Section -->
+  <section class="personal-hero">
     <div class="container">
-      <h1 class="display-4">Personal Portfolio Website</h1>
-      <p class="lead">A comprehensive personal portfolio showcasing professional achievements, projects, and technical skills</p>
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <div class="text-center mb-4">
+            <img src="img/New Logo/Jaffar_Logo.png" alt="Jaffar Alromaih Logo - Personal Portfolio Website" style="height: 120px; width: auto; object-fit: contain;">
+          </div>
+          <h1 class="display-3 fw-bold text-center mb-4">Personal Portfolio Website</h1>
+          <h2 class="h2 mb-4 text-center">Professional Web Presence</h2>
+          <p class="lead mb-4">A comprehensive personal portfolio website showcasing professional projects, educational background, technical skills, and work experience. Built with modern web technologies to create an impressive online presence.</p>
+          <div class="d-flex flex-wrap gap-3 justify-content-center mb-4">
+            <a href="#overview" class="personal-hero-btn personal-hero-btn-primary">
+              <i class="fas fa-info-circle me-2"></i>Learn More
+            </a>
+            <a href="#features" class="personal-hero-btn personal-hero-btn-secondary">
+              <i class="fas fa-star me-2"></i>Key Features
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="personal-details-card mb-4">
+            <div class="personal-details-header">
+              <h5 class="mb-0">Quick Stats</h5>
+            </div>
+            <div class="personal-details-body">
+              <div class="detail-item">
+                <span class="detail-label">Live URL:</span>
+                <span class="detail-value">jaffaralromaih.com</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Status:</span>
+                <span class="detail-value">Active</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Last Update:</span>
+                <span class="detail-value">30/10/2025</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Type:</span>
+                <span class="detail-value">Personal Project</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Project Details Section -->
-  <section class="py-5">
+  <!-- Project Overview Section -->
+  <section id="overview" class="personal-section bg-light">
     <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Project Overview</h2>
+            <div class="title-underline mx-auto"></div>
+          </div>
+        </div>
+      </div>
+      
       <div class="row">
         <div class="col-lg-8">
           <div class="project-overview">
-            <h2 class="mb-4">Project Overview</h2>
+            <h3 class="mb-4">The Vision</h3>
             <p class="lead">
-              This personal portfolio website serves as a comprehensive digital platform to showcase my professional journey, 
-              academic achievements, technical skills, and project portfolio. Designed with modern web technologies and best practices, 
-              it provides visitors with an engaging and informative experience.
+              This personal portfolio website represents a comprehensive digital presence designed to showcase professional expertise, 
+              academic achievements, and technical projects. The platform serves as a central hub for potential employers, 
+              collaborators, and visitors to explore my capabilities and background in software engineering.
             </p>
             
-            <h3 class="mt-5 mb-3">The Challenge</h3>
+            <h3 class="mt-5 mb-3">The Purpose</h3>
             <p>
-              Creating a personal portfolio that effectively communicates professional expertise while maintaining excellent user experience 
-              across all devices. The challenge was to design a platform that not only showcases technical skills but also demonstrates 
-              strong web development capabilities through its implementation. Key requirements included responsive design, fast loading times, 
-              accessibility standards, and easy content management.
+              The website was created to establish a professional online presence that effectively communicates my skills, 
+              experience, and achievements in the field of software engineering. It serves multiple purposes: acting as a 
+              digital resume, project showcase, educational portfolio, and contact platform, all while maintaining a modern, 
+              responsive design that works seamlessly across all devices.
             </p>
             
-            <h3 class="mt-5 mb-3">The Solution</h3>
+            <h3 class="mt-5 mb-3">The Implementation</h3>
             <p>
-              Implemented a modern, responsive website using Bootstrap 5 framework with custom CSS enhancements. The solution features 
-              a clean, professional design with smooth animations, intuitive navigation, and comprehensive content sections. The architecture 
-              follows semantic HTML5 standards, ensuring accessibility and SEO optimization. Interactive elements and micro-interactions 
-              enhance user engagement while maintaining performance standards.
+              Built with modern web standards including HTML5, CSS3, Bootstrap 5, and vanilla JavaScript, the website emphasizes 
+              performance, accessibility, and user experience. The implementation follows best practices for SEO optimization, 
+              responsive design, and semantic markup, ensuring the site is both user-friendly and search engine optimized.
             </p>
-            
-            <h3 class="mt-5 mb-3">Key Features</h3>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="feature-box">
-                  <i class="fas fa-laptop-code"></i>
-                  <h4>Responsive Design</h4>
-                  <p>Fully responsive layout that adapts seamlessly to desktop, tablet, and mobile devices with optimized user experience.</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="feature-box">
-                  <i class="fas fa-tachometer-alt"></i>
-                  <h4>Performance Optimized</h4>
-                  <p>Fast loading times with optimized images, minified assets, and efficient code structure for optimal performance.</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="feature-box">
-                  <i class="fas fa-universal-access"></i>
-                  <h4>Accessibility Compliant</h4>
-                  <p>Built with WCAG guidelines in mind, ensuring the website is accessible to users with disabilities.</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="feature-box">
-                  <i class="fas fa-search"></i>
-                  <h4>SEO Optimized</h4>
-                  <p>Search engine friendly structure with proper meta tags, semantic HTML, and optimized content for better visibility.</p>
-                </div>
-              </div>
-            </div>
-            
-            <h3 class="mt-5 mb-3">Development Timeline</h3>
-            <div class="timeline">
-              <div class="timeline-item">
-                <h5>Planning & Design</h5>
-                <p class="text-muted">Initial wireframing, design mockups, and technology stack selection</p>
-              </div>
-              <div class="timeline-item">
-                <h5>Core Development</h5>
-                <p class="text-muted">HTML structure, CSS styling, and Bootstrap integration</p>
-              </div>
-              <div class="timeline-item">
-                <h5>Content Integration</h5>
-                <p class="text-muted">Adding personal information, projects, and educational details</p>
-              </div>
-              <div class="timeline-item">
-                <h5>Testing & Optimization</h5>
-                <p class="text-muted">Cross-browser testing, performance optimization, and accessibility checks</p>
-              </div>
-              <div class="timeline-item">
-                <h5>Deployment & Launch</h5>
-                <p class="text-muted">Final deployment to GitHub Pages with continuous integration</p>
-              </div>
-            </div>
           </div>
         </div>
         
         <div class="col-lg-4">
-          <div class="project-sidebar">
-            <div class="card mb-4">
-              <div class="card-header bg-primary text-white">
-                <h5 class="mb-0">Project Details</h5>
+          <div class="personal-details-card mb-4">
+            <div class="personal-details-header">
+              <h5 class="mb-0">Project Details</h5>
+            </div>
+            <div class="personal-details-body">
+              <div class="detail-item">
+                <span class="detail-label">Platform:</span>
+                <span class="detail-value">Web Application</span>
               </div>
-              <div class="card-body">
-                <p><strong>Duration:</strong> Ongoing</p>
-                <p><strong>Role:</strong> Full Stack Developer</p>
-                <p><strong>Type:</strong> Personal Project</p>
-                <p><strong>Status:</strong> Active</p>
-                <p><strong>Platform:</strong> GitHub Pages</p>
+              <div class="detail-item">
+                <span class="detail-label">Development Time:</span>
+                <span class="detail-value">10 days (redevelopment)</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Role:</span>
+                <span class="detail-value">Full Stack Developer</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Project Type:</span>
+                <span class="detail-value">Personal Portfolio</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Category:</span>
+                <span class="detail-value">Web Development</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Framework:</span>
+                <span class="detail-value">Bootstrap 5</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Languages:</span>
+                <span class="detail-value">HTML5, CSS3, JavaScript</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Target Audience:</span>
+                <span class="detail-value">Professional Network</span>
               </div>
             </div>
-            
-            <div class="card mb-4">
-              <div class="card-header bg-info text-white">
-                <h5 class="mb-0">Technologies Used</h5>
-              </div>
-              <div class="card-body">
-                <span class="badge bg-info tech-badge">HTML5</span>
-                <span class="badge bg-info tech-badge">CSS3</span>
-                <span class="badge bg-info tech-badge">JavaScript</span>
-                <span class="badge bg-info tech-badge">Bootstrap 5</span>
-                <span class="badge bg-info tech-badge">Font Awesome</span>
-                <span class="badge bg-info tech-badge">GitHub Pages</span>
-              </div>
+          </div>
+          
+          <div class="personal-details-card mb-4">
+            <div class="personal-details-header">
+              <h5 class="mb-0">Key Achievements</h5>
             </div>
-            
-            <div class="card mb-4">
-              <div class="card-header bg-success text-white">
-                <h5 class="mb-0">Project Links</h5>
+            <div class="personal-details-body">
+              <div class="detail-item">
+                <span class="detail-label">SEO Optimized:</span>
+                <span class="detail-value">✓ Complete</span>
               </div>
-              <div class="card-body">
-                <a href="https://github.com/Dracolmao/Dracolmao.github.io" target="_blank" class="btn btn-outline-primary btn-sm btn-block mb-2">
-                  <i class="fab fa-github mr-2"></i>View Source Code
-                </a>
-                <a href="index.html" target="_blank" class="btn btn-outline-success btn-sm btn-block mb-2">
-                  <i class="fas fa-external-link-alt mr-2"></i>Live Website
-                </a>
+              <div class="detail-item">
+                <span class="detail-label">Mobile Responsive:</span>
+                <span class="detail-value">✓ Complete</span>
               </div>
-            </div>
-            
-            <div class="card">
-              <div class="card-header bg-warning text-dark">
-                <h5 class="mb-0">Website Preview</h5>
+              <div class="detail-item">
+                <span class="detail-label">Performance:</span>
+                <span class="detail-value">✓ Optimized</span>
               </div>
-              <div class="card-body website-screenshot">
-                <img src="img/Jaffar_Alromaih_Picture_sq.png" alt="Jaffar Alromaih - Professional Headshot" class="img-fluid mb-3">
-                <p class="text-center text-muted small">Professional portfolio showcasing technical expertise and achievements</p>
+              <div class="detail-item">
+                <span class="detail-label">Accessibility:</span>
+                <span class="detail-value">✓ WCAG Compliant</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Cross-browser:</span>
+                <span class="detail-value">✓ Compatible</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
-      <!-- Website Sections Overview -->
-      <div class="row mt-5">
+    </div>
+  </section>
+
+  <!-- Technology Stack Section -->
+  <section id="technology" class="personal-section">
+    <div class="container">
+      <div class="row">
         <div class="col-12">
-          <h3 class="mb-4 text-center">Website Sections</h3>
-          <div class="row">
-            <div class="col-md-4 mb-3">
-              <div class="card h-100">
-                <div class="card-body text-center">
-                  <i class="fas fa-user fa-3x text-primary mb-3"></i>
-                  <h5 class="card-title">Hero Section</h5>
-                  <p class="card-text">Professional introduction with key skills and call-to-action buttons</p>
-                </div>
-              </div>
+          <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Technology Stack</h2>
+            <div class="title-underline mx-auto"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <div class="personal-tech-card">
+            <h4 class="mb-3"><i class="fas fa-code me-2"></i>Frontend Technologies</h4>
+            <div class="mb-3">
+              <span class="personal-tech-badge">HTML5</span>
+              <span class="personal-tech-badge">CSS3</span>
+              <span class="personal-tech-badge">JavaScript ES6+</span>
+              <span class="personal-tech-badge">Bootstrap 5</span>
             </div>
-            <div class="col-md-4 mb-3">
-              <div class="card h-100">
-                <div class="card-body text-center">
-                  <i class="fas fa-graduation-cap fa-3x text-success mb-3"></i>
-                  <h5 class="card-title">Education & Skills</h5>
-                  <p class="card-text">Academic background, technical skills, and professional certifications</p>
-                </div>
-              </div>
+            <p>Modern frontend stack with semantic HTML5, responsive CSS3, and interactive JavaScript for dynamic user experiences.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="personal-tech-card">
+            <h4 class="mb-3"><i class="fas fa-paint-brush me-2"></i>Design & Styling</h4>
+            <div class="mb-3">
+              <span class="personal-tech-badge">Responsive Design</span>
+              <span class="personal-tech-badge">CSS Grid</span>
+              <span class="personal-tech-badge">Flexbox</span>
+              <span class="personal-tech-badge">Custom CSS</span>
             </div>
-            <div class="col-md-4 mb-3">
-              <div class="card h-100">
-                <div class="card-body text-center">
-                  <i class="fas fa-briefcase fa-3x text-info mb-3"></i>
-                  <h5 class="card-title">Work Experience</h5>
-                  <p class="card-text">Professional experience and career achievements</p>
-                </div>
-              </div>
+            <p>Advanced CSS techniques with custom gradients, animations, and responsive layouts for optimal visual presentation.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="personal-tech-card">
+            <h4 class="mb-3"><i class="fas fa-search me-2"></i>SEO & Optimization</h4>
+            <div class="mb-3">
+              <span class="personal-tech-badge">Meta Tags</span>
+              <span class="personal-tech-badge">Structured Data</span>
+              <span class="personal-tech-badge">Open Graph</span>
+              <span class="personal-tech-badge">Twitter Cards</span>
             </div>
-            <div class="col-md-4 mb-3">
-              <div class="card h-100">
-                <div class="card-body text-center">
-                  <i class="fas fa-code fa-3x text-warning mb-3"></i>
-                  <h5 class="card-title">Projects Portfolio</h5>
-                  <p class="card-text">Showcase of technical projects and development work</p>
-                </div>
-              </div>
+            <p>Comprehensive SEO implementation with structured data, meta tags, and social media optimization for better visibility.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="personal-tech-card">
+            <h4 class="mb-3"><i class="fas fa-server me-2"></i>Deployment & Hosting</h4>
+            <div class="mb-3">
+              <span class="personal-tech-badge">Netlify</span>
+              <span class="personal-tech-badge">Custom Domain</span>
+              <span class="personal-tech-badge">HTTPS</span>
+              <span class="personal-tech-badge">CDN</span>
             </div>
-            <div class="col-md-4 mb-3">
-              <div class="card h-100">
-                <div class="card-body text-center">
-                  <i class="fas fa-file-alt fa-3x text-danger mb-3"></i>
-                  <h5 class="card-title">Resume/CV</h5>
-                  <p class="card-text">Downloadable resume and detailed qualifications</p>
-                </div>
+            <p>Modern deployment infrastructure with Netlify hosting, custom domain from Porkbun, and global CDN for fast loading.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Development Timeline Section -->
+  <section id="timeline" class="personal-section bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Development Timeline</h2>
+            <div class="title-underline mx-auto"></div>
+            <p class="lead">Project evolution from initial concept to ongoing maintenance</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="personal-timeline-card">
+            <div class="personal-timeline">
+              <div class="personal-timeline-item">
+                <h6>2023 - Discontinued</h6>
+                <p>Initial version of the personal website was discontinued due to technical limitations and the need for a more modern approach.</p>
               </div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <div class="card h-100">
-                <div class="card-body text-center">
-                  <i class="fas fa-envelope fa-3x text-secondary mb-3"></i>
-                  <h5 class="card-title">Contact</h5>
-                  <p class="card-text">Contact information and professional social links</p>
-                </div>
+              
+              <div class="personal-timeline-item">
+                <h6>19/10/2025 - 29/10/2025 - Redeveloped from Scratch</h6>
+                <p>Complete redevelopment of the website using modern web technologies, implementing responsive design, SEO optimization, and enhanced user experience. The entire project was rebuilt from the ground up with best practices and current web standards.</p>
+              </div>
+              
+              <div class="personal-timeline-item">
+                <h6>29/10/2025 - Deployed</h6>
+                <p>Successful deployment of the redeveloped website to Netlify with custom domain configuration from Porkbun. The site went live with full functionality and optimization.</p>
+              </div>
+              
+              <div class="personal-timeline-item">
+                <h6>30/10/2025 - Present - Updates + Maintenance</h6>
+                <p>Ongoing maintenance and updates to ensure optimal performance, security, and user experience. Regular content updates, performance monitoring, and feature enhancements based on user feedback and analytics.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
-      <div class="row mt-5">
+    </div>
+  </section>
+
+  <!-- Key Features Section -->
+  <section id="features" class="personal-section">
+    <div class="container">
+      <div class="row">
         <div class="col-12">
-          <div class="text-center">
-            <a href="index.html#projects" class="btn btn-primary btn-lg">
-              <i class="fas fa-arrow-left mr-2"></i>Back to Projects
+          <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Key Features</h2>
+            <div class="title-underline mx-auto"></div>
+            <p class="lead">Comprehensive functionality designed for professional presentation</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <div class="personal-feature-box">
+            <i class="fas fa-mobile-alt"></i>
+            <h4>Responsive Design</h4>
+            <p>Fully responsive layout that adapts seamlessly to all screen sizes and devices, ensuring optimal viewing experience on desktops, tablets, and smartphones.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="personal-feature-box">
+            <i class="fas fa-search"></i>
+            <h4>SEO Optimized</h4>
+            <p>Comprehensive SEO implementation with structured data, meta tags, and optimization for search engines to improve visibility and ranking.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="personal-feature-box">
+            <i class="fas fa-universal-access"></i>
+            <h4>Accessibility Compliant</h4>
+            <p>WCAG compliant design with semantic HTML, proper ARIA labels, and keyboard navigation support for inclusive user experience.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="personal-feature-box">
+            <i class="fas fa-tachometer-alt"></i>
+            <h4>Performance Optimized</h4>
+            <p>Optimized loading times, minified assets, and efficient code structure for fast page loads and smooth user interactions.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="personal-feature-box">
+            <i class="fas fa-palette"></i>
+            <h4>Modern Design</h4>
+            <p>Contemporary design with custom gradients, smooth animations, and professional color scheme that reflects technical expertise.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="personal-feature-box">
+            <i class="fas fa-shield-alt"></i>
+            <h4>Secure & Reliable</h4>
+            <p>HTTPS encryption, secure hosting, and regular updates to ensure data protection and website reliability.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deployment Details Section -->
+  <section id="deployment" class="personal-section bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Deployment & Infrastructure</h2>
+            <div class="title-underline mx-auto"></div>
+            <p class="lead">Modern hosting solution with professional domain management</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <div class="personal-deployment-card">
+            <h4 class="mb-3"><i class="fas fa-cloud me-2"></i>Hosting Platform</h4>
+            <div class="mb-3">
+              <span class="personal-tech-badge">Netlify</span>
+              <span class="personal-tech-badge">Continuous Deployment</span>
+              <span class="personal-tech-badge">Global CDN</span>
+            </div>
+            <p>Deployed on Netlify for optimal performance with automatic deployments, global content delivery network, and built-in security features. The platform provides excellent uptime, fast loading speeds, and seamless scaling.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="personal-deployment-card">
+            <h4 class="mb-3"><i class="fas fa-globe me-2"></i>Domain Management</h4>
+            <div class="mb-3">
+              <span class="personal-tech-badge">Porkbun</span>
+              <span class="personal-tech-badge">Custom Domain</span>
+              <span class="personal-tech-badge">DNS Management</span>
+            </div>
+            <p>Professional domain management through Porkbun with custom domain <strong>jaffaralromaih.com</strong>. Features include DNS configuration, SSL certificate management, and domain privacy protection.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="personal-deployment-card">
+            <h4 class="mb-3"><i class="fas fa-lock me-2"></i>Security Features</h4>
+            <div class="mb-3">
+              <span class="personal-tech-badge">HTTPS</span>
+              <span class="personal-tech-badge">SSL Certificate</span>
+              <span class="personal-tech-badge">Secure Headers</span>
+            </div>
+            <p>Enterprise-grade security with HTTPS encryption, automatic SSL certificate renewal, and secure HTTP headers to protect user data and ensure safe browsing.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 mb-4">
+          <div class="personal-deployment-card">
+            <h4 class="mb-3"><i class="fas fa-chart-line me-2"></i>Performance Monitoring</h4>
+            <div class="mb-3">
+              <span class="personal-tech-badge">Analytics</span>
+              <span class="personal-tech-badge">Performance Metrics</span>
+              <span class="personal-tech-badge">Uptime Monitoring</span>
+            </div>
+            <p>Continuous monitoring of website performance, user analytics, and uptime to ensure optimal user experience and quick identification of any issues.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="personal-deployment-card text-center">
+            <h4 class="mb-3"><i class="fas fa-external-link-alt me-2"></i>Live Website</h4>
+            <p class="lead mb-4">Visit the live website to explore the complete portfolio experience</p>
+            <a href="https://jaffaralromaih.com" target="_blank" class="personal-btn-primary btn-lg">
+              <i class="fas fa-globe me-2"></i>Visit Live Website
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conclusion Section -->
+  <section id="conclusion" class="personal-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Project Impact</h2>
+            <div class="title-underline mx-auto"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <p class="lead mb-4">
+            This personal portfolio website represents a comprehensive demonstration of modern web development capabilities, 
+            showcasing technical expertise in frontend development, responsive design, and user experience optimization.
+          </p>
+          
+          <h4 class="mb-3">Professional Value</h4>
+          <p class="mb-3">
+            The website serves as a powerful tool for professional networking, job applications, and establishing a strong 
+            online presence. It effectively communicates technical skills, project experience, and educational background 
+            to potential employers and collaborators.
+          </p>
+          <p class="mb-4">
+            Beyond its functional purpose, the project demonstrates proficiency in modern web technologies, SEO best practices, 
+            and responsive design principles - all essential skills in today's digital landscape.
+          </p>
+          
+          <div class="personal-deployment-card mb-4">
+            <h5 class="mb-3"><i class="fas fa-rocket text-primary me-2"></i>Future Enhancements</h5>
+            <p class="mb-2">
+              The website continues to evolve with regular updates, performance optimizations, and new features based on 
+              user feedback and emerging web technologies.
+            </p>
+            <p class="mb-0">
+              Planned enhancements include advanced animations, interactive components, and expanded project showcases 
+              to further demonstrate technical capabilities.
+            </p>
+          </div>
+          
+          <div class="d-flex flex-wrap gap-3 justify-content-center">
+            <a href="index.html#projects" class="personal-btn-primary">
+              <i class="fas fa-arrow-left me-2"></i>Back to Projects
+            </a>
+            <a href="https://jaffaralromaih.com" target="_blank" class="personal-btn-primary">
+              <i class="fas fa-external-link-alt me-2"></i>Visit Live Site
             </a>
           </div>
         </div>
@@ -386,7 +1124,12 @@
       </div>
     </div>
   </footer>
-
+  
+  <!-- Scroll to Top Button -->
+  <button id="scroll-to-top" aria-label="Scroll to top" style="background: linear-gradient(135deg, var(--personal-primary-blue), var(--personal-secondary-blue)); border: none;">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   

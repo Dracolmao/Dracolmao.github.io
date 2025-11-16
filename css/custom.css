@@ -2437,14 +2437,7 @@ img:not(.fieldz-image) {
   border: 1px solid rgba(40, 167, 69, 0.1);
   background: #ffffff;
   box-shadow: 0 4px 15px rgba(10, 36, 99, 0.1);
-  transition: all 0.3s ease;
   margin-top: 2rem;
-}
-
-.personal-projects-section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(10, 36, 99, 0.15);
-  border-color: rgba(40, 167, 69, 0.3);
 }
 
 .personal-project-card {
