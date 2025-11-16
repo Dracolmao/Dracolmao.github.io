@@ -2508,6 +2508,21 @@ img:not(.fieldz-image) {
   flex-shrink: 0;
 }
 
+.personal-project-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.personal-project-logo:hover {
+  transform: scale(1.05);
+}
+
 .personal-project-title {
   color: #155724;
   font-weight: 600;
@@ -2678,6 +2693,12 @@ img:not(.fieldz-image) {
     margin-right: 0.75rem;
   }
   
+  .personal-project-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.75rem;
+  }
+  
   .personal-project-title {
     font-size: 1rem;
   }
@@ -2710,6 +2731,13 @@ img:not(.fieldz-image) {
   
   .personal-project-icon {
     font-size: 1.25rem;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .personal-project-logo {
+    width: 36px;
+    height: 36px;
     margin-right: 0;
     margin-bottom: 0.5rem;
   }
