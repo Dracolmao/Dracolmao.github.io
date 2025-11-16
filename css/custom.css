@@ -2620,24 +2620,50 @@ img:not(.fieldz-image) {
   color: white;
 }
 
+.tech-badge-java {
+  background-color: #f89820;
+  color: white;
+}
+
+.tech-badge-xml {
+  background-color: #0060ac;
+  color: white;
+}
+
+.tech-badge-android {
+  background-color: #3ddc84;
+  color: #000;
+}
+
 .personal-project-tech .badge:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.personal-projects-btn {
-  background: linear-gradient(135deg, #28a745, #20c997) !important;
-  border: none !important;
-  color: white !important;
-  font-weight: 600 !important;
-  transition: all 0.3s ease !important;
+.personal-project-btn {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
 }
 
-.personal-projects-btn:hover {
-  background: linear-gradient(135deg, #218838, #1ea085) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3) !important;
-  color: white !important;
+.personal-project-btn:hover {
+  background: linear-gradient(135deg, #218838, #1ea085);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3);
+  color: white;
+  text-decoration: none;
+}
+
+.personal-project-btn i {
+  font-size: 0.8rem;
 }
 
 /* Responsive adjustments for personal projects */
